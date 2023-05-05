@@ -1,0 +1,182 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+a{
+  text-decoration: none;
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+/* Navbar and side panel css */
+
+.navbar, .n-left{
+  width: 98%;
+  margin: 0;
+  padding: 0;
+}
+.n-left .sidepanel a{
+  font-size: 1.05rem;
+  padding-top: 0.8rem;
+  font-family: "JetBrains Mono", sans-serif;
+  color: limegreen;
+}
+.n-left .sidepanel span{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 40%;
+}
+.n-left .sidepanel span h5{
+  color: limegreen;
+  font-size: 0.8rem;
+  font-family: "JetBrains Mono", sans-serif;
+  margin-top: 0.2rem;
+  margin-bottom: 0;
+}
+
+/* The sidepanel menu */
+.sidepanel {
+    height: 100%; /* Specify a height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #464646; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+  }
+  
+  /* The sidepanel links */
+  .sidepanel a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidepanel a:hover {
+    color: #f1f1f1;
+  }
+  
+  /* Position and style the close button (top right corner) */
+  .sidepanel .closebtn {
+    position: absolute;
+    top:1%;
+    font-size: 36px;
+    margin-left: 0px;
+  }
+  
+  /* Style the button that is used to open the sidepanel */
+  .openbtn {
+    font-size: 30px;
+    position: relative;
+    left: 2%;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    padding: 1rem;
+    border: none;
+  }
+  
+  .openbtn:hover {
+    opacity: 0.7;
+  }
+
+  /* Heading css */
+  .heading h1{
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: "JetBrains Mono", sans-serif;
+    color: rgb(3, 138, 3);
+    margin-top: 0;
+  }
+
+  .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  /* welcome css */
+  .welcome{
+    width: 95%;
+    height: 35vh;
+    border-radius: 8px;
+    background-image: url(./img/book2.jpg);
+    background-size: cover;
+  }
+  .welcome span h3{
+    font-size: 1rem;
+    font-family: "JetBrains Mono", serif;
+    padding: 5%;
+    margin-bottom: 0;
+    margin-top: 7%;
+    margin-left: 6%;
+    font-weight: lighter
+  }
+  .welcome span h4{
+    font-size: 1rem;
+    font-weight: bolder;
+    font-family: "JetBrains Mono", serif;
+    padding: 5%;
+    margin-top: -9%;
+    margin-left: 20%;
+  }
+
+  /* News css */
+  .news{
+    width: 95%;
+    height: 35vh;
+    border-radius: 8px;
+    margin-bottom: 5rem;
+  }
+   
+  .news h5{
+    font-size: 1.05rem;
+    padding: 1rem;
+    margin: 0;
+    font-family: "JetBrains Mono", serif;
+    color: limegreen;
+  }
+
+  /* Slideshow container */
+.news_slider {
+  width: 100%;
+  position: relative;
+  margin: 0;
+}
+
+/* Hide the images by default */
+.myslides {
+  display: none;
+  height: 40vh;
+  width: 100%;
+}
+.myslides img{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 8px;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}

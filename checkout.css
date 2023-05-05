@@ -1,0 +1,287 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* book section css */
+.book_container{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    width: 90%;
+    background-color: white;
+    border: 1px solid black;
+    
+}
+.book_picture{
+    width: 100%;
+    height: 40vh;
+}
+.book_picture img{
+    width: 100%;
+    height: 100%;
+}
+.book_text{
+    display: flex;
+    justify-content: space-evenly;
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    padding: 0rem 1rem 1rem 1rem;
+}
+
+.book_text .b-left{
+    width: 60%;
+    margin-top: 0.5rem;
+}
+
+.b-left h2{
+    font-size: 1rem;
+    margin: 0;
+    font-family: "JetBrains Mono", serif;
+}
+.b-right h3, .book_price{
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    font-family: "JetBrains Mono", serif;
+}
+.book_price{
+  border: none;
+  background: none;
+  margin-bottom: 1rem;
+}
+.b-left h5{
+    font-size: 0.9rem;
+    color: gray;
+    margin-top: 0.2rem;
+    font-family: "JetBrains Mono", serif;
+}
+
+/* buttons css */
+.buttons a{
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    background-color: #1A3952;
+    border-radius: 4px;
+    font-family: "JetBrains Mono", serif;
+}
+
+.buy_button{
+    background-color: #1A3952;
+    border-radius: 4px;
+    padding: 0.5rem;
+    color: white;
+    width: 18vh;
+    font-size: 1rem;
+    font-family: "JetBrains Mono", serif;
+}
+
+.quantity {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+  }
+  .quantity h5{
+    margin-top: 0;
+    font-size: 0.9rem;
+    font-family: "JetBrains Mono", serif;
+  }
+  .quantity span{
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    left: -10%;
+  }
+  .quantity input {
+    background: none;
+    border: none;
+    text-align: center;
+    width: 32px;
+    font-size: 16px;
+    color: #43484D;
+    font-weight: 300;
+  }
+   
+  button .search_button {
+    width: 30px;
+    height: 30px;
+    background-color: #E1E8EE;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: "JetBrains Mono", serif;
+  }
+  .minus-btn img {
+    margin-bottom: 3px;
+  }
+  .plus-btn img {
+    margin-top: 2px;
+  }
+   
+  button:focus,
+  input:focus {
+    outline:0;
+  }
+
+  .search{
+    margin-left: 5%;
+    width: 79%;
+    height: 6vh;
+    border: 1px solid black;
+    border-radius: 6px;
+    background-color: white;
+    color: black;
+    font-family: "JetBrains Mono", sans-serif;
+    padding-inline-start: 2rem;
+}
+  .search_icon{
+    position: absolute;
+    left: 8%;
+    top: 96.5%;
+}
+.search_button{
+  margin-top: 0.5rem;
+  margin-left: 5%;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+/* cart css */
+.cart_table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+
+.cart_table th, .cart_table td {
+  padding: 10px;
+  text-align: center;
+  color: black;
+  font-size: 1rem;
+  font-family: "JetBrains Mono", serif;
+  vertical-align: middle;
+  border: 1px solid #0e0d0d;
+}
+
+.cart_table th {
+  background-color: rgb(227, 231, 227);
+  font-weight: bold;
+}
+
+.cart_table td:nth-child(2), .cart_table td:nth-child(3), .cart_table td:nth-child(4), .cart_table td:nth-child(5) {
+  text-align: center;
+}
+
+.cart_table td:last-child {
+  text-align: center;
+}
+
+.cart_table tr:last-child td:first-child {
+  text-align: right;
+  font-weight: bold;
+}
+
+
+.delete_btn {
+  background: none;
+  color: none;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.checkout_button{
+  padding: 1rem;
+  background: none;
+  color: block;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-left: 5%;
+  font-family: "JetBrains Mono", serif;
+}
+
+.cart_container >p> a, .cart_container P{
+  color:black;
+  font-size: 1rem;
+  margin-left: 5%;
+  font-family: "JetBrains Mono", sans-serif;
+}
+
+.cart_container h1{
+  font-size: 1.3rem;
+  color: black;
+  font-family: "JetBrains Mono", serif;
+  text-align: center;
+}
+
+
+  /* Checkout Modal Styles */
+  .modal {
+    display: none;  /*Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  .modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px 20px 40px ;
+    border: 1px solid #888;
+    font-family: "JetBrains Mono", serif;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  #paymentForm label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  #paymentForm input[type="text"],
+  #paymentForm input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: "JetBrains Mono", serif;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+  }
+  .buy-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem;
+    margin-top: -1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+  .buy-btn:hover {
+    background-color: #45a049;
+  }
+
+

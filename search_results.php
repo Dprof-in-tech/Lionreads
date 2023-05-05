@@ -1,0 +1,98 @@
+<!-- // search_results.php -->
+<?php
+// set the session timeout to 5 minutes
+ini_set('session.gc_maxlifetime', 300);
+session_set_cookie_params(300);
+
+// start the session
+session_start();
+
+// regenerate the session ID to prevent session fixation attacks
+session_regenerate_id(true);
+
+// set the last activity time to the current time
+$_SESSION['last_activity'] = time();
+
+// check if the session has timed out
+if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 300)) {
+    // session timed out, destroy the session
+    session_unset();
+    session_destroy();
+    header("location: bookshop.php");
+}
+
+// update the last activity time
+$_SESSION['last_activity'] = time();
+
+
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bookshop.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=JetBrains Mono">
+    <script src="https://kit.fontawesome.com/ff24e75514.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="./img/LionReads-logo.png" type="image/x-icon">
+    <title>Search Results | LionReadz</title>
+</head>
+<body>
+    <!-- include navbar -->
+    <?php include "sidepanel.php";?>
+
+    <?php
+// connect to the database
+require "db.php";
+// retrieve the search query from the form submission
+$search_query = $_GET['query'];
+
+// construct the SQL query to search for products that match the search query
+$sql = "SELECT * FROM books WHERE book_title LIKE '%$search_query%'";
+
+// execute the query and retrieve the search results
+$result = mysqli_query($con, $sql);
+//Search results
+
+
+
+?>
+
+    <div class="search_resultcontainer">
+        <?php 
+            if (mysqli_num_rows($result) > 0) {
+                echo "<ul>";
+                while ($row = mysqli_fetch_assoc($result)) {
+                  // display the product name and a link to the product detail page
+                  echo "<li><a href='checkout.php?id=" . $row['id'] . "'>" . $row['book_title'] . "</a></li>";
+                }
+                echo "</ul>";
+              } else {
+                // display a message if no products were found
+                echo "No products found.";
+              }
+        ?>
+
+        <!-- include footer -->
+        <div class="copyright_2">
+            <h5>Copyright @ LionReadz, 2023</h5>
+        </div>
+    </div>
+
+
+    <script>    
+        /* Set the width of the sidebar to 250px (show it) */
+    function openNav() {
+        document.getElementById("mySidepanel").style.width = "75%";
+    }
+    /* Set the width of the sidebar to 0 (hide it) */
+    function closeNav() {
+        document.getElementById("mySidepanel").style.width = "0";
+    }
+    </script>
+</body>
+</html>
+

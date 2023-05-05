@@ -1,0 +1,10 @@
+{
+    "name": "cartwright/lion-reads",
+    "description": "This is a mobile bookstore dedicated for unn students to get their educational materials from the school bookshop without stress",
+    "type": "project",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {
+        "flutterwavedev/flutterwave-v3": "^1.0"
+    }
+}

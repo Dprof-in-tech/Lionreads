@@ -1,0 +1,49 @@
+body{
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+.footer_container{
+    padding: 1rem;
+    width: 90%;
+    margin: 0;
+}
+.about h1{
+    font-size: 1.6rem;
+    color: black;
+    font-family: "JetBrains Mono", sans-serif;
+}
+
+.about p{
+    font-size: 1.1rem;
+    color: black;
+    max-width: 80%;
+    font-family: "JetBrains Mono", serif;
+}
+a{
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: black;
+    font-family: "JetBrains Mono", serif;
+}
+
+.social h1{
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: black;
+    font-family: "JetBrains Mono", serif;
+}
+.social >ul{
+    list-style-type: none;
+    margin-left: -1.3rem;
+}
+.social li{
+    margin-bottom: 1rem;
+}
+.copyright h5{
+    margin-top: 3rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    color: black;
+    font-family: "JetBrains Mono", sans-serif;
+}

@@ -1,0 +1,61 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Faqs container css */
+.faqs_container{
+    padding-inline-start: 1rem;
+}
+
+.faqs_container h1{
+    font-size: 1.5rem;
+    color: black;
+    font-family: "JetBrains Mono", sans-serif;
+}
+.faqs_container h5{
+    font-size: 1rem;
+    max-width: 90%;
+    color: black;
+    font-family: "JetBrains Mono", serif;
+}
+.faqs_container h5 a{
+    color:limegreen;
+    text-decoration: underline;
+    text-decoration-color: white;
+}
+
+.faqs header h3, .more_questions header h3{
+    font-size: 1rem;
+    color: gray;
+    font-family: "JetBrains Mono", serif;
+    margin-bottom: 0;
+}
+.faqs p, .more_questions p{
+    font-size: 1rem;
+    font-family: "JetBrains Mono", sans-serif;
+    color: black;
+    max-width: 90%;
+}
+input::placeholder{
+    font-family: "JetBrains Mono", sans-serif; 
+}
+.more_questions{
+    margin-bottom: 2rem;
+}
+.more_questions .questions{
+    width: 87%;
+    height: 8vh;
+    border-radius: 6px;
+    padding-inline-start: 1rem;
+}
+.more_questions .submit_message{
+    width: 60%;
+    margin-left: 18%;
+    margin-top: 1rem;
+    color:  black;
+    background-color: inherit;
+    padding: 1rem;
+    font-family: "JetBrains Mono", sans-serif; 
+}
