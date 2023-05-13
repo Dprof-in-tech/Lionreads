@@ -51,9 +51,10 @@ if($result->data->status == 'success'){
     $status = $result->data->gateway_response;
     $ref = $result->data->reference;
     $phone = $result->data->customer->phone;
+    $date = $result->data->paid_at;
 
     require "db.php";
-    $sql ="INSERT INTO customer_details (payment_status,reference, name, phone, order_number, amount, payment_description) VALUES ('$status','$ref', '$name', '$phone', '$orderCR', '$amount', '$description')";
+    $sql ="INSERT INTO customer_details (payment_status,reference, name, phone, order_number, amount, payment_description, date) VALUES ('$status','$ref', '$name', '$phone', '$orderCR', '$amount', '$description', '$date')";
     $query = mysqli_query($con, $sql);
     
     if(!$query){

@@ -12,7 +12,15 @@ a{
 }
 
 /* Navbar and side panel css */
-
+.navbar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.navbar .n-right{
+  padding-right: 5%;
+}
 .navbar, .n-left{
   width: 98%;
   margin: 0;
@@ -83,7 +91,7 @@ a{
     position: relative;
     left: 2%;
     cursor: pointer;
-    background-color: white;
+    background-color: transparent;
     color: black;
     padding: 1rem;
     border: none;

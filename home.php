@@ -43,7 +43,7 @@ session_start();
         <h5><i class=" fa-solid fa-lightbulb" style="color: black;"></i> News & Memes</h5>
         <div class="news_slider">
             <div class="myslides fade" id="mySlides">
-                <img src="./img/meme.jpg" alt=" Meme Picture">
+                <img src="./img/book5.jpg" alt=" Meme Picture">
             </div>
             
             <div class="myslides fade" id="mySlides">

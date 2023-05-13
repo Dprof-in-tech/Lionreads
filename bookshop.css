@@ -46,7 +46,7 @@ body{
 }
 
 .search_icon{
-    position: absolute;
+    position: fixed;
     left: 8%;
     top: 51%;
 }

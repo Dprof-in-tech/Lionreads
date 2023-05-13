@@ -1,19 +1,24 @@
 <?php
-// start session
-ini_set('session.gc_maxlifetime', 100);
-ini_set('session.cookie_lifetime', 100);
-session_start();
-// check if the session has expired
-if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 100)) {
-// destroy the session and redirect to the login page
-session_unset();     // unset $_SESSION variable for the run-time 
-session_destroy();   // destroy session data in storage
-header("Location: home.php");
-exit();
+// Set session cookie lifetime to 30 minutes (adjust as needed)
+$sessionLifetime = 300; // 5 minutes in seconds
+session_set_cookie_params($sessionLifetime);
+ // start the session
+ session_start();
+ 
+ 
+// Check if the session expiration time is set
+if (isset($_SESSION['expire_time'])) {
+  // Check if the session has expired
+  if (time() > $_SESSION['expire_time']) {
+      // Redirect to logout.php
+      header("Location: ./admin/logout.php");
+      exit();
+  }
 }
 
-// update the LAST_ACTIVITY timestamp
-$_SESSION['LAST_ACTIVITY'] = time();
+// Set the new expiration time
+$_SESSION['expire_time'] = time() + $sessionLifetime;
+
 
 
 
@@ -128,54 +133,50 @@ $books_Paidfor = $_SESSION['books_paid_for'];
     let imgBtn = document.getElementById("image-btn");
 
     // Add event listener to the PDF button
-    pdfBtn.addEventListener("click", function() {
-        // Use html2canvas to capture the content of the receipt element
-        html2canvas(document.querySelector("#receipt")).then(canvas => {
-            // Create a new PDF document
-            var doc = new jsPDF();
+pdfBtn.addEventListener("click", function() {
+    // Use html2canvas to capture the content of the receipt element
+    html2canvas(document.querySelector("#receipt")).then(canvas => {
+        // Create a new PDF document
+        var doc = new jsPDF();
 
-            // Add the canvas to the PDF document
-            doc.addImage(canvas.toDataURL(), 'PDF', 10, 10, 190, 277);
+        // Add the canvas to the PDF document
+        doc.addImage(canvas.toDataURL(), 'PDF', 10, 10, 190, 277);
 
-            // Download the PDF file
-            doc.save("LionReadzreceipt.pdf");
+        // Download the PDF file with a callback function
+        doc.save("LionReadzreceipt.pdf", function() {
+            // PDF successfully downloaded, redirect to logout.php
+            window.location.href = './admin/logout.php';
         });
     });
-
-    // Add event listener to the image button
-    imgBtn.addEventListener("click", function() {
-  // Use html2canvas to capture the content of the receipt element
-  html2canvas(document.querySelector("#receipt")).then(canvas => {
-    // Create a new canvas element with a white background
-    const newCanvas = document.createElement('canvas');
-    const context = newCanvas.getContext('2d');
-    newCanvas.width = canvas.width;
-    newCanvas.height = canvas.height;
-    context.fillStyle = '#fff';
-    context.fillRect(0, 0, canvas.width, canvas.height);
-
-    // Draw the original canvas onto the new canvas
-    context.drawImage(canvas, 0, 0);
-
-    // Download the image file
-    const link = document.createElement('a');
-    link.download = 'LionReadzreceipt.jpeg';
-    link.href = newCanvas.toDataURL('image/jpeg', 1.0);
-    link.click();
-  });
 });
 
-    // imgBtn.addEventListener("click", function() {
-    //     // Use html2canvas to capture the content of the receipt element
-    //     html2canvas(document.querySelector("#receipt")).then(canvas => {
-    //         // Download the image file
-    //         var link = document.createElement('a');
-    //         link.download = 'LionReadzreceipt.jpeg';
-    //         link.href = canvas.toDataURL('image/jpeg', 1.0);
+   // Add event listener to the image button
+imgBtn.addEventListener("click", function() {
+    // Use html2canvas to capture the content of the receipt element
+    html2canvas(document.querySelector("#receipt")).then(canvas => {
+        // Create a new canvas element with a white background
+        const newCanvas = document.createElement('canvas');
+        const context = newCanvas.getContext('2d');
+        newCanvas.width = canvas.width;
+        newCanvas.height = canvas.height;
+        context.fillStyle = '#fff';
+        context.fillRect(0, 0, canvas.width, canvas.height);
 
-    //         link.click();
-    //     });
-    // });
+        // Draw the original canvas onto the new canvas
+        context.drawImage(canvas, 0, 0);
+
+        // Download the image file with a callback function
+        const link = document.createElement('a');
+        link.download = 'LionReadzreceipt.jpeg';
+        link.href = newCanvas.toDataURL('image/jpeg', 1.0);
+        link.addEventListener('click', function() {
+            // Image successfully saved, redirect to logout.php
+            window.location.href = './admin/logout.php';
+        });
+        link.click();
+    });
+});
+
 </script>
 
 </body>
