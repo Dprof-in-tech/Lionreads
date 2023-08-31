@@ -41,6 +41,7 @@ if (isset($_SESSION['email'])) {
                 <a href="../home.php" alt=""><i class="fa-solid fa-light fa-house" style="color: white;"></i> Home</a>
                 <a href="add.php"><i class="fa-solid fa-book" style="color: white;"></i>  Add Books</a>
                 <a href="transactions.php"><i class="fa-solid fa-message" style="color: white;"></i> Transactions</a>
+                <a href="verify_reciept.php"><i class="fa-solid fa-message" style="color: white;"></i> Verify Receipt</a>
                 <a href="books.php"><i class="fa-solid fa-book" style="color: white;"></i> Books</a>
                 <a href="profile.php"><i class="fa-solid fa-user" style="color: white;"></i> Profile</a>
                 <a href="register.php"><i class="fa-solid fa-user-plus" style="color: white;"></i> Add Admin</a>
