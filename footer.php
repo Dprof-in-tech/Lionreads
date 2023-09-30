@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=JetBrains Mono">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="footer.css">
-    <title>Footer | LionReadz</title>
+    <title>Footer | LionReads</title>
 </head>
 <body>
     <div class="footer_container">
@@ -18,7 +18,7 @@
             <h1>About Us</h1>
 
             <p>
-                LionReadz is your mobile UNN Bookshop,
+                LionReads is your mobile UNN Bookshop,
                 tailored to help you get your School Learning Materials 
                 Quick and Easy...
             </p>
@@ -37,7 +37,7 @@
         </div>
 
         <div class="copyright">
-            <h5>Copyright @ LionReadz, 2023</h5>
+            <h5>Copyright @ LionReads, 2023</h5>
         </div>
     </div>
 </body>

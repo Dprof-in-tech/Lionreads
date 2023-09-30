@@ -8,8 +8,9 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Welcome to LionReads.com.ng, your trusted academic companion for the University of Nigeria (UNN). Explore our seamless platform to find and effortlessly purchase required textbooks. Boost your academic journey with LionReads, your UNN mobile bookshop. Stay updated with news, memes, and valuable insights.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LionReadz | Your UNN mobile Bookshop</title>
+    <title>LionReads | Your UNN mobile Bookshop</title>
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=JetBrains Mono">
     <script src="https://kit.fontawesome.com/ff24e75514.js" crossorigin="anonymous"></script>
@@ -21,7 +22,7 @@ session_start();
 
     <!-- Heading begins -->
     <div class="heading">
-        <a href="index.php"><h1>LionReadz</h1></a>
+        <a href="index.php"><h1>LionReads</h1></a>
     </div>
     <!-- Heading ends -->
 

@@ -1,6 +1,6 @@
 <?php
 // Set session cookie lifetime to 30 minutes (adjust as needed)
-$sessionLifetime = 300; // 5 minutes in seconds
+$sessionLifetime = 1800; // 5 minutes in seconds
 session_set_cookie_params($sessionLifetime);
  // start the session
  session_start();
@@ -29,7 +29,7 @@ $name = $_SESSION['name'];
 $email = $_SESSION['email'];
 $order_number = $_SESSION['order_number'];
 $books_Paidfor = $_SESSION['books_paid_for'];
-
+$location = $_SESSION['location'];
 
 ?>
 
@@ -43,14 +43,14 @@ $books_Paidfor = $_SESSION['books_paid_for'];
     <script src="https://kit.fontawesome.com/ff24e75514.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="./img/LionReads-logo.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Receipt | LionReadz</title>
+    <title>Payment Receipt | LionReads</title>
 </head>
 <body>
     <div id="receipt">
     <div class="top_bar">
         <span>
             <img src="./img/LionReads-logo.png" alt="" height="30" width="30" >
-            <h3>LionReadz</h3>
+            <h3>LionReads</h3>
         </span>
     </div>
     <?php
@@ -69,13 +69,14 @@ $books_Paidfor = $_SESSION['books_paid_for'];
         $order_description = htmlspecialchars($row['payment_description']);
         $sender_phone = htmlspecialchars($row['phone']);
         $payment_info = htmlspecialchars($row['payment_status']);
+        $pickup_location = htmlspecialchars($rows['pickup_location']);
     } else {
         echo "Error: " . mysqli_error($con);
     }
 ?>
 
     <div class="transaction">
-        <h4>N<?php echo $order_amount;?>.00</h4>
+        <h4>N<?php echo $order_amount;?></h4>
         <h5><?php echo $payment_info;?></h5>
     </div>
     <div class="transaction_details">
@@ -99,19 +100,26 @@ $books_Paidfor = $_SESSION['books_paid_for'];
             <h4>Order Info: </h4>
             <h3><?php echo $order_description;?></h3>
         </div>
+
+        <div class="details">
+            <h4>Pickup Location: </h4>
+            <h3><?php echo $location;?></h3>
+        </div>
         
     </div>
 
     <div class="information">
+        <h3> All Pickup to be done between 11AM - 1PM and 4PM - 6PM on Tuesdays to Fridays..
+        </h3>
         <h3>Please do not lose or discard this Receipt
             until your order has been successfully processed 
             and delivered..
         </h3>
         <h3>For Delivery Services, please call
-            09027585480.. Delivery Charges at #200..
+            09115375399.. Delivery Charges at #200..
         </h3>
         <h3>
-            Thank you from LionReadz!!
+            Thank you from LionReads!!
         </h3>
     </div>
 
@@ -143,7 +151,7 @@ pdfBtn.addEventListener("click", function() {
         doc.addImage(canvas.toDataURL(), 'PDF', 10, 10, 190, 277);
 
         // Download the PDF file with a callback function
-        doc.save("LionReadzreceipt.pdf", function() {
+        doc.save("LionReadsreceipt.pdf", function() {
             // PDF successfully downloaded, redirect to logout.php
             window.location.href = './admin/logout.php';
         });
@@ -167,7 +175,7 @@ imgBtn.addEventListener("click", function() {
 
         // Download the image file with a callback function
         const link = document.createElement('a');
-        link.download = 'LionReadzreceipt.jpeg';
+        link.download = 'LionReadsreceipt.jpeg';
         link.href = newCanvas.toDataURL('image/jpeg', 1.0);
         link.addEventListener('click', function() {
             // Image successfully saved, redirect to logout.php

@@ -1,8 +1,10 @@
 
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
     // set the session timeout to 5 minutes
-ini_set('session.gc_maxlifetime', 300);
-session_set_cookie_params(300);
+ini_set('session.gc_maxlifetime', 1800);
+session_set_cookie_params(1800);
 
 // start the session
 session_start();
@@ -14,7 +16,7 @@ session_regenerate_id(true);
 $_SESSION['last_activity'] = time();
 
 // check if the session has timed out
-if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 300)) {
+if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 1800)) {
     // session timed out, destroy the session
     session_unset();
     session_destroy();
@@ -91,7 +93,7 @@ $_SESSION['last_activity'] = time();
                 <?php
                     $total = 0;
                     $total_charges = 0;
-                    $charges = 300;
+                    $charges = 250;
                     $amount = 0;
                     foreach ($cart as $item):
                         $book_name = $item['book_id'];
@@ -157,6 +159,15 @@ $_SESSION['last_activity'] = time();
     <input type="hidden" name="session_id" value="<?php echo $session_id;?>">
     <input type="hidden" id="books" name="books_paid_for" value="<?php echo $book_name;?>" >
   </div>
+  <div class="form-group">
+  <label for="location">Choose your Pickup Location</label>
+        <select id="location" name="location">
+            <option value="engine-chitis">Engine Chitis</option>
+            <option value="gs-building">GS Building</option>
+            <option value="sub">S.U.B</option>
+            <option value="stadium">Stadium</option>
+        </select>
+  </div>
   <div class="form-submit">
     <button type="submit" class="buy-btn" onclick="payWithPaystack()" name="pay_for_books"> Pay </button>
   </div>
@@ -172,6 +183,7 @@ $_SESSION['last_activity'] = time();
   $order_number = $_POST['order_number'];
   $session_id = $_POST['session_id'];
   $books_Paidfor =  $_POST['books_paid_for'];
+  $location = $_POST['location'];
 
     // Set session variables
     $_SESSION['email_address'] = $email;
@@ -181,6 +193,7 @@ $_SESSION['last_activity'] = time();
     $_SESSION['order_number'] = $order_number;
     $_SESSION['session_id'] = $session_id;
     $_SESSION['books_paid_for'] = $books_Paidfor;
+    $_SESSION['location'] = $location;
   }
 
     
@@ -233,6 +246,7 @@ function payWithPaystack(e) {
     let amountPaid = document.getElementById('amount').value;
     let name = document.getElementById('customer_name').value;
     let phone_number = document.getElementById('phone_number').value;
+    let location = document.getElementById('location').value;
     let order_number = '<?php echo $order_number;?>';
     let session_id = '<?php echo $session_id;?>';
 
@@ -256,10 +270,11 @@ const concatenatedInputs = bookValues.join(', ');
 
      // Create a Paystack transaction object
      let handler = PaystackPop.setup({
-      key: 'pk_test_551f5f2069f047184cd08f2779e761546a6424f1',
+      key: 'pk_live_669da5a653365e22482c52a90fdaeb32039a90ad',
       email: email,
       phone: phone_number,
       amount: amountPaid * 100,
+      location: location,
       currency: 'NGN',
       metadata: {
         custom_fields: [
@@ -282,7 +297,7 @@ const concatenatedInputs = bookValues.join(', ');
       },
       callback: function(response) {
         // The payment was successful, redirect to receipt page
-        window.location.href = 'verify_payment.php?reference=' + response.reference + '&name=' + name + '&order_number=' + order_number + '&amount=' + amountPaid + '&description=' + concatenatedInputs;
+        window.location.href = 'verify_payment.php?reference=' + response.reference + '&name=' + name + '&order_number=' + order_number + '&amount=' + amountPaid + '&location=' + location + '&description=' + concatenatedInputs;
       },
       onClose: function() {
         alert('Payment cancelled');
@@ -297,3 +312,4 @@ const concatenatedInputs = bookValues.join(', ');
    
 </body>
 </html>
+

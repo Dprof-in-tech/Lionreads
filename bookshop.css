@@ -250,4 +250,508 @@ ul li{
     font-size: 1rem;
     color: white;
     font-family: "JetBrains Mono", sans-serif;
+}body{
+    margin: 0;
+    padding: 0;
+}
+/* Welcome text begins */
+.welcome_text{
+    text-align: start;
+    width: 100%;
+}
+.welcome_text h3, .bestseller_container>h3{
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin-top: -2%;
+    margin-bottom: 0;
+    color: black;
+    font-family: "JetBrains Mono", sans-serif;
+    max-width: 80%;
+}
+
+/* Best seller css */
+.bestseller_container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    margin:0;
+}
+
+/* Search bar css */
+ .search_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+}
+.search{
+    width: 79%;
+    height: 6vh;
+    border: 1px solid gray;
+    border-radius: 6px;
+    background-color: white;
+    color: black;
+    font-family: "JetBrains Mono", sans-serif;
+    padding-inline-start: 2rem;
+}
+
+.search_icon{
+    position: fixed;
+    left: 8%;
+    top: 51%;
+}
+
+.search_button{
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+/* book section css */
+.book_container{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    width: 90%;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 4px;
+}
+.book_picture{
+    width: 100%;
+    height: 40vh;
+}
+.book_picture img{
+    width: 100%;
+    height: 100%;
+}
+.book_text{
+    display: flex;
+    justify-content: space-evenly;
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    padding: 0rem 1rem 1rem 1rem;
+}
+
+.book_text .b-left{
+    width: 60%;
+    margin-top: 0.5rem;
+}
+
+.b-left h2{
+    font-size: 1rem;
+    margin: 0;
+    font-family: "JetBrains Mono", serif;
+}
+.b-right h3{
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    font-family: "JetBrains Mono", serif;
+}
+.b-left h5{
+    font-size: 0.9rem;
+    color: gray;
+    margin-top: 0.2rem;
+    font-family: "JetBrains Mono", serif;
+}
+
+
+/* buttons css */
+.buttons a{
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    background-color: #1A3952;
+    border-radius: 4px;
+    font-family: "JetBrains Mono", serif;
+}
+
+.buy_button{
+    background-color: #1A3952;
+    border-radius: 4px;
+    padding: 0.5rem;
+    color: white;
+    width: 18vh;
+    font-size: 1rem;
+    font-family: "JetBrains Mono", serif;
+}
+
+.quantity {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+  }
+  .quantity h5{
+    margin-top: 0;
+    font-size: 0.9rem;
+    font-family: "JetBrains Mono", serif;
+  }
+  .quantity span{
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    left: -10%;
+  }
+  .quantity input {
+    background: none;
+    border: none;
+    text-align: center;
+    width: 32px;
+    font-size: 16px;
+    color: #43484D;
+    font-weight: 300;
+  }
+   
+  button[class*=btn] {
+    width: 30px;
+    height: 30px;
+    background-color: #E1E8EE;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: "JetBrains Mono", serif;
+  }
+  .minus-btn img {
+    margin-bottom: 3px;
+  }
+  .plus-btn img {
+    margin-top: 2px;
+  }
+   
+  button:focus,
+  input:focus {
+    outline:0;
+  }
+/* Pdf section css */
+.pdf_container{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+    width: 90%;
+}
+.pdf_picture{
+    width: 100%;
+    height: 40vh;
+ 
+}
+.pdf_picture img{
+    width: 100%;
+    height: 100%;
+}
+.pdf_text h4{
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    color: black;
+    font-family: "JetBrains Mono", serif;
+}
+
+.pdf_text h5{
+    font-size: 1rem;
+    color: black;
+    margin-top: 0.5rem;
+    margin-bottom: 3rem;
+    font-family: "JetBrains Mono", sans-serif;
+}
+.download_button a{
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    background-color: #1A3952;
+    border-radius: 4px;
+    font-family: "JetBrains Mono", serif;
+}
+
+/* Search results css */
+a{
+   color: black;
+   font-size: 1rem;
+   font-family: "JetBrains Mono", serif;
+}
+ul li:hover li a{
+    opacity: 0.5;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+ul li{
+    max-width: 89%;
+    padding: 1rem 1rem 0rem 1rem;
+}
+.copyright_2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100%;
+}
+.copyright_2>h5{
+    margin-top: 3rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    color: white;
+    font-family: "JetBrains Mono", sans-serif;
+}body{
+    margin: 0;
+    padding: 0;
+}
+/* Welcome text begins */
+.welcome_text{
+    text-align: start;
+    width: 100%;
+}
+.welcome_text h3, .bestseller_container>h3{
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin-top: -2%;
+    margin-bottom: 0;
+    color: black;
+    font-family: "JetBrains Mono", sans-serif;
+    max-width: 80%;
+}
+
+/* Best seller css */
+.bestseller_container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    margin:0;
+}
+
+/* Search bar css */
+ .search_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+}
+.search{
+    width: 79%;
+    height: 6vh;
+    border: 1px solid gray;
+    border-radius: 6px;
+    background-color: white;
+    color: black;
+    font-family: "JetBrains Mono", sans-serif;
+    padding-inline-start: 2rem;
+}
+
+.search_icon{
+    position: fixed;
+    left: 8%;
+    top: 51%;
+}
+
+.search_button{
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+/* book section css */
+.book_container{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    width: 90%;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 4px;
+}
+.book_picture{
+    width: 100%;
+    height: 40vh;
+}
+.book_picture img{
+    width: 100%;
+    height: 100%;
+}
+.book_text{
+    display: flex;
+    justify-content: space-evenly;
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    padding: 0rem 1rem 1rem 1rem;
+}
+
+.book_text .b-left{
+    width: 60%;
+    margin-top: 0.5rem;
+}
+
+.b-left h2{
+    font-size: 1rem;
+    margin: 0;
+    font-family: "JetBrains Mono", serif;
+}
+.b-right h3{
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    font-family: "JetBrains Mono", serif;
+}
+.b-left h5{
+    font-size: 0.9rem;
+    color: gray;
+    margin-top: 0.2rem;
+    font-family: "JetBrains Mono", serif;
+}
+
+
+/* buttons css */
+.buttons a{
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    background-color: #1A3952;
+    border-radius: 4px;
+    font-family: "JetBrains Mono", serif;
+}
+
+.buy_button{
+    background-color: #1A3952;
+    border-radius: 4px;
+    padding: 0.5rem;
+    color: white;
+    width: 18vh;
+    font-size: 1rem;
+    font-family: "JetBrains Mono", serif;
+}
+
+.quantity {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+  }
+  .quantity h5{
+    margin-top: 0;
+    font-size: 0.9rem;
+    font-family: "JetBrains Mono", serif;
+  }
+  .quantity span{
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    left: -10%;
+  }
+  .quantity input {
+    background: none;
+    border: none;
+    text-align: center;
+    width: 32px;
+    font-size: 16px;
+    color: #43484D;
+    font-weight: 300;
+  }
+   
+  button[class*=btn] {
+    width: 30px;
+    height: 30px;
+    background-color: #E1E8EE;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: "JetBrains Mono", serif;
+  }
+  .minus-btn img {
+    margin-bottom: 3px;
+  }
+  .plus-btn img {
+    margin-top: 2px;
+  }
+   
+  button:focus,
+  input:focus {
+    outline:0;
+  }
+/* Pdf section css */
+.pdf_container{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+    width: 90%;
+}
+.pdf_picture{
+    width: 100%;
+    height: 40vh;
+ 
+}
+.pdf_picture img{
+    width: 100%;
+    height: 100%;
+}
+.pdf_text h4{
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    color: black;
+    font-family: "JetBrains Mono", serif;
+}
+
+.pdf_text h5{
+    font-size: 1rem;
+    color: black;
+    margin-top: 0.5rem;
+    margin-bottom: 3rem;
+    font-family: "JetBrains Mono", sans-serif;
+}
+.download_button a{
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    background-color: #1A3952;
+    border-radius: 4px;
+    font-family: "JetBrains Mono", serif;
+}
+
+/* Search results css */
+a{
+   color: black;
+   font-size: 1rem;
+   font-family: "JetBrains Mono", serif;
+}
+ul li:hover li a{
+    opacity: 0.5;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+ul li{
+    max-width: 89%;
+    padding: 1rem 1rem 0rem 1rem;
+}
+.copyright_2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100%;
+}
+.copyright_2>h5{
+    margin-top: 3rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    color: white;
+    font-family: "JetBrains Mono", sans-serif;
 }

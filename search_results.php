@@ -1,8 +1,8 @@
 <!-- // search_results.php -->
 <?php
 // set the session timeout to 5 minutes
-ini_set('session.gc_maxlifetime', 300);
-session_set_cookie_params(300);
+ini_set('session.gc_maxlifetime', 1800);
+session_set_cookie_params(1800);
 
 // start the session
 session_start();
@@ -14,7 +14,7 @@ session_regenerate_id(true);
 $_SESSION['last_activity'] = time();
 
 // check if the session has timed out
-if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 300)) {
+if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 1800)) {
     // session timed out, destroy the session
     session_unset();
     session_destroy();
@@ -67,18 +67,18 @@ $result = mysqli_query($con, $sql);
                 echo "<ul>";
                 while ($row = mysqli_fetch_assoc($result)) {
                   // display the product name and a link to the product detail page
-                  echo "<li><a href='checkout.php?id=" . $row['id'] . "'>" . $row['book_title'] . "</a></li>";
+                  echo "<li><a href='checkout.php?id=" . $row['id'] . "'>" . $row['book_title'] . ' - Quantity Available: ' . $row['book_quantity'] . "</a></li>";
                 }
                 echo "</ul>";
               } else {
                 // display a message if no products were found
-                echo "No products found.";
+                echo "No books found.";
               }
         ?>
 
         <!-- include footer -->
         <div class="copyright_2">
-            <h5>Copyright @ LionReadz, 2023</h5>
+            <h5>Copyright @ LionReads, 2023</h5>
         </div>
     </div>
 

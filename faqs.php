@@ -7,12 +7,13 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Welcome to LionReads.com.ng, your trusted academic companion for the University of Nigeria (UNN). Do you have questions on how and why we operate, visit our website now to explore our seamless platform to find and effortlessly purchase required textbooks. Boost your academic journey with LionReads, your UNN mobile bookshop. Stay updated with news, memes, and valuable insights.">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=JetBrains Mono">
     <script src="https://kit.fontawesome.com/ff24e75514.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="./img/LionReads-logo.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="faqs.css">
-    <title>Frequently Asked Questions | LionReadz.com</title>
+    <title>Frequently Asked Questions | LionReads.com</title>
 </head>
 <body>
     <!-- include navbar -->
@@ -24,40 +25,44 @@
         <h1>Frequently Asked Questions</h1>
 
         <h5>
-            Everything you need to know about LionReadz. 
+            Everything you need to know about LionReads. 
             Please chat our team for more <a href="">information.</a>
         </h5>
 
         <div class="faqs">
             <header>
-                <h3>How to get a book on LionReadz?</h3>
+                <h3>How to get a book on LionReads?</h3>
             </header>
             <p>
-                Lorem ipsum dolor sit amet consectetur 
-                adipisicing elit. Minima possimusea cupiditate officiis 
-                velit ullam
+             STEP 1: <br>
+            simply access the sidepanel by clicking the icon on the top left corner of your screen, navigate to the bookshop and search for the book you want to purchase.
             </p>
         </div>
 
         <div class="faqs">
             <header>
-                <h3>How to get a book on LionReadz?</h3>
+                <h3>STEP 2:</h3>
             </header>
             <p>
-                Lorem ipsum dolor sit amet consectetur 
-                adipisicing elit. Minima possimusea cupiditate officiis 
-                velit ullam
+                Next you click on it and select the quantity you want using the plus or minus buttons. Then you click on add cart to add this book to your cart and either continue to search for more books or to checkout your cart and pay.
             </p>
         </div>
 
         <div class="faqs">
             <header>
-                <h3>How to get a book on LionReadz?</h3>
+                <h3>Can i pay with bank transfer?</h3>
             </header>
             <p>
-                Lorem ipsum dolor sit amet consectetur 
-                adipisicing elit. Minima possimusea cupiditate officiis 
-                velit ullam
+                Yes you can, also we have made provisions for payments with atm cards or direct bank transfers. Do make sure to download your receipt as pdf or a picture on successful payment.
+            </p>
+        </div>
+
+        <div class="faqs">
+            <header>
+                <h3>How to checkout my cart?</h3>
+            </header>
+            <p>
+                Kindly click on the cart button or the cart icon at the top right of your screen to access your cart, click on pay after verifying the total amount to be paid and make your payments.
             </p>
         </div>
 
@@ -69,9 +74,7 @@
             </header>
 
             <p>
-                Lorem ipsum dolor sit amet consectetur 
-                adipisicing elit. Minima possimusea cupiditate officiis 
-                velit ullam 
+                Do you still have a question for us or you have a technical issue to give us feedback on, kindly send us a message through the below form or dop a message on our official support community on Whatsapp.
             </p>
 
             <input type="text" class="questions" placeholder="Send your Questions" name="questions">

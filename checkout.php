@@ -1,7 +1,7 @@
 <?php
     // set the session timeout to 5 minutes
-ini_set('session.gc_maxlifetime', 300);
-session_set_cookie_params(300);
+ini_set('session.gc_maxlifetime', 1800);
+session_set_cookie_params(1800);
 
 // start the session
 session_start();
@@ -13,7 +13,7 @@ session_regenerate_id(true);
 $_SESSION['last_activity'] = time();
 
 // check if the session has timed out
-if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 300)) {
+if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 1800)) {
     // session timed out, destroy the session
     session_unset();
     session_destroy();
@@ -115,7 +115,7 @@ $_SESSION['last_activity'] = time();
             </div>
 
             <div class="buttons">
-                <button type="submit" class="buy_button" name="add_to_cart" >Add Cart</button>
+                <button type="submit" class="buy_button" name="add_to_cart" >Add 2 Cart</button>
                 <a href="cart.php" class="view_cart"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
             </div>
             </form>

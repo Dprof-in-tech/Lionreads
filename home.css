@@ -7,6 +7,10 @@ a{
   text-decoration: none;
 }
 
+h1{
+    font-size: 1.2rem;
+}
+
 ::-webkit-scrollbar{
   display: none;
 }
@@ -14,12 +18,12 @@ a{
 /* Navbar and side panel css */
 .navbar{
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   justify-content: space-evenly;
   align-items: center;
 }
 .navbar .n-right{
-  padding-right: 5%;
+  padding-left: 5%;
 }
 .navbar, .n-left{
   width: 98%;
@@ -55,7 +59,7 @@ a{
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
     top: 0;
-    left: 0;
+    right: 0;
     background-color: #464646; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
@@ -64,7 +68,9 @@ a{
   
   /* The sidepanel links */
   .sidepanel a {
-    padding: 8px 8px 8px 32px;
+      position: relative;
+      left: 5%;
+    padding: 8px 32px 8px 8px;
     text-decoration: none;
     font-size: 25px;
     color: #ffffff;
@@ -81,15 +87,19 @@ a{
   .sidepanel .closebtn {
     position: absolute;
     top:1%;
+    left: 80%;
     font-size: 36px;
     margin-left: 0px;
   }
   
   /* Style the button that is used to open the sidepanel */
   .openbtn {
+      display: flex;
+      flex-direction: row-reverse;
     font-size: 30px;
     position: relative;
-    left: 2%;
+    left: 80%;
+    width: fit-content;
     cursor: pointer;
     background-color: transparent;
     color: black;
@@ -102,12 +112,135 @@ a{
   }
 
   /* Heading css */
+  .heading{
+    display: none;
+  }
+ 
+  /* welcome css */
+  .welcome1{
+    width: 100%;
+    height: 50vh;
+    margin:0;
+    background-image: url(./img/library3.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 3rem;
+  }
+  .welcome_banner{
+    background-color: rgba(6, 42, 88, 0.4);
+    width:100%;
+    margin-top: -1rem;
+    height: 100%;
+  }
+
+  .welcome1 span h3{
+    font-size: 1.5rem;
+    color: white;
+    font-family: "JetBrains Mono", serif;
+    padding-top: 3rem;
+    margin-bottom: 0;
+    margin-top: 1rem;
+    margin-left: 3rem;
+    font-weight: bolder;
+  }
+  
+  .welcome1 span h4{
+    font-size: 1rem;
+    font-weight: lighter;
+    color: white;
+    font-family: "JetBrains Mono", serif;
+    padding: 1rem;
+    margin-top: -0.5rem;
+    margin-left: 2rem;
+    max-width: 50%;
+  }
+  .welcome1 span h5{
+    font-size: 1rem;
+    font-weight: bolder;
+    color: limegreen;
+    font-family: "JetBrains Mono", serif;
+    padding: 5%;
+    margin-top: -3.5rem;
+    margin-left: 1rem;
+    max-width: 70%;
+  }
+  .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  /* welcome css */
+  .welcome{
+    width: 95%;
+    height: 70vh;
+    border-radius: 2px;
+    background-image: url(./img/book2.jpg);
+    background-size: cover;
+  }
+
+  .news{
+    width: 95%;
+    height: 70vh;
+    border-radius: 2px;
+    margin-bottom: 5rem;
+  }
+
+  .myslides {
+    display: none;
+    height: 70vh;
+    width: 100%;
+  }
+
+@media only screen and (max-width: 600px){
   .heading h1{
     text-align: center;
     font-size: 1.2rem;
     font-family: "JetBrains Mono", sans-serif;
     color: rgb(3, 138, 3);
     margin-top: 0;
+  }
+
+  .welcome1{
+    width: 100%;
+    height: 40vh;
+    margin:0;
+    background-image: url(./img/library3.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 3rem;
+  }
+
+  .welcome1 span h3{
+    font-size: 1.5rem;
+    color: white;
+    font-family: "JetBrains Mono", serif;
+    padding: 5%;
+    margin-bottom: 0;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    font-weight: bolder;
+  }
+  
+  .welcome1 span h4{
+    font-size: 1rem;
+    font-weight: lighter;
+    color: white;
+    font-family: "JetBrains Mono", serif;
+    padding: 5%;
+    margin-top: -2.5rem;
+    margin-left: 1rem;
+    max-width: 70%;
+  }
+  .welcome1 span h5{
+    font-size: 1rem;
+    font-weight: bolder;
+    color: limegreen;
+    font-family: "JetBrains Mono", serif;
+    padding: 5%;
+    margin-top: -3.5rem;
+    margin-left: 1rem;
+    max-width: 70%;
   }
 
   .container{
@@ -124,6 +257,20 @@ a{
     background-image: url(./img/book2.jpg);
     background-size: cover;
   }
+
+  .news{
+    width: 95%;
+    height: 35vh;
+    border-radius: 8px;
+    margin-bottom: 5rem;
+  }
+
+  .myslides {
+    display: none;
+    height: 40vh;
+    width: 100%;
+  }
+}
   .welcome span h3{
     font-size: 1rem;
     font-family: "JetBrains Mono", serif;
@@ -143,12 +290,7 @@ a{
   }
 
   /* News css */
-  .news{
-    width: 95%;
-    height: 35vh;
-    border-radius: 8px;
-    margin-bottom: 5rem;
-  }
+
    
   .news h5{
     font-size: 1.05rem;
@@ -166,11 +308,7 @@ a{
 }
 
 /* Hide the images by default */
-.myslides {
-  display: none;
-  height: 40vh;
-  width: 100%;
-}
+
 .myslides img{
   width: 100%;
   height: 100%;

@@ -1,0 +1,61 @@
+
+RewriteEngine On
+# Remove .php extension for all files
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L]
+# browser requests PHP
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^\ ]+)\.php
+RewriteRule ^/?(.*)\.php$ /$1 [L,R=301]
+# check to see if the request is for a PHP file:
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^/?(.*)$ /$1.php [L]
+# Your existing rules go here (if any)
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:CF-Visitor} !{"scheme":"https"}
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# Prevent directory listing
+Options -Indexes
+# Set the default index file to index.php
+DirectoryIndex index.php
+# Enable mod_rewrite for URL rewriting
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # Redirect www to non-www (e.g., www.example.com to example.com)
+    RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+    RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+    # Handle requests for existing files or directories
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+    # Rewrite all other requests to index.php
+    RewriteRule ^ index.php [L]
+</IfModule>
+# Set the PHP timezone (adjust to your timezone)
+<IfModule mod_php7.c>
+    php_value date.timezone "Africa/Lagos"
+</IfModule>
+# Set the maximum file upload size (adjust as needed)
+<IfModule mod_php7.c>
+    php_value upload_max_filesize 64M
+</IfModule>
+# Set the maximum execution time (adjust as needed)
+<IfModule mod_php7.c>
+    php_value max_execution_time 300
+</IfModule>
+# Security headers (adjust to your specific needs)
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header always append X-Frame-Options SAMEORIGIN
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+# Enable GZIP compression for faster page loading
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript
+</IfModule>
+# Set cache headers for static files (adjust as needed)
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 year"
+</IfModule>
