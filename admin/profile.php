@@ -1,6 +1,6 @@
 <?php
  // Set session cookie lifetime to 30 minutes (adjust as needed)
- $sessionLifetime = 300; // 5 minutes in seconds
+ $sessionLifetime = 1800; // 5 minutes in seconds
  session_set_cookie_params($sessionLifetime);
   // start the session
   session_start();
@@ -26,7 +26,7 @@
         $email = $_SESSION['email'];
     
         // Prepare and execute the SQL query
-        $db = new PDO('mysql:host=localhost;dbname=lionreadz', 'root', '');
+        $db = new PDO('mysql:host=sql311.infinityfree.com;dbname=if0_34904562_lionreads', 'if0_34904562', '2bkiU8B0pp2s');
         $stmt = $db->prepare("SELECT full_name, profile_picture FROM admin WHERE email = :email");
         $stmt->execute([':email' => $email]);
     

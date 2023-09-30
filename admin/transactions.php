@@ -1,6 +1,6 @@
 <?php
  // Set session cookie lifetime to 30 minutes (adjust as needed)
-$sessionLifetime = 300; // 5 minutes in seconds
+$sessionLifetime = 1800; // 5 minutes in seconds
 session_set_cookie_params($sessionLifetime);
  // start the session
  session_start();
@@ -48,6 +48,7 @@ $_SESSION['expire_time'] = time() + $sessionLifetime;
       <th scope="col">Amount</th>
       <th scope="col">Order Number</th>
       <th scope="col">Phone</th>
+      <th scope="col">Pickup Location</th>
       <th scope="col">Date</th>
     </tr>
   </thead>
@@ -67,7 +68,8 @@ $_SESSION['expire_time'] = time() + $sessionLifetime;
           $amount = $row['amount'];
           $order_number = $row['order_number'];
           $phone = $row['phone'];
-          $date = $row['date'];
+          $location = $row['pickup_location'];
+          $date = $row['payment_date'];
           echo '
     <tr>
       <th scope="row">' . $id . '</th>
@@ -77,6 +79,7 @@ $_SESSION['expire_time'] = time() + $sessionLifetime;
       <td>' . $amount . '</td>
       <td>' . $order_number . '</td>
       <td>' . $phone . '</td>
+      <td>' . $location .'</td>
       <td>' . $date . '</td>
       </tr>';
       }

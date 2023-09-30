@@ -1,4 +1,4 @@
-@media only screen and (max-width: 991px){
+@media only screen and (max-width: 991.9px){
     body{
         background: rgb(211, 210, 210);
         display: flex;
@@ -19,7 +19,7 @@
         margin-top: 7%;
         box-shadow: 2px 2px 2px 2px white;
     }
-    h1,h5{
+    h5{
         font-family: cursive;
         color: gray;
         font-style: oblique;
@@ -28,6 +28,15 @@
         margin-bottom: 1rem;
         max-width: 80%;
         text-align: start;
+    }
+    h1{
+          font-family: cursive;
+        color: gray;
+        font-style: oblique;
+        font-size: 1rem;
+        margin-top: 0;
+        margin-bottom: 1rem;
+        max-width: 80%;
     }
     h2{
         font-family: Georgia, 'Times New Roman', Times, serif;
@@ -144,6 +153,7 @@
     h1{
         font-family: Georgia, 'Times New Roman', Times, serif;
         color: gray;
+        text-align: center;
         font-style: oblique;
         font-size: 1rem;
         margin-top: -0.8rem;

@@ -1,12 +1,14 @@
 
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
  // Set session cookie lifetime to 30 minutes (adjust as needed)
- $sessionLifetime = 300; // 5 minutes in seconds
+ $sessionLifetime = 1800; // 5 minutes in seconds
  session_set_cookie_params($sessionLifetime);
   // start the session
   session_start();
   
-  
+
  // Check if the session expiration time is set
  if (isset($_SESSION['expire_time'])) {
    // Check if the session has expired
@@ -21,7 +23,7 @@
  $_SESSION['expire_time'] = time() + $sessionLifetime;
 
 //connect to the database
-$db = mysqli_connect("localhost", "root", "", "lionreadz");
+$db = mysqli_connect("sql311.infinityfree.com", "if0_34904562", "2bkiU8B0pp2s", "if0_34904562_lionreads");
 
 //initialize variables
 $email = "";
@@ -81,8 +83,12 @@ $errors = array();
                 if (password_verify($password, $user['password'])) {
                     //log user in
                     $_SESSION['email'] = $email;
+
+                    // Fetch and store the admin role
+                    $admin_role = $user['admin_role'];
+                    $_SESSION['admin_role'] = $admin_role; 
                     $_SESSION['success'] = "You are now logged in";
-                    header('location: admin.php');
+                    header('location: profile.php');
                 } else {
                     echo "<p class='error'>Wrong email/password combination</p>";
                 }

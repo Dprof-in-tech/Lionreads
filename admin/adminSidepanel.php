@@ -6,7 +6,7 @@ if (isset($_SESSION['email'])) {
     $email = $_SESSION['email'];
 
     // Prepare and execute the SQL query
-    $db = new PDO('mysql:host=localhost;dbname=lionreadz', 'root', '');
+    $db = new PDO('mysql:host=sql311.infinityfree.com;dbname=if0_34904562_lionreads', 'if0_34904562', '2bkiU8B0pp2s');
     $stmt = $db->prepare("SELECT full_name, profile_picture FROM admin WHERE email = :email");
     $stmt->execute([':email' => $email]);
 
@@ -37,18 +37,41 @@ if (isset($_SESSION['email'])) {
      <div class="navbar">
         <div class="n-left">
             <div id="mySidepanel" class="sidepanel">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa-solid fa-xmark"></i></a>
-                <a href="../home.php" alt=""><i class="fa-solid fa-light fa-house" style="color: white;"></i> Home</a>
-                <a href="add.php"><i class="fa-solid fa-book" style="color: white;"></i>  Add Books</a>
-                <a href="transactions.php"><i class="fa-solid fa-message" style="color: white;"></i> Transactions</a>
-                <a href="verify_reciept.php"><i class="fa-solid fa-message" style="color: white;"></i> Verify Receipt</a>
-                <a href="books.php"><i class="fa-solid fa-book" style="color: white;"></i> Books</a>
-                <a href="profile.php"><i class="fa-solid fa-user" style="color: white;"></i> Profile</a>
-                <a href="register.php"><i class="fa-solid fa-user-plus" style="color: white;"></i> Add Admin</a>
-                <a href="logout.php"><i class="fa-solid fa-user-secret" style="color: white;"></i>  Logout</a>
+                <?php
+            // Check the admin_role and show/hide menu items accordingly
+            if ($_SESSION['admin_role'] == 'super-Management') {
+                echo '<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa-solid fa-xmark"></i></a>';
+                echo '<a href="../home.php" alt=""><i class="fa-solid fa-light fa-house" style="color: white;"></i> Home</a>';
+                echo '<a href="add.php"><i class="fa-solid fa-book" style="color: white;"></i>  Add Books</a>';
+                echo '<a href="update_bookquantity.php"><i class="fa-solid fa-book" style="color: white;"></i>  Update Book Quantity</a>';
+                echo '<a href="update_bookprice.php"><i class="fa-solid fa-book" style="color: white;"></i>  Update Book Price</a>';
+                echo '<a href="transactions.php"><i class="fa-solid fa-message" style="color: white;"></i> Transaction History</a>';
+                echo '<a href="pending_transactions.php"><i class="fa-solid fa-message" style="color: white;"></i> Pending Transactions</a>';
+                echo '<a href="completed_transactions.php"><i class="fa-solid fa-message" style="color: white;"></i> Completed Transactions</a>';
+                echo '<a href="location_order.php"><i class="fa-solid fa-message" style="color: white;"></i> Order by Location</a>';
+                echo '<a href="verify_reciept.php"><i class="fa-solid fa-message" style="color: white;"></i> Verify Receipt</a>';
+                echo '<a href="books.php"><i class="fa-solid fa-book" style="color: white;"></i> Books</a>';
+                echo '<a href="profile.php"><i class="fa-solid fa-user" style="color: white;"></i> Profile</a>';
+                echo '<a href="register.php"><i class="fa-solid fa-user-plus" style="color: white;"></i> Add Admin</a>';
+                echo '<a href="logout.php"><i class="fa-solid fa-user-secret" style="color: white;"></i>  Logout</a>';
+            } elseif ($_SESSION['admin_role'] == 'distributor') {
+                echo '<a href="verify_reciept.php"><i class="fa-solid fa-message" style="color: white;"></i> Verify Receipt</a>';
+                echo '<a href="profile.php"><i class="fa-solid fa-user" style="color: white;"></i> Profile</a>';
+                echo '<a href="logout.php"><i class="fa-solid fa-user-secret" style="color: white;"></i>  Logout</a>';
+                echo '<a href="pending_transactions.php"><i class="fa-solid fa-message" style="color: white;"></i> Pending Transactions</a>';
+                echo '<a href="completed_transactions.php"><i class="fa-solid fa-message" style="color: white;"></i> Completed Transactions</a>';
+            }elseif ($_SESSION['admin_role'] == 'location-Head'){
+                echo '<a href="verify_reciept.php"><i class="fa-solid fa-message" style="color: white;"></i> Verify Receipt</a>';
+                echo '<a href="location_order.php"><i class="fa-solid fa-message" style="color: white;"></i> Order by Location</a>';
+                echo '<a href="pending_transactions.php"><i class="fa-solid fa-message" style="color: white;"></i> Pending Transactions</a>';
+                echo '<a href="completed_transactions.php"><i class="fa-solid fa-message" style="color: white;"></i> Completed Transactions</a>';
+                echo '<a href="profile.php"><i class="fa-solid fa-user" style="color: white;"></i> Profile</a>';
+                echo '<a href="logout.php"><i class="fa-solid fa-user-secret" style="color: white;"></i>  Logout</a>';
+            }
+            ?>
                 <span>
                     <h5>All Rights Reserved</h5>
-                    <h5>LionReadz, 2023</h5>
+                    <h5>LionReads, 2023</h5>
                 </span>
            </div>
                   
@@ -58,15 +81,12 @@ if (isset($_SESSION['email'])) {
         <div class="n-right">
             <span>
                 <h2>
-                    LionReads Bookstore
+                    LionReads Admin
                 </h2>
                 <h3>
-                    Admin
+                    <?php echo $_SESSION['admin_role'];?>
                 </h3>
             </span>
-            <div class="admin_image">
-                <img src="../img/<?php echo $profilePicture;?>" alt="Admin Profile Picture">
-            </div>
 
         </div>
 
@@ -74,4 +94,27 @@ if (isset($_SESSION['email'])) {
     </div>
     <!-- Navbar ends -->
 </body>
-</html>
+</html><?php
+include '../db.php';
+
+// Check if the email session variable is set
+if (isset($_SESSION['email'])) {
+    $email = $_SESSION['email'];
+
+    // Prepare and execute the SQL query
+    $db = new PDO('mysql:host=sql311.infinityfree.com;dbname=if0_34904562_lionreads', 'if0_34904562', '2bkiU8B0pp2s');
+    $stmt = $db->prepare("SELECT full_name, profile_picture FROM admin WHERE email = :email");
+    $stmt->execute([':email' => $email]);
+
+    // Fetch the result
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    // Retrieve the name and profile picture
+    if ($result) {
+        $fullName = $result['full_name'];
+        $profilePicture = $result['profile_picture'];
+    }
+}
+?>
+
+

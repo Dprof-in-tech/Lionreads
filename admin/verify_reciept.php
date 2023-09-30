@@ -1,3 +1,31 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// Set the session timeout to 5 minutes
+ini_set('session.gc_maxlifetime', 1800);
+session_set_cookie_params(1800);
+
+// Start the session
+session_start();
+
+// Regenerate the session ID to prevent session fixation attacks
+session_regenerate_id(true);
+
+// Set the last activity time to the current time
+$_SESSION['last_activity'] = time();
+
+// Debugging Step 2: Check for session timeout.
+if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 1800)) {
+    // Session timed out, destroy the session
+    session_unset();
+    session_destroy();
+    header("location: home.php");
+}
+
+// Update the last activity time
+$_SESSION['last_activity'] = time();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +35,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=JetBrains Mono">
     <script src="https://kit.fontawesome.com/ff24e75514.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="./img/LionReads-logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/LionReads-logo.png" type="image/x-icon">
     <title>LionReads Bookshop | Get your Books quick and Easy</title>
     <style>
         body{
@@ -35,10 +63,9 @@
         }
         label{
             align-self: flex-start;
-            padding-left: 20px;
+            padding-left: 30px;
             margin-bottom: 0.2rem;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            font-style: italic;
+            font-family: 'JetBrains Mono', sans-serif;
         }
         .verify{
             height: 2rem;
@@ -46,7 +73,7 @@
             border-radius: 8px;
             font-size: 1rem;
             padding-left: 10px;
-            font-family: serif;
+            font-family: 'JetBrains Mono', serif;
             margin-bottom: 1rem;
             border: 1px thin silver;
         }
@@ -57,12 +84,12 @@
             color: white;
             border-radius: 4px;
             font-size: 0.9rem;
-            font-family: serif;
+            font-family: 'JetBrains Mono', serif;
             font-style: oblique;
         }
 
         h2{
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-family: 'JetBrains Mono', sans-serif;
             
         }
     </style>
@@ -76,13 +103,10 @@
         <h2>Verify Orders..</h2>
         <form action="results.php" method="GET">
             <label for="order-number">Input the Order Number...</label>
-            <input type="text" name="order-number" class="verify">
-            <input type="submit" value="Verify order.." class="submit">
+            <input type="text" name="order_number" class="verify" autocomplete= "off">
+            <input type="submit" value="Verify.." class="submit">
         </form>
     </div>
-
-     <!-- footer begins -->
-     <?php include '../footer.php';?>
 
      <script>    
         /* Set the width of the sidebar to 250px (show it) */

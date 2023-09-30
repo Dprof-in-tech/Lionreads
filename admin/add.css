@@ -35,3 +35,29 @@ label{
     width: 60%;
     margin-top: 1rem;
 }
+
+/* CSS for the success alert */
+/* CSS for the success alert */
+.alert {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    background-color: #4CAF50; /* Green background color */
+    color: white; /* White text color */
+    border-radius: 0 0 0 5px;
+    transition: transform 0.5s ease-in-out; /* Add a smooth transition for hiding */
+}
+
+/* CSS to hide the alert by default */
+.hidden {
+    display: none;
+}
+
+/* CSS for the close button (×) */
+.closebtn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+}

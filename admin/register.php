@@ -1,6 +1,8 @@
 <?php 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
  // Set session cookie lifetime to 30 minutes (adjust as needed)
- $sessionLifetime = 300; // 5 minutes in seconds
+ $sessionLifetime = 1800; // 5 minutes in seconds
  session_set_cookie_params($sessionLifetime);
   // start the session
   session_start();
@@ -24,6 +26,7 @@ if(isset($_POST['submit'])){
     $name = $_POST['name'];
     $email = $_POST['email'];
     $phone_number = $_POST['phone_number'];
+    $admin_role = $_POST['admin_role'];
     $password = $_POST['password'];
     $profile_picture = $_POST['picture'];
     $confirmpassword = $_POST['confirmpassword'];
@@ -65,6 +68,13 @@ if(isset($_POST['submit'])){
     <input class="input" type="text" name="phone_number" placeholder="Phone Number" autocomplete="off">
     <input class="input" type="password" name="password" placeholder="Password" autocomplete="off" required="required">
     <input class="input" type="password" name="confirmpassword" placeholder="Confirm Password" autocomplete="off" required="required">
+    <label for="admin_role">Admin Role</label>
+        <select id="admin_role" name="admin_role">
+            <option value="super-Management">Super Management</option>
+            <option value="location-Head">Location Head</option>
+            <option value="distributor">Distributor</option>
+            <option value="finance">Finance</option>
+        </select>
     <label for="picture">Upload a Picture</label>
     <input type="file" name="picture" id="Picture" class="picture">
     <?php
@@ -78,7 +88,7 @@ if(isset($_POST['submit'])){
 
         // continue with the rest of the form processing
         // Connect to the database
-        $db = new PDO('mysql:host=localhost;dbname=lionreadz', 'root', '');
+        $db = new PDO('mysql:host=sql311.infinityfree.com;dbname=if0_34904562_lionreads', 'if0_34904562', '2bkiU8B0pp2s');
         // Prepare a SQL statement to check if the email already exists in the database
         $stmt= $db->prepare('SELECT * FROM admin WHERE email = :email');
         $stmt->bindParam(':email', $_POST['email']);
@@ -88,11 +98,11 @@ if(isset($_POST['submit'])){
         if ($stmt->rowCount() > 0) {
           echo '<p class="error">This email is already registered. Please Login!!</p>';
         } elseif ($password == $confirmpassword) {
-          $sql = "INSERT INTO admin(full_name, email, password, phone_number, profile_picture ) VALUES ('$name', '$email', '$hashed_password', '$phone_number', '$imageFileName')";
+          $sql = "INSERT INTO admin(full_name, email, password, admin_role, phone_number, profile_picture ) VALUES ('$name', '$email', '$hashed_password', '$admin_role', '$phone_number', '$imageFileName')";
           $result = mysqli_query($con, $sql);
 
           if ($result) {
-            header('location:login.php');
+            header('location:register.php');
           }else{
 
           }
