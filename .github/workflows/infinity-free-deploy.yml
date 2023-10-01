@@ -18,6 +18,6 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: sftp
-          localDir: ./  # Upload all files from the current directory
-          remoteDir: /lionreads.com.ng/htdocs  # Remote directory path on the server
+          protocol: ftp
+          local-dir: ./  # Upload all files from the current directory
+          remote-dir: /lionreads.com.ng/htdocs  # Remote directory path on the server
