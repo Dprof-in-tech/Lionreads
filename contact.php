@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="./img/LionReads-logo.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="contact.css">
-    <title>Contact Us today! | LionReadz.com</title>
+    <title>Contact Us today! | lionreads.com</title>
 </head>
 <body>
     <!-- include sidepanel -->

@@ -38,7 +38,7 @@ $_SESSION['last_activity'] = time();
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=JetBrains Mono">
     <script src="https://kit.fontawesome.com/ff24e75514.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="./img/LionReads-logo.png" type="image/x-icon">
-    <title>Search Results | LionReadz</title>
+    <title>Search Results | lionreads</title>
 </head>
 <body>
     <!-- include navbar -->

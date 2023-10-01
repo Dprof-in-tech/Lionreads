@@ -36,7 +36,7 @@ $_SESSION['last_activity'] = time();
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=JetBrains Mono">
     <script src="https://kit.fontawesome.com/ff24e75514.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="./img/LionReads-logo.png" type="image/x-icon">
-    <title>LionReadz Bookshop Catalog | Get your Books quick and Easy</title>
+    <title>lionreads Bookshop Catalog | Get your Books quick and Easy</title>
 </head>
 <body>
     <!-- Include Navbar -->
@@ -108,7 +108,7 @@ if (mysqli_num_rows($result) > 0) {
 
     <!-- welcome section -->
     <div class="welcome_text">
-        <h3>90% of Students who use LionReadz report
+        <h3>90% of Students who use lionreads report
             receiving higher grades
         </h3>
     </div>

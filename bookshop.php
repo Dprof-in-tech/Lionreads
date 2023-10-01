@@ -295,7 +295,7 @@ $_SESSION['last_activity'] = time();
 
     <!-- welcome section -->
     <div class="welcome_text">
-        <h3>90% of Students who use LionReadz report
+        <h3>90% of Students who use lionreads report
             receiving higher grades
         </h3>
     </div>

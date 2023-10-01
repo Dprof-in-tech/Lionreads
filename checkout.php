@@ -58,7 +58,7 @@ $_SESSION['last_activity'] = time();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="checkout.css">
     <script src="https://checkout.flutterwave.com/v3.js"></script>
-    <title>Checkout your Cart | LionReadz.com</title>
+    <title>Checkout your Cart | lionreads.com</title>
 </head>
 <body>
     <!-- include sidepanel -->
