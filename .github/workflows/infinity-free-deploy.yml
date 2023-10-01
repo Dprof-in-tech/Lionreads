@@ -1,0 +1,23 @@
+name: Deploy to Lionreads Hosting
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup FTP Client
+        uses: woleverywhere/ftp-action@3.3
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: sftp
+          localDir: ./  # Upload all files from the current directory
+          remoteDir: /lionreads.com.ng/htdocs  # Remote directory path on the server
