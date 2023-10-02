@@ -73,7 +73,7 @@ $_SESSION['last_activity'] = time();
 
     <?php
     // connect to the database
-    require "../db.php";
+    include "../config.php";
     // retrieve the search query from the form submission
     $search_query = $_GET['order_number'];
 

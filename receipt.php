@@ -54,7 +54,7 @@ $location = $_SESSION['location'];
         </span>
     </div>
     <?php
-    require 'db.php';
+    include "config.php";
 
     // Sanitize the input
 

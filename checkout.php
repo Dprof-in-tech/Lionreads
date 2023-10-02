@@ -69,7 +69,7 @@ $_SESSION['last_activity'] = time();
             <!-- // product_detail.php -->
             <?php
             // connect to the database
-            require "db.php";
+            include "config.php";
 
             // retrieve the product ID from the URL query parameter
             $book_id = $_GET['id'];

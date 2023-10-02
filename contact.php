@@ -28,7 +28,7 @@
         <h3>
             We will like to hear from you
         </h3>
-        <form action="" method="post">
+        <form action="" method="post" class="contact-form">
             <input type="text" name="name" placeholder="Your Name." class="name">
             <input type="email" name="email" id="email" placeholder="Email" class="email" >
             <input type="number" name="number" id="number" placeholder="Phone Number" class="phone_number" >

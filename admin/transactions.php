@@ -55,7 +55,7 @@ $_SESSION['expire_time'] = time() + $sessionLifetime;
   <tbody>
 
   <?php
-  include "../db.php";
+  include "../config.php";
   $sql = "SELECT * FROM customer_details";
   $result = mysqli_query($con, $sql);
   $rowcount = mysqli_num_rows($result);

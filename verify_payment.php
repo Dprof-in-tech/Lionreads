@@ -58,7 +58,7 @@ if($result->data->status == 'success'){
     $phone = $result->data->customer->phone;
     $date = $result->data->paid_at;
 
-    require "db.php";
+    include "config.php";
     // Insert data into customer_details table
     $sqlCustomerDetails = "INSERT INTO customer_details (payment_status, reference, name, phone, order_number, amount, payment_description, pickup_location, payment_date) VALUES ('$status', '$ref', '$name', '$phone', '$orderCR', '$amount', '$description', '$location', '$date')";
     $queryCustomerDetails = mysqli_query($con, $sqlCustomerDetails);

@@ -79,8 +79,8 @@ $_SESSION['last_activity'] = time();
         <h3>Bestsellers</h3>
         <div class="search_container">
             <!-- search_form.php -->
-            <form method="GET" action="search_results.php">
-                <input type="text" name="query" placeholder="Search books..." class="search">
+            <form method="GET" action="search_results.php" class="search-form">
+                <input type="search" name="query" placeholder="Search books..." class="search">
                 <button type="submit" class="search_button" >Search</button>
             </form>
         </div>
@@ -90,8 +90,8 @@ $_SESSION['last_activity'] = time();
 
         <!-- books begin -->
         <?php
-                    include "db.php";
-                     $sql = "SELECT * FROM books where id = 2";
+                    include "config.php";
+                     $sql = "SELECT * FROM books where id = 7";
                     $result = mysqli_query($con, $sql);
                     $rowcount = mysqli_num_rows($result);
                     if ($rowcount > 0) {
@@ -137,12 +137,11 @@ $_SESSION['last_activity'] = time();
                 <a href="cart.php" class="view_cart" ><i class="fa-solid fa-cart-shopping"></i> Cart</a>
             </div>
             </form>
-            
         </div>
             
 
         <?php
-                    include "db.php";
+                    include "config.php";
                      $sql = "SELECT * FROM books where id = 3";
                     $result = mysqli_query($con, $sql);
                     $rowcount = mysqli_num_rows($result);
@@ -194,7 +193,7 @@ $_SESSION['last_activity'] = time();
 
         
         <?php
-                    include "db.php";
+                    include "config.php";
                      $sql = "SELECT * FROM books where id = 4";
                     $result = mysqli_query($con, $sql);
                     $rowcount = mysqli_num_rows($result);
@@ -243,7 +242,7 @@ $_SESSION['last_activity'] = time();
         </div>
 
         <?php
-                    include "db.php";
+                    include "config.php";
                      $sql = "SELECT * FROM books where id = 5";
                     $result = mysqli_query($con, $sql);
                     $rowcount = mysqli_num_rows($result);
@@ -291,14 +290,117 @@ $_SESSION['last_activity'] = time();
             </form>
         </div> 
 
+        <?php
+                    include "config.php";
+                     $sql = "SELECT * FROM books where id = 9";
+                    $result = mysqli_query($con, $sql);
+                    $rowcount = mysqli_num_rows($result);
+                    if ($rowcount > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $book_title = $row['book_title'];
+                        $book_author = $row['book_author'];
+                        $book_price = $row['book_price'];
+                        $book_image = $row['book_image'];
+                  }
+                }
+                ?>
+        <div class="book_container">
+            <div class="book_picture">
+            <img src="./img/<?php echo $book_image;?>" alt="Design of Everyday things.">
+            </div>
+           
+            <div class="book_text">
+                <div class="b-left">
+                    <h2><?php echo $book_title;?></h2>
+                    <h5><?php echo $book_author;?></h5>
+                </div>
+                
+                <div class="b-right">
+                    <form  method="post">
+                    <h3>N<?php echo $book_price; ?></h3> 
+                    
+                    
+                    <input type="hidden" name="book_id" value="<?php echo $book_title;?>">
+                    <input type="hidden" name="book_price" value="<?php echo $book_price;?>">
+                    <div class="quantity">
+                        <h5>Quantity</h5>
+                        <span>
+                        <button class="minus-btn" type="button" name="button" id="minus_btn">-</button>
+                        <input type="text" name="quantity" value="1" id="quantity_input">
+                        <button class="plus-btn" type="button" name="button" id="plus_btn">+</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button type="submit" class="buy_button" name="add_to_cart" >Add 2 Cart</button>
+                <a href="cart.php" class="view_cart" ><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+            </div>
+            </form>
+        </div>
+            
+
+        <?php
+                    include "config.php";
+                     $sql = "SELECT * FROM books where id = 11";
+                    $result = mysqli_query($con, $sql);
+                    $rowcount = mysqli_num_rows($result);
+                    if ($rowcount > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $book_title = $row['book_title'];
+                        $book_author = $row['book_author'];
+                        $book_price = $row['book_price'];
+                        $book_image = $row['book_image'];
+                  }
+                }
+                ?>
+
+        <div class="book_container">
+            <div class="book_picture">
+            <img src="./img/<?php echo $book_image;?>" alt="Design of Everyday things.">
+            </div>
+           
+            <div class="book_text">
+                <div class="b-left">
+                    <h2><?php echo $book_title;?></h2>
+                    <h5><?php echo $book_author;?></h5>
+                </div>
+                
+                <div class="b-right">
+                    <form  method="post">
+                    <h3>N<?php echo $book_price; ?></h3> 
+                    
+                    
+                    <input type="hidden" name="book_id" value="<?php echo $book_title;?>">
+                    <input type="hidden" name="book_price" value="<?php echo $book_price;?>">
+                    <div class="quantity">
+                        <h5>Quantity</h5>
+                        <span>
+                        <button class="minus-btn" type="button" name="button" id="minus_btn">-</button>
+                        <input type="text" name="quantity" value="1" id="quantity_input">
+                        <button class="plus-btn" type="button" name="button" id="plus_btn">+</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button type="submit" class="buy_button" name="add_to_cart" >Add 2 Cart</button>
+                <a href="cart.php" class="view_cart" ><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+            </div>
+            </form>
+        </div>
+
+
     </div>
 
     <!-- welcome section -->
-    <div class="welcome_text">
+    <!-- <div class="welcome_text">
         <h3>90% of Students who use lionreads report
             receiving higher grades
         </h3>
-    </div>
+    </div> -->
     <!-- welcome ends. -->
 
     <!-- PDF section begins -->
@@ -342,27 +444,27 @@ $_SESSION['last_activity'] = time();
     </script>
 
     <script>
-            let input = document.getElementById('quantity_input');
-    let plusBtn = document.getElementById("plus_btn");
-    let minusBtn = document.getElementById("minus_btn");
-        
-    plusBtn.addEventListener('click', function(e){
-        e.preventDefault();
-        if(input.value < 0){
-            return
-        }else{
-            input.value++;
-        }
-    })
+        let input = document.getElementById('quantity_input');
+        let plusBtn = document.getElementById("plus_btn");
+        let minusBtn = document.getElementById("minus_btn");
+            
+        plusBtn.addEventListener('click', function(e){
+            e.preventDefault();
+            if(input.value < 0){
+                return
+            }else{
+                input.value++;
+            }
+        })
 
-    minusBtn.addEventListener('click', function(e){
-        e.preventDefault();
-        if(input.value > 0){
-            input.value--;
-        }else{
-            return
-        }
-    })
+        minusBtn.addEventListener('click', function(e){
+            e.preventDefault();
+            if(input.value > 0){
+                input.value--;
+            }else{
+                return
+            }
+        })
     </script>
 
 </body>

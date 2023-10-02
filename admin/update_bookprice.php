@@ -21,7 +21,7 @@
  
 
 if (isset($_POST['submit'])){
-    require "../db.php";
+    include "../config.php";
     $bookTitle = $_POST['book_title'];
     $book_price = $_POST['book_price'];
     

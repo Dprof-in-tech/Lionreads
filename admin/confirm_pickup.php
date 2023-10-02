@@ -6,7 +6,7 @@ if (isset($_POST['orderNumber'])) {
 
     // Connect to your database (replace with your database credentials)
     // Include your database connection code here
-    require "../db.php";
+    include "../config.php";
 
     // Check the connection
     if ($conn->connect_error) {

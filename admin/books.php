@@ -50,7 +50,7 @@
   <tbody>
 
   <?php
-  include "../db.php";
+  include "../config.php";
   $sql = "SELECT * FROM books";
   $result = mysqli_query($con, $sql);
   $rowcount = mysqli_num_rows($result);

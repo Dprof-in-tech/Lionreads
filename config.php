@@ -1,5 +1,11 @@
 <?php
+// Determine if you're running locally (e.g., based on environment variable)
+$localEnvironment = false; // Set this to true for local development
 
-define('FLUTTERWAVE_PUBLIC_KEY', 'FLWPUBK_TEST-7ac9c03214e7dc1314d26b754ceb52e2-X');
-define('FLUTTERWAVE_SECRET_KEY', 'FLWSECK_TEST-0a160a281580a998fc9c56c72489a65e-X');
-define('FLUTTERWAVE_ENCRYPTION_KEY', 'FLWSECK_TEST8cf4d6714b74');
+if ($localEnvironment) {
+    require_once('db_local.php'); // Load local configuration
+} else {
+    require_once('db.php'); // Load production configuration
+}
+
+// Your code that uses the database connection goes here

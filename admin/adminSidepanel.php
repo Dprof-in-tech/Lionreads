@@ -1,26 +1,44 @@
 <?php
-include '../db.php';
+// Set session cookie lifetime to 30 minutes (adjust as needed)
+$sessionLifetime = 1800; // 5 minutes in seconds
+
+// Check if the session expiration time is set
+if (isset($_SESSION['expire_time'])) {
+    // Check if the session has expired
+    if (time() > $_SESSION['expire_time']) {
+        // Redirect to logout.php
+        header("Location: logout.php");
+        exit();
+    }
+}
+
+// Set the new expiration time
+$_SESSION['expire_time'] = time() + $sessionLifetime;
+
+require_once "../config.php";
 
 // Check if the email session variable is set
 if (isset($_SESSION['email'])) {
     $email = $_SESSION['email'];
 
-    // Prepare and execute the SQL query
-    $db = new PDO('mysql:host=sql311.infinityfree.com;dbname=if0_34904562_lionreads', 'if0_34904562', '2bkiU8B0pp2s');
-    $stmt = $db->prepare("SELECT full_name, profile_picture FROM admin WHERE email = :email");
-    $stmt->execute([':email' => $email]);
+    // Prepare and execute the SQL query using MySQLi
+    $stmt = $con->prepare("SELECT full_name, profile_picture FROM admin WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $stmt->bind_result($fullName, $profilePicture);
 
     // Fetch the result
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    // Retrieve the name and profile picture
-    if ($result) {
-        $fullName = $result['full_name'];
-        $profilePicture = $result['profile_picture'];
+    if ($stmt->fetch()) {
+        // Data fetched successfully
+        $stmt->close();
+        // Continue with displaying data
+    } else {
+        // No data found
+        $stmt->close();
     }
 }
-?>
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -42,6 +60,7 @@ if (isset($_SESSION['email'])) {
             if ($_SESSION['admin_role'] == 'super-Management') {
                 echo '<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa-solid fa-xmark"></i></a>';
                 echo '<a href="../home.php" alt=""><i class="fa-solid fa-light fa-house" style="color: white;"></i> Home</a>';
+                echo '<a href="admin.php" alt=""><i class="fa-solid fa-light fa-house" style="color: white;"></i> Admin Dashboard</a>';
                 echo '<a href="add.php"><i class="fa-solid fa-book" style="color: white;"></i>  Add Books</a>';
                 echo '<a href="update_bookquantity.php"><i class="fa-solid fa-book" style="color: white;"></i>  Update Book Quantity</a>';
                 echo '<a href="update_bookprice.php"><i class="fa-solid fa-book" style="color: white;"></i>  Update Book Price</a>';
@@ -94,27 +113,4 @@ if (isset($_SESSION['email'])) {
     </div>
     <!-- Navbar ends -->
 </body>
-</html><?php
-include '../db.php';
-
-// Check if the email session variable is set
-if (isset($_SESSION['email'])) {
-    $email = $_SESSION['email'];
-
-    // Prepare and execute the SQL query
-    $db = new PDO('mysql:host=sql311.infinityfree.com;dbname=if0_34904562_lionreads', 'if0_34904562', '2bkiU8B0pp2s');
-    $stmt = $db->prepare("SELECT full_name, profile_picture FROM admin WHERE email = :email");
-    $stmt->execute([':email' => $email]);
-
-    // Fetch the result
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    // Retrieve the name and profile picture
-    if ($result) {
-        $fullName = $result['full_name'];
-        $profilePicture = $result['profile_picture'];
-    }
-}
-?>
-
-
+</html>

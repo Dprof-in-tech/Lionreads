@@ -23,8 +23,7 @@ ini_set('display_errors', 1);
  $_SESSION['expire_time'] = time() + $sessionLifetime;
 
 //connect to the database
-$db = mysqli_connect("sql311.infinityfree.com", "if0_34904562", "2bkiU8B0pp2s", "if0_34904562_lionreads");
-
+include "../config.php";
 //initialize variables
 $email = "";
 $password = "";
@@ -51,13 +50,14 @@ $errors = array();
 <body>
     <form  method="post">
         <h3>Login to your Account</h3>
+        <br>
         <h1>Quick and Easy</h1>
     <input class="input" type="email" name="email" placeholder=" Email">
     <input class="input" type="password" name="password" placeholder=" Password"required="required">
     <?php
     if (isset($_POST['submit'])) {
-        $email = mysqli_real_escape_string($db, $_POST['email']);
-        $password = mysqli_real_escape_string($db, $_POST['password']);
+        $email = mysqli_real_escape_string($con, $_POST['email']);
+        $password = mysqli_real_escape_string($con, $_POST['password']);
     
         //form validation
         if (empty($email)) {
@@ -74,9 +74,9 @@ $errors = array();
         //check for errors
         if (!empty($password)) {
             $query = "SELECT * FROM admin WHERE email='$email'";
-            $results = mysqli_query($db, $query);
+            $results = mysqli_query($con, $query);
             if(!$results){
-                die(mysqli_error($db));
+                die(mysqli_error($con));
             }
             if (mysqli_num_rows($results) == 1) {
                 $user = mysqli_fetch_assoc($results);

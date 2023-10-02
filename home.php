@@ -44,20 +44,53 @@ session_start();
         <h5><i class=" fa-solid fa-lightbulb" style="color: black;"></i> News & Memes</h5>
         <div class="news_slider">
             <div class="myslides fade" id="mySlides">
-                <img src="./img/book5.jpg" alt=" Meme Picture">
+                <img src="https://memeheist.com/wp-content/uploads/2023/06/Funny-Memes71.jpeg" alt=" Meme Picture">
             </div>
             
             <div class="myslides fade" id="mySlides">
-                <img src="./img/book3.jpg" alt=" Meme Picture">
+                <img src="https://memeheist.com/wp-content/uploads/2023/06/Funny-Memes75.jpeg" alt=" Meme Picture">
             </div>
 
             <div class="myslides fade" id="mySlides">
-                <img src="./img/book4.jpg" alt=" Meme Picture">
+                <img src="https://memeheist.com/wp-content/uploads/2023/06/Funny-Memes60.jpeg" alt=" Meme Picture">
             </div>
 
         </div>
 
     </div>
+
+    <!-- Company Management Section -->
+<div class="company-management">
+    <div class="container">
+        <h2>Meet the Team</h2>
+        <div class="management-cards">
+            <!-- Manager 1 -->
+            <div class="management-card">
+                <img src="img/esther.jpeg" alt="Manager 1">
+                <h3>Esther, Amarachi</h3>
+                <p>CEO</p>
+                <p>Esther is the CEO of LionReads.com.ng, bringing years of experience in the industry.</p>
+            </div>
+
+            <!-- Manager 2 -->
+            <div class="management-card">
+                <img src="img/isaac.jpeg" alt="Manager 2">
+                <h3>Isaac Onyemaechi (@prof)</h3>
+                <p>CTO</p>
+                <p>Isaac serves as the Chief Technical Officer, overseeing day-to-day Technical operations.</p>
+            </div>
+
+            <!-- Manager 3 -->
+            <!-- <div class="management-card">
+                <img src="img/isaac.jpeg" alt="Manager 3">
+                <h3>David Chogo</h3>
+                <p>CFO</p>
+                <p>David Chogo manages our finances and ensures financial stability.</p>
+            </div> -->
+        </div>
+    </div>
+</div>
+
 
     <!-- include footer -->
     <?php include "footer.php"; ?>

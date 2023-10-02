@@ -9,13 +9,13 @@
 /* Profile picture css */
 .profile_picture{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 50%;
     height: 25vh;
     border-radius: 50%;
     padding: 0.5rem;
-    background-color: rgb(184, 184, 184);
 }
 .profile_picture img{
     height: 100%;
@@ -29,7 +29,7 @@
 .profile_text h3{
     font-family: 'JetBrains Mono', sans-serif;
     font-size: 0.8rem;
-    margin-bottom: 0;
+    margin-bottom: 1rem;
     text-align: center;
 }
 .profile_text h2{
@@ -38,8 +38,10 @@
     margin-top: 0;
     text-align: center;
 }
-.profile_container a{
+
+.profile_text a{
     padding: 1rem;
+    margin-left: 4rem;
     border: 1px solid grey;
     border-radius: 5px;
     text-decoration: none;
@@ -47,4 +49,108 @@
     font-size: 1rem;
     color: black;
     background-color: rgb(185, 185, 185);
+}
+.profile_actions, .password-input, .name-input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+.profile_actions>button{
+    height: 6vh;
+    width: 70%;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+
+.password-input>input, .name-input>input{
+    height: 7vh;
+    width: 100%;
+    display: flex;
+    align-self: center;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    padding-inline-start: 10px;
+}
+.name-input>button, .password-input>button{
+    height: 7vh;
+    width: 70%;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+
+@media only screen and (min-width: 464px){
+    .profile_container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+        gap: 1.5rem;
+    }
+    
+    .profile_picture{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+        width: 15%;
+        height: 25vh;
+        border-radius: 50%;
+        padding: 0.5rem;
+        margin-top: 2rem;
+    }
+    .profile_container a{
+        position: relative;
+        top: 2%;
+    }
+    .profile_text{
+        margin-top: 2rem;
+        text-align: start;
+        width: 75%;
+    }
+    .profile_text h3{
+        font-family: 'JetBrains Mono', sans-serif;
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+        margin-top: 0;
+        text-align: start;
+    }
+    .profile_text h2{
+        font-family: 'JetBrains Mono', sans-serif;
+        font-size: 1.5rem;
+        margin-top: 0;
+        text-align: start;
+    }
+    .profile_actions>button{
+        height: 10vh;
+        width: 40%;
+        margin-bottom: 1rem;
+        border-radius: 8px;
+    }
+    .profile_actions, .password-input, .name-input{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        width: 100%;
+    }
+
+    .password-input>input, .name-input>input{
+        height: 7vh;
+        width: 40%;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        padding-inline-start: 10px;
+    }
+    .name-input>button, .password-input>button{
+        height: 7vh;
+        width: 20%;
+        margin-bottom: 1rem;
+        border-radius: 8px;
+    }
 }

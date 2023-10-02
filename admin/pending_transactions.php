@@ -77,7 +77,7 @@ $_SESSION['expire_time'] = time() + $sessionLifetime;
         </thead>
         <tbody>
             <?php
-            include "../db.php";
+            include "../config.php";
             $sql = "SELECT * FROM Transactions WHERE pickup_status = 'incomplete'";
             $result = mysqli_query($con, $sql);
             $rowcount = mysqli_num_rows($result);

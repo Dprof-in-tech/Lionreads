@@ -5,6 +5,7 @@ body{
 }
 .footer_container{
     padding: 1rem;
+    padding-left: 3rem;
     width: 90%;
     margin: 0;
 }

@@ -13,10 +13,9 @@ if (isset($_SESSION['expire_time'])) {
 
 // Set session cookie lifetime to 30 minutes (adjust as needed)
 $sessionLifetime = 1800; // 30 minutes in seconds
-session_set_cookie_params($sessionLifetime);
 
 // Database connection code - replace with your actual database connection code
-require "../db.php";
+include "../config.php";
 
 if (isset($_POST['submit'])) {
     $bookTitle = mysqli_real_escape_string($con, $_POST['book_title']);

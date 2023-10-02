@@ -21,7 +21,7 @@ $_SESSION['expire_time'] = time() + $sessionLifetime;
 // Check if the form has been submitted
 if (isset($_GET['location'])) {
     $location = $_GET['location'];
-    include "../db.php"; // Include your database connection script
+    include "../config.php"; // Include your database connection script
 
     // Modify the SQL query to retrieve orders based on the selected location
     $sql = "SELECT * FROM customer_details WHERE pickup_location = '$location'";
