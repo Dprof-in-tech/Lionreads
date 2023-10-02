@@ -19,7 +19,7 @@
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa-solid fa-xmark"></i></a>
                 <a href="home.php" alt=""><i class="fa-solid fa-light fa-house" style="color: white;"></i> Home</a>
                 <a href="bookshop.php"><i class="fa-solid fa-shop" style="color: white;"></i> Bookshop</a>
-                <a href="catalog.php"><i class="fa-solid fa-shop" style="color: white;"></i> Catalog</a>
+                <!-- <a href="catalog.php"><i class="fa-solid fa-shop" style="color: white;"></i> Catalog</a> -->
                 <a href="faqs.php"><i class="fa-solid fa-message" style="color: white;"></i>  FAQs</a>
                 <a href="contact.php"><i class="fa-solid fa-comments" style="color: white;"></i> Contact</a>
                 <a href="./admin/login.php"><i class="fa-solid fa-user-secret" style="color: white;"></i> Admin</a>

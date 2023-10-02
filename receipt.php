@@ -109,7 +109,7 @@ $location = $_SESSION['location'];
     </div>
 
     <div class="information">
-        <h3> All Pickup to be done between 11AM - 1PM and 4PM - 6PM on Tuesdays to Fridays..
+        <h3> All Pickup to be done between 11AM - 1PM for Engine Chitis and 4PM - 6PM for Stadium and SUB on Tuesdays, Wednesdays & Fridays..
         </h3>
         <h3>Please do not lose or discard this Receipt
             until your order has been successfully processed 

@@ -163,10 +163,14 @@ $_SESSION['last_activity'] = time();
   <label for="location">Choose your Pickup Location</label>
         <select id="location" name="location">
             <option value="engine-chitis">Engine Chitis</option>
-            <option value="gs-building">GS Building</option>
             <option value="sub">S.U.B</option>
             <option value="stadium">Stadium</option>
         </select>
+  </div>
+  <div class="form-group">
+      <h3>
+        By clicking on Pay, you agree to our terms and conditions for pickup as stated <a href="pickup-policy.php">here</a>.
+      </h3>
   </div>
   <div class="form-submit">
     <button type="submit" class="buy-btn" onclick="payWithPaystack()" name="pay_for_books"> Pay </button>

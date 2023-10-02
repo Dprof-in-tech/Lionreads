@@ -66,8 +66,8 @@ if (isset($_GET['location'])) {
         <label for="location">Select Location:</label>
         <select id="location" name="location">
             <option value="engine-chitis">Engine Chitis</option>
-            <option value="pharmacy">Pharmacy</option>
-            <option value="jimbazz">Jimbazz</option>
+            <option value="sub">S.U.B</option>
+            <option value="stadium">Stadium</option>
         </select>
         <input type="submit" value="Search">
     </form>
