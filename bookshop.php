@@ -125,7 +125,7 @@ $_SESSION['last_activity'] = time();
                         <h5>Quantity</h5>
                         <span>
                         <button class="minus-btn" type="button" name="button" id="minus_btn">-</button>
-                        <input type="text" name="quantity" value="1" id="quantity_input">
+                        <input type="text" name="quantity" value="1" id="quantity_input" class="quantity-input">
                         <button class="plus-btn" type="button" name="button" id="plus_btn">+</button>
                         </span>
                     </div>
@@ -177,7 +177,7 @@ $_SESSION['last_activity'] = time();
                         <h5>Quantity</h5>
                         <span>
                         <button class="minus-btn" type="button" name="button" id="minus_btn">-</button>
-                        <input type="text" name="quantity" value="1" id="quantity_input">
+                        <input type="text" name="quantity" value="1" id="quantity_input" class="quantity-input">
                         <button class="plus-btn" type="button" name="button" id="plus_btn">+</button>
                         </span>
                     </div>
@@ -227,7 +227,7 @@ $_SESSION['last_activity'] = time();
                         <h5>Quantity</h5>
                         <span>
                         <button class="minus-btn" type="button" name="button" id="minus_btn">-</button>
-                        <input type="text" name="quantity" value="1" id="quantity_input">
+                        <input type="text" name="quantity" value="1" id="quantity_input" class="quantity-input">
                         <button class="plus-btn" type="button" name="button" id="plus_btn">+</button>
                         </span>
                     </div>
@@ -276,7 +276,7 @@ $_SESSION['last_activity'] = time();
                         <h5>Quantity</h5>
                         <span>
                         <button class="minus-btn" type="button" name="button" id="minus_btn">-</button>
-                        <input type="text" name="quantity" value="1" id="quantity_input">
+                        <input type="text" name="quantity" value="1" id="quantity_input" class="quantity-input">
                         <button class="plus-btn" type="button" name="button" id="plus_btn">+</button>
                         </span>
                     </div>
@@ -326,7 +326,7 @@ $_SESSION['last_activity'] = time();
                         <h5>Quantity</h5>
                         <span>
                         <button class="minus-btn" type="button" name="button" id="minus_btn">-</button>
-                        <input type="text" name="quantity" value="1" id="quantity_input">
+                        <input type="text" name="quantity" value="1" id="quantity_input" class="quantity-input">
                         <button class="plus-btn" type="button" name="button" id="plus_btn">+</button>
                         </span>
                     </div>
@@ -378,7 +378,7 @@ $_SESSION['last_activity'] = time();
                         <h5>Quantity</h5>
                         <span>
                         <button class="minus-btn" type="button" name="button" id="minus_btn">-</button>
-                        <input type="text" name="quantity" value="1" id="quantity_input">
+                        <input type="text" name="quantity" value="1" id="quantity_input" class="quantity-input">
                         <button class="plus-btn" type="button" name="button" id="plus_btn">+</button>
                         </span>
                     </div>
@@ -444,27 +444,30 @@ $_SESSION['last_activity'] = time();
     </script>
 
     <script>
-        let input = document.getElementById('quantity_input');
-        let plusBtn = document.getElementById("plus_btn");
-        let minusBtn = document.getElementById("minus_btn");
-            
-        plusBtn.addEventListener('click', function(e){
-            e.preventDefault();
-            if(input.value < 0){
-                return
-            }else{
-                input.value++;
-            }
-        })
+        // JavaScript code to handle quantity input and buttons
+        let plusBtns = document.querySelectorAll(".plus-btn");
+        let minusBtns = document.querySelectorAll(".minus-btn");
+        let quantityInputs = document.querySelectorAll(".quantity input");
 
-        minusBtn.addEventListener('click', function(e){
-            e.preventDefault();
-            if(input.value > 0){
-                input.value--;
-            }else{
-                return
-            }
-        })
+        plusBtns.forEach((plusBtn, index) => {
+            plusBtn.addEventListener('click', function(e){
+                e.preventDefault();
+                let inputValue = parseInt(quantityInputs[index].value);
+                if (!isNaN(inputValue)) {
+                    quantityInputs[index].value = inputValue + 1;
+                }
+            });
+        });
+
+        minusBtns.forEach((minusBtn, index) => {
+            minusBtn.addEventListener('click', function(e){
+                e.preventDefault();
+                let inputValue = parseInt(quantityInputs[index].value);
+                if (!isNaN(inputValue) && inputValue > 0) {
+                    quantityInputs[index].value = inputValue - 1;
+                }
+            });
+        });
     </script>
 
 </body>

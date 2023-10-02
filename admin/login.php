@@ -54,6 +54,14 @@ $errors = array();
         <h1>Quick and Easy</h1>
     <input class="input" type="email" name="email" placeholder=" Email">
     <input class="input" type="password" name="password" placeholder=" Password"required="required">
+    <br>
+     <!-- Add the "Forgot Password" link with a unique ID -->
+     <a href="#" id="forgot-password-link">Forgot Password</a>
+    <br>
+    <!-- Container to display the message -->
+    <div id="forgot-password-message" style="display: none;">
+        So sorry, please remember your password!
+    </div>
     <?php
     if (isset($_POST['submit'])) {
         $email = mysqli_real_escape_string($con, $_POST['email']);
@@ -100,5 +108,15 @@ $errors = array();
     ?>
     <input class="submit" type="submit" value="login" name="submit">
     </form>
+
+
+     <!-- JavaScript to display the "Forgot Password" message -->
+     <script>
+        document.getElementById("forgot-password-link").addEventListener("click", function(e) {
+            e.preventDefault();
+            // Display the message by setting its style to "block"
+            document.getElementById("forgot-password-message").style.display = "block";
+        });
+    </script>
 </body>
 </html>

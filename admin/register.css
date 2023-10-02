@@ -65,7 +65,7 @@
         font-size: 1.2rem;
         width: 75%;
         height: 3.5rem;
-        margin-bottom: 1.3rem;
+        margin-bottom: 1rem;
         padding-inline-start: 1rem;
     }
     label{
@@ -128,6 +128,28 @@
     }
 
 }
+
+a{
+    color: black;
+    padding-top: 1rem;
+}
+#forgot-password{
+    color: darkgray;
+    margin-top: 1rem;
+}
+
+#forgot-password-message{
+    color: crimson;
+    font-family: 'JetBrains Mono', serif;
+}
+.container{
+    display:flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 60%;
+    padding-left: 2.5rem;
+    align-items: start;
+}
 @media only screen and (min-width: 992px){
     body{
         background: rgb(211, 210, 210);
@@ -176,7 +198,7 @@
         font-size: 1.2rem;
         width: 75%;
         height: 3rem;
-        margin-top: 2rem;
+        margin-bottom: 1rem;
         padding-inline-start: 1rem;
     }
     .submit{
@@ -189,6 +211,7 @@
         width: 12rem;
         height: 3rem;
         margin-top: 1.2rem;
+        margin-bottom: 1rem;
     }
     p.error{
         color: red ;

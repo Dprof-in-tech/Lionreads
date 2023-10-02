@@ -67,6 +67,19 @@ session_start();
                 <img src="https://memeheist.com/wp-content/uploads/2023/05/Funny-Memes47-1-1024x856.jpeg" alt=" Meme Picture">
             </div>
         </div>
+        <div class="news_text">
+            <h1>MORE THAN 1M BOOKS IN DIFFERENT FIELDS!!</h1>
+            <H3>
+                In the Lionreads store, you will find what you're looking for through
+                an impressive collection of Books and Continous assessments of Different 
+                genres and Courses in the University of Nigeria, Nsukka.
+            </H3>
+            <a href="bookshop.php">
+                <h4>
+                    <i class="fa-solid fa-arrow-right"></i> Explore the Bookshop
+                </h4>
+            </a>
+        </div>
 
     </div>
 

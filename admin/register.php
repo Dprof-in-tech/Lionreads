@@ -91,18 +91,16 @@ if (isset($_POST['submit'])) {
         <input class="input" type="text" name="phone_number" placeholder="Phone Number" autocomplete="off">
         <input class="input" type="password" name="password" placeholder="Password" autocomplete="off" required="required">
         <input class="input" type="password" name="confirmpassword" placeholder="Confirm Password" autocomplete="off" required="required">
-        <br>
-        <br>
-        <label for="admin_role">Admin Role</label>
-        <select id="admin_role" name="admin_role">
-            <option value="super-Management">Super Management</option>
-            <option value="location-Head">Location Head</option>
-            <option value="distributor">Distributor</option>
-            <option value="finance">Finance</option>
-        </select>
-        <br>
-        <label for="picture">Upload a Picture</label>
-        <input type="file" name="picture" id="Picture" class="picture">
+        <div class="container">
+            <select id="admin_role" name="admin_role">
+                <option value="" disabled selected>Select Admin role</option>
+                <option value="super-Management">Super Management</option>
+                <option value="location-Head">Location Head</option>
+                <option value="distributor">Distributor</option>
+                <option value="finance">Finance</option>
+            </select>
+            <input type="file" name="picture" id="Picture" class="picture" value="Upload picture">
+        </div>
         <?php
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $password = $_POST['password'];
@@ -114,8 +112,6 @@ if (isset($_POST['submit'])) {
         }
         ?>
         <input class="submit" type="submit" value="Submit" name="submit">
-        <h5>You have an account with us,<a href="login.php">Login</a></h5>
-        <h5>By Clicking submit, you consent to our company and customer's <a href="">Privacy Policies</a></h5>
     </form>
 </body>
 </html>

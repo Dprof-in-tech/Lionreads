@@ -181,7 +181,7 @@ h1{
 
   .news{
     width: 95%;
-    height: 70vh;
+    height: 80vh;
     border-radius: 2px;
     margin-bottom: 5rem;
   }
@@ -291,9 +291,14 @@ h1{
   }
 
   /* News css */
-
+.news{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
    
   .news h5{
+    width: 100%;
     font-size: 1.05rem;
     padding: 1rem;
     margin: 0;
@@ -301,11 +306,44 @@ h1{
     color: limegreen;
   }
 
+  .news_text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    text-align: center;
+    font-family: 'JetBrains Mono', serif;
+  }
+  .news_text>h1{
+    font-size: 1.7rem;
+    margin-bottom: 0;
+    margin-top: 1rem;
+    /* Apply a gradient as the text color */
+    background: linear-gradient(to right, #1c2e19, #24ca0e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Hide the original text color */
+
+    /* Add some text shadow for a pop effect */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  .news_text>h3{
+    font-size: 1rem;
+    color: rgb(53, 53, 53);
+  }
+
+  .news_text>a{
+    border: 1px solid rgb(75, 75, 75);
+    border-radius: 8px;
+    padding: 0rem 1rem 0rem 1rem;
+    background-color: rgb(28, 44, 28);
+    color: white;
+  }
+  
   /* Slideshow container */
 .news_slider {
-  width: 100%;
-  position: relative;
-  margin: 0;
+  width: 40%;
 }
 
 /* Hide the images by default */
@@ -379,6 +417,11 @@ h1{
 }
 
 @media only screen and (max-width: 680px){
+  .news_slider {
+    width: 100%;
+    position: relative;
+    margin: 0;
+  }
   .management-cards {
     display: flex;
     justify-content: space-evenly;
@@ -397,5 +440,26 @@ h1{
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   }
+
+  .news{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+  .news_text{
+    width: 100%;
+    margin-top: 2rem;
+  }
+  .news_text>h1{
+    font-size: 1.4rem;
+    margin-bottom: 0;
+    margin-top: 1rem;
+  }
+  .news_text>h3{
+    font-size: 1rem;
+    color: rgb(53, 53, 53);
+    margin-bottom: 2rem;
+  }
+
    
 }
