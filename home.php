@@ -54,7 +54,18 @@ session_start();
             <div class="myslides fade" id="mySlides">
                 <img src="https://memeheist.com/wp-content/uploads/2023/06/Funny-Memes60.jpeg" alt=" Meme Picture">
             </div>
-
+            <div class="myslides fade" id="mySlides">
+                <img src="https://memeheist.com/wp-content/uploads/2023/06/Funny-Memes86-824x1024.jpeg" alt=" Meme Picture">
+            </div>
+            <div class="myslides fade" id="mySlides">
+                <img src="https://memeheist.com/wp-content/uploads/2023/05/Funny-Memes2-839x1024.jpeg" alt=" Meme Picture">
+            </div>
+            <div class="myslides fade" id="mySlides">
+                <img src="https://memeheist.com/wp-content/uploads/2023/05/Funny-Memes13-828x1024.jpeg" alt=" Meme Picture">
+            </div>
+            <div class="myslides fade" id="mySlides">
+                <img src="https://memeheist.com/wp-content/uploads/2023/05/Funny-Memes47-1-1024x856.jpeg" alt=" Meme Picture">
+            </div>
         </div>
 
     </div>
