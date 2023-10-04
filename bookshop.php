@@ -19,34 +19,6 @@ if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 
     session_destroy();
     header("location: home.php");
 }
-
-// update the last activity time
-$_SESSION['last_activity'] = time();
-
-        if(isset($_POST['add_to_cart'])){
-            // Get the product ID and quantity from the form submission
-            $book_id = $_POST['book_id'];
-            $quantity = $_POST['quantity'];
-            $book_price = $_POST['book_price'];
-    
-            // Check if the product is already in the cart
-            if(isset($_SESSION['cart'][$book_id])){
-                // If the product is already in the cart, increment the quantity
-                $_SESSION['cart'][$book_id]['quantity'] += $quantity;
-            }else{
-                // If the product is not yet in the cart, add it
-                $_SESSION['cart'][$book_id] = array(
-                    'quantity' => $quantity,
-                    'book_id' => $book_id,
-                    'price' => $book_price
-                    
-                );
-
-                // Book successfully added to cart, trigger an alert
-                echo '<script>alert("Book successfully added to cart!");</script>';
-
-            }
-        }
 ?>
 
 
@@ -62,6 +34,19 @@ $_SESSION['last_activity'] = time();
     <script src="https://kit.fontawesome.com/ff24e75514.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="./img/LionReads-logo.png" type="image/x-icon">
     <title>LionReads Bookshop | Get your Books quick and Easy</title>
+    <style>
+        #message-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: none;
+            z-index: 999;
+        }
+    </style>
 </head>
 <body>
     <!-- Include Navbar -->
@@ -74,6 +59,9 @@ $_SESSION['last_activity'] = time();
     </div>
     <!-- welcome ends. -->
 
+    <div id="message-container" style="display: none;">
+        <div id="message"><?php echo $message;?></div>
+    </div>
     <!-- Bestseller section begins -->
     <div class="bestseller_container">
         <h3>Bestsellers</h3>
@@ -86,8 +74,6 @@ $_SESSION['last_activity'] = time();
         </div>
 
         <!-- // search_results.php -->
-        
-
         <!-- books begin -->
         <?php
                     include "config.php";
@@ -470,5 +456,50 @@ $_SESSION['last_activity'] = time();
         });
     </script>
 
+    <?php
+        
+$message = "Book added successfully";
+// update the last activity time
+$_SESSION['last_activity'] = time();
+
+        if(isset($_POST['add_to_cart'])){
+            // Get the product ID and quantity from the form submission
+            $book_id = $_POST['book_id'];
+            $quantity = $_POST['quantity'];
+            $book_price = $_POST['book_price'];
+    
+            // Check if the product is already in the cart
+            if(isset($_SESSION['cart'][$book_id])){
+                // If the product is already in the cart, increment the quantity
+                $_SESSION['cart'][$book_id]['quantity'] += $quantity;
+            }else{
+                // If the product is not yet in the cart, add it
+                $_SESSION['cart'][$book_id] = array(
+                    'quantity' => $quantity,
+                    'book_id' => $book_id,
+                    'price' => $book_price
+                    
+                );
+            }
+            // Book successfully added to cart, trigger an alert
+            echo '<script>
+            function showMessage(message) {
+                const messageContainer = document.getElementById("message-container");
+                const messageElement = document.getElementById("message");
+                messageElement.textContent = message;
+
+                messageContainer.style.display = "block";
+
+                setTimeout(function() {
+                    messageContainer.style.display = "none";
+                }, 3000); // Hide the message after 3 seconds
+            }
+
+            // Call this function to display the message
+            showMessage("' . $message . '");
+            </script>';
+
+        }
+    ?>
 </body>
 </html>

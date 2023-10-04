@@ -62,6 +62,7 @@ if (isset($_SESSION['email'])) {
                 echo '<a href="../home.php" alt=""><i class="fa-solid fa-light fa-house" style="color: white;"></i> Home</a>';
                 echo '<a href="admin.php" alt=""><i class="fa-solid fa-light fa-house" style="color: white;"></i> Admin Dashboard</a>';
                 echo '<a href="add.php"><i class="fa-solid fa-book" style="color: white;"></i>  Add Books</a>';
+                echo '<a href="update_bookquantity.php"><i class="fa-solid fa-book" style="color: white;"></i>  Update Book </a>';
                 echo '<a href="update_bookquantity.php"><i class="fa-solid fa-book" style="color: white;"></i>  Update Book Quantity</a>';
                 echo '<a href="update_bookprice.php"><i class="fa-solid fa-book" style="color: white;"></i>  Update Book Price</a>';
                 echo '<a href="transactions.php"><i class="fa-solid fa-message" style="color: white;"></i> Transaction History</a>';

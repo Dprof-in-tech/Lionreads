@@ -69,7 +69,7 @@ $location = $_SESSION['location'];
         $order_description = htmlspecialchars($row['payment_description']);
         $sender_phone = htmlspecialchars($row['phone']);
         $payment_info = htmlspecialchars($row['payment_status']);
-        $pickup_location = htmlspecialchars($rows['pickup_location']);
+        $pickup_location = htmlspecialchars($row['pickup_location']);
     } else {
         echo "Error: " . mysqli_error($con);
     }
