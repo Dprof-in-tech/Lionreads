@@ -274,7 +274,7 @@ const concatenatedInputs = bookValues.join(', ');
 
      // Create a Paystack transaction object
      let handler = PaystackPop.setup({
-      key: 'pk_test_d360b6e9f8185ec36e34f5bd790bb4fbefd31a3d',
+      key: 'pk_live_669da5a653365e22482c52a90fdaeb32039a90ad',
       email: email,
       phone: phone_number,
       amount: amountPaid * 100,
