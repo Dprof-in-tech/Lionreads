@@ -17,37 +17,7 @@ $sessionLifetime = 1800; // 30 minutes in seconds
 // Database connection code - replace with your actual database connection code
 include "../config.php";
 
-if (isset($_POST['submit'])) {
-    $bookTitle = mysqli_real_escape_string($con, $_POST['book_title']);
-    $bookAuthor = mysqli_real_escape_string($con, $_POST['book_author']);
-    $bookPrice = mysqli_real_escape_string($con, $_POST['book_price']);
-    $book_quantity = mysqli_real_escape_string($con, $_POST['book_quantity']);
 
-    // Handle file upload
-    $imageFileName = '';
-    if (isset($_FILES['camera_image']['tmp_name']) && !empty($_FILES['camera_image']['tmp_name'])) {
-        $bookImage = $_FILES['camera_image']['tmp_name'];
-        $imageFileName = $_FILES['camera_image']['name'];
-        $imageDestination = '../img/' . $imageFileName;
-
-        // Move the camera-captured image to the destination folder
-        if (move_uploaded_file($bookImage, $imageDestination)) {
-            // File move successful, insert the data into the database using prepared statement
-            $stmt = $con->prepare("INSERT INTO books (book_title, book_image, book_author, book_price, book_quantity) VALUES (?, ?, ?, ?, ?)");
-            $stmt->bind_param("sssss", $bookTitle, $imageFileName, $bookAuthor, $bookPrice, $book_quantity);
-
-            if ($stmt->execute()) {
-                // Successfully inserted into the database
-                $stmt->close();
-                $con->close();
-
-                  echo '<script>showSuccessAlert();</script>';
-            } else {
-                echo "Error: " . $stmt->error;
-            }
-        }
-    }
-}
 ?>
 
 <!DOCTYPE html>
@@ -62,6 +32,19 @@ if (isset($_POST['submit'])) {
     <link rel="shortcut icon" href="../img/LionReads-logo.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #message-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: none;
+            z-index: 999;
+        }
+    </style>
 </head>
 <body>
     <!-- include navbar -->
@@ -85,10 +68,10 @@ if (isset($_POST['submit'])) {
         <input type="submit" value="Add Book" name="submit" class="add_button">
     </form>
     </div>
- <div id="success-alert" class="alert success hidden">
-    <span class="closebtn" onclick="closeAlert()">&times;</span>
-    Book successfully uploaded!
-</div>
+ 
+    <div id="message-container" style="display: none;">
+        <div id="message"><?php echo $message;?></div>
+    </div>
 
     
     <script>    
@@ -101,24 +84,58 @@ if (isset($_POST['submit'])) {
         document.getElementById("mySidepanel").style.width = "0";
     }
     </script>
-<script>
-    // Function to show the success alert
-    function showSuccessAlert() {
-        var alert = document.getElementById("success-alert");
-        alert.style.transform = "translateY(0%)"; // Slide down
 
-        // Automatically hide the alert after 3 seconds
-        setTimeout(function() {
-            closeAlert();
-        }, 3000);
+
+<?php
+     $message = "Book added successfully";
+    if (isset($_POST['submit'])) {
+        $bookTitle = mysqli_real_escape_string($con, $_POST['book_title']);
+        $bookAuthor = mysqli_real_escape_string($con, $_POST['book_author']);
+        $bookPrice = mysqli_real_escape_string($con, $_POST['book_price']);
+        $book_quantity = mysqli_real_escape_string($con, $_POST['book_quantity']);
+    
+        // Handle file upload
+        $imageFileName = '';
+        if (isset($_FILES['camera_image']['tmp_name']) && !empty($_FILES['camera_image']['tmp_name'])) {
+            $bookImage = $_FILES['camera_image']['tmp_name'];
+            $imageFileName = $_FILES['camera_image']['name'];
+            $imageDestination = '../img/' . $imageFileName;
+    
+            // Move the camera-captured image to the destination folder
+            if (move_uploaded_file($bookImage, $imageDestination)) {
+                // File move successful, insert the data into the database using prepared statement
+                $stmt = $con->prepare("INSERT INTO books (book_title, book_image, book_author, book_price, book_quantity) VALUES (?, ?, ?, ?, ?)");
+                $stmt->bind_param("sssss", $bookTitle, $imageFileName, $bookAuthor, $bookPrice, $book_quantity);
+    
+                if ($stmt->execute()) {
+                    // Successfully inserted into the database
+                    $stmt->close();
+                    $con->close();
+    
+                      // Book successfully added to cart, trigger an alert
+                    echo '<script>
+                    function showMessage(message) {
+                        const messageContainer = document.getElementById("message-container");
+                        const messageElement = document.getElementById("message");
+                        messageElement.textContent = message;
+    
+                        messageContainer.style.display = "block";
+    
+                        setTimeout(function() {
+                            messageContainer.style.display = "none";
+                        }, 3000); // Hide the message after 3 seconds
+                    }
+    
+                    // Call this function to display the message
+                    showMessage("' . $message . '");
+                    </script>';
+                
+                } else {
+                    echo "Error: " . $stmt->error;
+                }
+            }
+        }
     }
-
-    // Function to hide the success alert
-    function closeAlert() {
-        var alert = document.getElementById("success-alert");
-        alert.style.transform = "translateY(-100%)"; // Slide up
-    }
-</script>
-
+?>
 </body>
 </html>
