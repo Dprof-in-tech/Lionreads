@@ -40,6 +40,10 @@ try {
     $mail->setFrom('lionreadsunn@gmail.com', 'Lionreads');
     $mail->addAddress('amaechiisaac450@gmail.com', 'Isaac Onyemaechi');
 
+    // Add BCC recipient
+    $mail->addBCC('akannodebbie7@gmail.com', 'Akanno Deborah');
+
+
     // Email subject
     $mail->Subject = 'Lionreads Payment Notification';
 
