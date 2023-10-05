@@ -78,6 +78,7 @@ $_SESSION['last_activity'] = time();
             $book_title = $row['book_title'];
             $book_image = $row['book_image'];
             $book_price = $row['book_price'];
+            $book_no = $row['id'];
         ?>
 
             <div class="book_picture">
@@ -95,6 +96,7 @@ $_SESSION['last_activity'] = time();
                     <h3>N<?php echo $book_price; ?></h3> 
                     
                     <input type="hidden" name="book_charges" value="300" >
+                    <input type="hidden" name="book_no" value="<?php echo $book_no;?>">
                     <input type="hidden" name="book_id" value="<?php echo $book_title;?>">
                     <input type="hidden" name="book_price" value="<?php echo $book_price;?>">
                     <div class="quantity">
@@ -171,6 +173,7 @@ $_SESSION['last_activity'] = time();
         $quantity = $_POST['quantity'];
         $book_price = $_POST['book_price'];
         $book_charges = $_POST['book_charges'];
+        $book_no =$_POST['book_no'];
 
         // Check if the product is already in the cart
         if(isset($_SESSION['cart'][$book_id])){
@@ -183,6 +186,7 @@ $_SESSION['last_activity'] = time();
                 'book_id' => $book_id,
                 'price' => $book_price,
                 'charges' => $book_charges,
+                'id' => $book_no
                 
             );
         }

@@ -86,6 +86,7 @@ if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 
                         $book_author = $row['book_author'];
                         $book_price = $row['book_price'];
                         $book_image = $row['book_image'];
+                        $book_no = $row['id'];
                   }
                 }
                 ?>
@@ -104,7 +105,7 @@ if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 
                     <form  method="post">
                     <h3>N<?php echo $book_price; ?></h3> 
                     
-                    
+                    <input type="hidden" name="book_no" value="<?php echo $book_no;?>">
                     <input type="hidden" name="book_id" value="<?php echo $book_title;?>">
                     <input type="hidden" name="book_price" value="<?php echo $book_price;?>">
                     <div class="quantity">
@@ -137,6 +138,7 @@ if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 
                         $book_author = $row['book_author'];
                         $book_price = $row['book_price'];
                         $book_image = $row['book_image'];
+                        $book_no = $row['id'];
                   }
                 }
                 ?>
@@ -156,7 +158,7 @@ if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 
                     <form  method="post">
                     <h3>N<?php echo $book_price; ?></h3> 
                     
-                    
+                    <input type="hidden" name="book_no" value="<?php echo $book_no;?>">
                     <input type="hidden" name="book_id" value="<?php echo $book_title;?>">
                     <input type="hidden" name="book_price" value="<?php echo $book_price;?>">
                     <div class="quantity">
@@ -189,6 +191,7 @@ if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 
                         $book_author = $row['book_author'];
                         $book_price = $row['book_price'];
                         $book_image = $row['book_image'];
+                        $book_no = $row['id'];
                   }
                 }
                 ?>
@@ -207,6 +210,7 @@ if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 
                 <div class="b-right">
                     <form  method="post">
                     <h3>N<?php echo $book_price; ?></h3> 
+                    <input type="hidden" name="book_no" value="<?php echo $book_no;?>">
                     <input type="hidden" name="book_id" value="<?php echo $book_title;?>">
                     <input type="hidden" name="book_price" value="<?php echo $book_price;?>">
                     <div class="quantity">
@@ -238,6 +242,7 @@ if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 
                         $book_author = $row['book_author'];
                         $book_price = $row['book_price'];
                         $book_image = $row['book_image'];
+                        $book_no = $row['id'];
                   }
                 }
                 ?>
@@ -256,6 +261,7 @@ if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 
                 <div class="b-right">
                     <form  method="post">
                     <h3>N<?php echo $book_price; ?></h3> 
+                    <input type="hidden" name="book_no" value="<?php echo $book_no;?>">
                     <input type="hidden" name="book_id" value="<?php echo $book_title;?>">
                     <input type="hidden" name="book_price" value="<?php echo $book_price;?>">
                     <div class="quantity">
@@ -287,6 +293,7 @@ if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 
                         $book_author = $row['book_author'];
                         $book_price = $row['book_price'];
                         $book_image = $row['book_image'];
+                        $book_no = $row['id'];
                   }
                 }
                 ?>
@@ -305,7 +312,7 @@ if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 
                     <form  method="post">
                     <h3>N<?php echo $book_price; ?></h3> 
                     
-                    
+                    <input type="hidden" name="book_no" value="<?php echo $book_no;?>">
                     <input type="hidden" name="book_id" value="<?php echo $book_title;?>">
                     <input type="hidden" name="book_price" value="<?php echo $book_price;?>">
                     <div class="quantity">
@@ -338,6 +345,7 @@ if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 
                         $book_author = $row['book_author'];
                         $book_price = $row['book_price'];
                         $book_image = $row['book_image'];
+                        $book_no = $row['id']; 
                   }
                 }
                 ?>
@@ -357,7 +365,7 @@ if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 
                     <form  method="post">
                     <h3>N<?php echo $book_price; ?></h3> 
                     
-                    
+                    <input type="hidden" name="book_no" value="<?php echo $book_no;?>">
                     <input type="hidden" name="book_id" value="<?php echo $book_title;?>">
                     <input type="hidden" name="book_price" value="<?php echo $book_price;?>">
                     <div class="quantity">
@@ -467,6 +475,7 @@ $_SESSION['last_activity'] = time();
             $book_id = $_POST['book_id'];
             $quantity = $_POST['quantity'];
             $book_price = $_POST['book_price'];
+            $book_no = $_POST['book_no'];
     
             // Check if the product is already in the cart
             if(isset($_SESSION['cart'][$book_id])){
@@ -477,7 +486,8 @@ $_SESSION['last_activity'] = time();
                 $_SESSION['cart'][$book_id] = array(
                     'quantity' => $quantity,
                     'book_id' => $book_id,
-                    'price' => $book_price
+                    'price' => $book_price,
+                    'id' => $book_no
                     
                 );
             }

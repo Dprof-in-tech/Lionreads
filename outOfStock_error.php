@@ -1,8 +1,11 @@
 <?php
 session_start();
 // Retrieve the list of out of stock books from the query parameter
-$out_of_stock_books_str = isset($_GET['books']) ? $_GET['books'] : '';
+$out_of_stock_books_str = isset($_GET['unavailableBooks']) ? $_GET['unavailableBooks'] : '';
 $out_of_stock_books = explode(',', $out_of_stock_books_str);
+
+// Remove duplicate values from the array
+$out_of_stock_books = array_unique($out_of_stock_books);
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +54,7 @@ $out_of_stock_books = explode(',', $out_of_stock_books_str);
             <?php endforeach; ?>
         </ul>
         <p>Please remove these books from your cart and continue shopping.</p>
-        <p>You can <a href="bookshop.php">return to the bookshop</a> to browse our other products.</p>
+        <p>You can <a href="cart.php">return to the cart</a> to remove these books or you can <a href="bookshop.php">head on to the bookshop</a> to see more of our products.</p>
     </div>
 </body>
 </html>

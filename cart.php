@@ -99,6 +99,7 @@ $_SESSION['last_activity'] = time();
                         $book_name = $item['book_id'];
                         $quantity = $item['quantity'];
                         $price = $item['price'];
+                        $book_no = $item['id'];
                         // replace with the actual price from the database
                         $amount +=  $price * $quantity;
                         $total_charges += $charges * $quantity;
@@ -219,26 +220,72 @@ $_SESSION['last_activity'] = time();
     }
 </script>
 <script>
+  document.getElementById("checkout_button").addEventListener("click", function () {
     // Get the modal
-    let modal =     document.querySelector(".modal");
-// When the user clicks the button, open the modal
-let openModal =  document.getElementById("checkout_button");
-let closeModal = document.getElementById("close_checkout");
+    let modal = document.querySelector(".modal");
+    // When the user clicks the button, open the modal
+    let closeModal = document.getElementById("close_checkout");
 
-openModal.addEventListener('click', function(){
-    document.querySelector(".modal").style.display = "block";
-})
-// When the user clicks on <span> (x), close the modal
- closeModal.addEventListener('click', function(){
-    document.querySelector(".modal").style.display = "none";
- })
+    // When the user clicks on span (x), close the modal
+    closeModal.addEventListener('click', function () {
+        document.querySelector(".modal").style.display = "none";
+    });
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    document.querySelector(".modal").style.display = "none";
-  }
-}
+    let bookValues = [];
+    <?php foreach ($_SESSION['cart'] as $item): ?>
+        let bookname_<?php echo $item['id']; ?> = "<?php echo $item['book_id']; ?>";
+        let quantity_<?php echo $item['id']; ?> = "<?php echo $item['quantity']; ?>";
+        bookValues.push({ bookname: bookname_<?php echo $item['id']; ?>, quantity: quantity_<?php echo $item['id']; ?> });
+    <?php endforeach; ?>
+
+    let allBooksAvailable = true;
+
+    // Initialize an array to store the names of unavailable books
+    let unavailableBooks = [];
+
+    // Loop through the book values and perform an AJAX request for each book
+    bookValues.forEach(item => {
+        let bookName = item.bookname;
+        let quantityPurchased = item.quantity;
+
+        // Send an AJAX request to check book availability
+        fetch('check_availability.php?bookName=' + encodeURIComponent(bookName) + '&quantity=' + quantityPurchased)
+            .then(response => response.json())
+            .then(data => {
+                if (!data.available) {
+                    // Book is not available, add it to the array of unavailable books
+                    unavailableBooks.push(bookName);
+                }
+            });
+    });
+
+    // After all AJAX requests have completed, check if any books are unavailable
+    Promise.all(bookValues.map(item => {
+        let bookName = item.bookname;
+        return fetch('check_availability.php?bookName=' + encodeURIComponent(bookName) + '&quantity=' + item.quantity)
+            .then(response => response.json())
+            .then(data => {
+                if (!data.available) {
+                    // Book is not available, add it to the array of unavailable books
+                    unavailableBooks.push(bookName);
+                }
+            });
+    })).then(() => {
+        if (unavailableBooks.length > 0) {
+            // Redirect to the error page with the list of unavailable books as a parameter
+            window.location.href = 'outOfStock_error.php?unavailableBooks=' + encodeURIComponent(unavailableBooks.join(','));
+        } else {
+            // All books are available, proceed with checkout
+            document.querySelector(".modal").style.display = "block";
+        }
+    });
+});
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        document.querySelector(".modal").style.display = "none";
+      }
+    }
     </script>
     <script>
         const paymentForm = document.getElementById('paymentForm');
