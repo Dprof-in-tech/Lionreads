@@ -24,6 +24,7 @@ $_SESSION['order_number'] = $orderCR;
 $_SESSION['books_paid_for'] = $books_Paidfor;
 $_SESSION['amount'] = $amount;
 $_SESSION['location'] = $location;
+$_SESSION['description'] = $description;
 
 // retreive session variables
 // $books_Paidfor = $_SESSION['books_paid_for'];
@@ -62,7 +63,7 @@ if (preg_match($pattern, $description, $matches)) {
                     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                     CURLOPT_CUSTOMREQUEST => "GET",
                     CURLOPT_HTTPHEADER => array(
-                    "Authorization: Bearer sk_live_42d9a6ab9ae085c4ba7a9802916b26acc04f1de2",
+                    "Authorization: Bearer sk_test_a43ad39c2bc1c9f90f9de69f1de84c09c60c1b81",
                     "Cache-Control: no-cache",
                     ),
                 ));
@@ -86,11 +87,8 @@ if (preg_match($pattern, $description, $matches)) {
                     $phone = $result->data->customer->phone;
                     $date = $result->data->paid_at;
                    
-                    // Extract the book title and quantity from the payment description
-                    // $pattern = '/^(.*?)\s\((\d+)\)$/';
-                    // if (preg_match($pattern, $description, $matches)) {
-                    //     $book_title = $matches[1];
-                    //     $quantity_purchased = intval($matches[2]);
+                    // Include the email sending file
+                    require 'email-alert.php';
 
                     // Deduct the purchased quantity from the book's quantity in the database
                     $updateSql = "UPDATE books SET book_quantity = book_quantity - ? WHERE book_title = ?";
