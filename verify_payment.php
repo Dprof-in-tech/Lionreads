@@ -63,7 +63,7 @@ if (preg_match($pattern, $description, $matches)) {
                     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                     CURLOPT_CUSTOMREQUEST => "GET",
                     CURLOPT_HTTPHEADER => array(
-                    "Authorization: Bearer sk_test_a43ad39c2bc1c9f90f9de69f1de84c09c60c1b81",
+                    "Authorization: Bearer sk_live_42d9a6ab9ae085c4ba7a9802916b26acc04f1de2",
                     "Cache-Control: no-cache",
                     ),
                 ));
