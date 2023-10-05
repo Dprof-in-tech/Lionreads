@@ -23,28 +23,6 @@ if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 
 // update the last activity time
 $_SESSION['last_activity'] = time();
 
-    if(isset($_POST['add_to_cart'])){
-        // Get the product ID and quantity from the form submission
-        $book_id = $_POST['book_id'];
-        $quantity = $_POST['quantity'];
-        $book_price = $_POST['book_price'];
-        $book_charges = $_POST['book_charges'];
-
-        // Check if the product is already in the cart
-        if(isset($_SESSION['cart'][$book_id])){
-            // If the product is already in the cart, increment the quantity
-            $_SESSION['cart'][$book_id]['quantity'] += $quantity;
-        }else{
-            // If the product is not yet in the cart, add it
-            $_SESSION['cart'][$book_id] = array(
-                'quantity' => $quantity,
-                'book_id' => $book_id,
-                'price' => $book_price,
-                'charges' => $book_charges,
-                
-            );
-        }
-    }
 ?>
 
 <!DOCTYPE html>
@@ -59,10 +37,26 @@ $_SESSION['last_activity'] = time();
     <link rel="stylesheet" href="checkout.css">
     <script src="https://checkout.flutterwave.com/v3.js"></script>
     <title>Checkout your Cart | lionreads.com</title>
+    <style>
+        #message-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: none;
+            z-index: 999;
+        }
+    </style>
 </head>
 <body>
     <!-- include sidepanel -->
     <?php include "sidepanel.php";?>
+    <div id="message-container" style="display: none;">
+        <div id="message"><?php echo $message;?></div>
+    </div>
 
     <!-- Checkout begins -->
     <div class="book_container">
@@ -169,5 +163,48 @@ $_SESSION['last_activity'] = time();
 
 
 </script>
+<?php
+    $message = "Book added successfully";
+    if(isset($_POST['add_to_cart'])){
+        // Get the product ID and quantity from the form submission
+        $book_id = $_POST['book_id'];
+        $quantity = $_POST['quantity'];
+        $book_price = $_POST['book_price'];
+        $book_charges = $_POST['book_charges'];
+
+        // Check if the product is already in the cart
+        if(isset($_SESSION['cart'][$book_id])){
+            // If the product is already in the cart, increment the quantity
+            $_SESSION['cart'][$book_id]['quantity'] += $quantity;
+        }else{
+            // If the product is not yet in the cart, add it
+            $_SESSION['cart'][$book_id] = array(
+                'quantity' => $quantity,
+                'book_id' => $book_id,
+                'price' => $book_price,
+                'charges' => $book_charges,
+                
+            );
+        }
+
+        // Book successfully added to cart, trigger an alert
+        echo '<script>
+        function showMessage(message) {
+            const messageContainer = document.getElementById("message-container");
+            const messageElement = document.getElementById("message");
+            messageElement.textContent = message;
+
+            messageContainer.style.display = "block";
+
+            setTimeout(function() {
+                messageContainer.style.display = "none";
+            }, 3000); // Hide the message after 3 seconds
+        }
+
+        // Call this function to display the message
+        showMessage("' . $message . '");
+        </script>';
+    }
+?>
 </body>
 </html>
