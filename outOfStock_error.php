@@ -53,7 +53,7 @@ $out_of_stock_books = array_unique($out_of_stock_books);
                 <li><?php echo $book; ?></li>
             <?php endforeach; ?>
         </ul>
-        <p>Please remove these books from your cart and continue shopping.</p>
+        <p>Please remove these books from your cart tocontinue shopping as they are not available in your neede quantity.. Kindly check the available quantity for this book....</p>
         <p>You can <a href="cart.php">return to the cart</a> to remove these books or you can <a href="bookshop.php">head on to the bookshop</a> to see more of our products.</p>
     </div>
 </body>
