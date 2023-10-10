@@ -23,10 +23,9 @@ $_SESSION['expire_time'] = time() + $sessionLifetime;
 
 
 // retrieve session variables
-$payment_status = $_SESSION['payment_status'];
 $reference = $_SESSION['reference'];
 $name = $_SESSION['name'];
-$email = $_SESSION['email'];
+$email = $_SESSION['email_address'];
 $order_number = $_SESSION['order_number'];
 $books_Paidfor = $_SESSION['books_paid_for'];
 $location = $_SESSION['location'];
@@ -68,6 +67,7 @@ $location = $_SESSION['location'];
         $order_amount = htmlspecialchars($row['amount']);
         $order_description = htmlspecialchars($row['payment_description']);
         $sender_phone = htmlspecialchars($row['phone']);
+        $orderCR = htmlspecialchars($row['order_number']);
         $payment_info = htmlspecialchars($row['payment_status']);
         $pickup_location = htmlspecialchars($row['pickup_location']);
     } else {
@@ -94,7 +94,7 @@ $location = $_SESSION['location'];
         </div>
         <div class="details">
             <h4>Order ID: </h4>
-            <h3><?php echo $order_number;?></h3>
+            <h3><?php echo $orderCR;?></h3>
         </div>
         <div class="details">
             <h4>Order Info: </h4>

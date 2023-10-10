@@ -1,2 +1,4 @@
 /vendor/
 db_local.php
+process_payment.php
+verify_payment.php

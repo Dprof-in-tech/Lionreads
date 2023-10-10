@@ -5,6 +5,6 @@
     "license": "MIT",
     "minimum-stability": "dev",
     "require": {
-        "flutterwavedev/flutterwave-v3": "^1.0"
+        "flutterwavedev/flutterwave-v3": "dev-master"
     }
 }

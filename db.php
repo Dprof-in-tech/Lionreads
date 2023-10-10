@@ -1,8 +1,8 @@
 <?php
-$dbHost = "sql311.infinityfree.com";
-$dbUser = "if0_34904562";
-$dbPassword = "2bkiU8B0pp2s";
-$dbName = "if0_34904562_lionreads";
+$dbHost = "localhost";
+$dbUser = "lionread_admin";
+$dbPassword = "admin@lionreads";
+$dbName = "lionread_lionreads";
 
 //create connection to database
 
