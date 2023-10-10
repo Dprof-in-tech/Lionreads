@@ -20,4 +20,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftp
           local-dir: ./  # Upload all files from the current directory
-          server-dir: /lionreads.com.ng/htdocs/  # Remote directory path on the server
+          server-dir: /home/lionread  # Remote directory path on the server
