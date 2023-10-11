@@ -29,7 +29,7 @@ $data = array(
     "tx_ref" => "LR_A" . uniqid(),
     "amount" => $amount_paid,
     "currency" => "NGN",
-    "redirect_url" => "http://localhost:8000/verify_payment.php",
+    "redirect_url" => "https://lionreads.com.ng/verify_payment.php",
     "meta" => array(
         "consumer_id" => 23,
         "consumer_mac" => "92a3-912ba-1192a"
@@ -41,7 +41,7 @@ $data = array(
     ),
     "customizations" => array(
         "title" => "Lionreads Book Purchase",
-        "logo" => "http://localhost:8000/img/LionReads-logo.png"
+        "logo" => "https://lionreads.com.ng/img/LionReads-logo.png"
     )
 );
 
