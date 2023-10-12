@@ -1,7 +1,7 @@
 <?php
     // set the session timeout to 5 minutes
-ini_set('session.gc_maxlifetime', 1800);
-session_set_cookie_params(1800);
+ini_set('session.gc_maxlifetime', 3600);
+session_set_cookie_params(3600);
 
 // start the session
 session_start();
@@ -13,7 +13,7 @@ session_regenerate_id(true);
 $_SESSION['last_activity'] = time();
 
 // check if the session has timed out
-if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 1800)) {
+if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 3600)) {
     // session timed out, destroy the session
     session_unset();
     session_destroy();
