@@ -12,7 +12,7 @@ if (isset($_SESSION['expire_time'])) {
 }
 
 // Set session cookie lifetime to 30 minutes (adjust as needed)
-$sessionLifetime = 3600; // 30 minutes in seconds
+$sessionLifetime = 2300; // 30 minutes in seconds
 
 // Database connection code - replace with your actual database connection code
 include "../config.php";

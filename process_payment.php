@@ -22,14 +22,14 @@ if(isset($_POST['pay_for_books'])){
     $_SESSION['location'] = $location;
 
   // Make sure to set your secret key
-$secretKey = "FLWSECK_TEST-0a160a281580a998fc9c56c72489a65e-X";
+$secretKey = "FLWSECK_TEST-7ccf562064f3de3d9197f3fa1dd2bcc6-X";
 
 // Define the data to be sent in the request
 $data = array(
     "tx_ref" => "LR_A" . uniqid(),
     "amount" => $amount_paid,
     "currency" => "NGN",
-    "redirect_url" => "https://lionreads.com.ng/verify_payment.php",
+    "redirect_url" => "http://localhost:8000/verify_payment.php",
     "meta" => array(
         "consumer_id" => 23,
         "consumer_mac" => "92a3-912ba-1192a"

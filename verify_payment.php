@@ -36,7 +36,7 @@ if(isset($_GET["transaction_id"]) AND isset($_GET["status"])  AND isset($_GET["t
     
     //Set the API headers
     curl_setopt($curl, CURLOPT_HTTPHEADER, [
-        "Authorization: Bearer FLWSECK_TEST-0a160a281580a998fc9c56c72489a65e-X",
+        "Authorization: Bearer FLWSECK_TEST-7ccf562064f3de3d9197f3fa1dd2bcc6-X",
         "Content-Type: Application/json"
     ]);
 
