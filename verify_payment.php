@@ -3,6 +3,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 session_start();
+$session_id = session_id();
 
 if(isset($_GET["transaction_id"]) AND isset($_GET["status"])  AND isset($_GET["tx_ref"])){
     $transactionID = htmlspecialchars($_GET['transaction_id']);
@@ -70,7 +71,7 @@ if(isset($_GET["transaction_id"]) AND isset($_GET["status"])  AND isset($_GET["t
   $_SESSION['name'] = $name;
   $_SESSION['reference'] = $reference;
   $_SESSION['phone_number'] = $phone_number;
-  $_SESSION['order_number'] = $order_number;
+  $_SESSION['order_number'] = $orderCR;
   $_SESSION['session_id'] = $session_id;
   $_SESSION['books_paid_for'] = $books_Paidfor;
   $_SESSION['location'] = $location;
