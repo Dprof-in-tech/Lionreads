@@ -75,319 +75,73 @@ if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 
 
         <!-- // search_results.php -->
         <!-- books begin -->
+        <!-- // Fetch all books from the database -->
         <?php
-                    include "config.php";
-                     $sql = "SELECT * FROM books where id = 7";
-                    $result = mysqli_query($con, $sql);
-                    $rowcount = mysqli_num_rows($result);
-                    if ($rowcount > 0) {
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $book_title = $row['book_title'];
-                        $book_author = $row['book_author'];
-                        $book_price = $row['book_price'];
-                        $book_image = $row['book_image'];
-                        $book_no = $row['id'];
-                  }
-                }
-                ?>
-        <div class="book_container">
-            <div class="book_picture">
-            <img src="./img/<?php echo $book_image;?>" alt="Design of Everyday things.">
-            </div>
-           
-            <div class="book_text">
-                <div class="b-left">
-                    <h2><?php echo $book_title;?></h2>
-                    <h5><?php echo $book_author;?></h5>
-                </div>
-                
-                <div class="b-right">
-                    <form  method="post">
-                    <h3>N<?php echo $book_price; ?></h3> 
-                    
-                    <input type="hidden" name="book_no" value="<?php echo $book_no;?>">
-                    <input type="hidden" name="book_id" value="<?php echo $book_title;?>">
-                    <input type="hidden" name="book_price" value="<?php echo $book_price;?>">
-                    <div class="quantity">
-                        <h5>Quantity</h5>
-                        <span>
-                        <button class="minus-btn" type="button" name="button" id="minus_btn">-</button>
-                        <input type="text" name="quantity" value="1" id="quantity_input" class="quantity-input">
-                        <button class="plus-btn" type="button" name="button" id="plus_btn">+</button>
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="buttons">
-                <button type="submit" class="buy_button" name="add_to_cart" >Add 2 Cart</button>
-                <a href="cart.php" class="view_cart" ><i class="fa-solid fa-cart-shopping"></i> Cart</a>
-            </div>
-            </form>
-        </div>
+            include "config.php";
+            $sql = "SELECT * FROM books";
+            $result = mysqli_query($con, $sql);
             
+            // Check if there are books in the database
+            if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $book_title = $row['book_title'];
+                    $book_author = $row['book_author'];
+                    $book_price = $row['book_price'];
+                    $book_image = $row['book_image'];
+                    $book_no = $row['id'];
 
-        <?php
-                    include "config.php";
-                     $sql = "SELECT * FROM books where id = 3";
-                    $result = mysqli_query($con, $sql);
-                    $rowcount = mysqli_num_rows($result);
-                    if ($rowcount > 0) {
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $book_title = $row['book_title'];
-                        $book_author = $row['book_author'];
-                        $book_price = $row['book_price'];
-                        $book_image = $row['book_image'];
-                        $book_no = $row['id'];
-                  }
-                }
-                ?>
+                    // Your HTML code to display each book goes here
+                    echo '<div class="book_container">';
+                    echo '<div class="book_picture">';
+                    echo '<img src="./img/' . $book_image . '" alt="' . $book_title . '">';
+                    echo '</div>';
 
-        <div class="book_container">
-            <div class="book_picture">
-            <img src="./img/<?php echo $book_image;?>" alt="Design of Everyday things.">
-            </div>
-           
-            <div class="book_text">
-                <div class="b-left">
-                    <h2><?php echo $book_title;?></h2>
-                    <h5><?php echo $book_author;?></h5>
-                </div>
-                
-                <div class="b-right">
-                    <form  method="post">
-                    <h3>N<?php echo $book_price; ?></h3> 
+                    echo '<div class="book_text">';
+                    echo '<div class="b-left">';
+                    echo '<h2>' . $book_title . '</h2>';
+                    echo '<h5>' . $book_author . '</h5>';
+                    echo '</div>';
                     
-                    <input type="hidden" name="book_no" value="<?php echo $book_no;?>">
-                    <input type="hidden" name="book_id" value="<?php echo $book_title;?>">
-                    <input type="hidden" name="book_price" value="<?php echo $book_price;?>">
-                    <div class="quantity">
-                        <h5>Quantity</h5>
-                        <span>
-                        <button class="minus-btn" type="button" name="button" id="minus_btn">-</button>
-                        <input type="text" name="quantity" value="1" id="quantity_input" class="quantity-input">
-                        <button class="plus-btn" type="button" name="button" id="plus_btn">+</button>
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="buttons">
-                <button type="submit" class="buy_button" name="add_to_cart" >Add 2 Cart</button>
-                <a href="cart.php" class="view_cart" ><i class="fa-solid fa-cart-shopping"></i> Cart</a>
-            </div>
-            </form>
-        </div>
-
-        
-        <?php
-                    include "config.php";
-                     $sql = "SELECT * FROM books where id = 4";
-                    $result = mysqli_query($con, $sql);
-                    $rowcount = mysqli_num_rows($result);
-                    if ($rowcount > 0) {
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $book_title = $row['book_title'];
-                        $book_author = $row['book_author'];
-                        $book_price = $row['book_price'];
-                        $book_image = $row['book_image'];
-                        $book_no = $row['id'];
-                  }
-                }
-                ?>
-
-        <div class="book_container">
-            <div class="book_picture">
-            <img src="./img/<?php echo $book_image;?>" alt="Design of Everyday things.">
-            </div>
-           
-            <div class="book_text">
-                <div class="b-left">
-                    <h2><?php echo $book_title;?></h2>
-                    <h5><?php echo $book_author;?></h5>
-                </div>
-                
-                <div class="b-right">
-                    <form  method="post">
-                    <h3>N<?php echo $book_price; ?></h3> 
-                    <input type="hidden" name="book_no" value="<?php echo $book_no;?>">
-                    <input type="hidden" name="book_id" value="<?php echo $book_title;?>">
-                    <input type="hidden" name="book_price" value="<?php echo $book_price;?>">
-                    <div class="quantity">
-                        <h5>Quantity</h5>
-                        <span>
-                        <button class="minus-btn" type="button" name="button" id="minus_btn">-</button>
-                        <input type="text" name="quantity" value="1" id="quantity_input" class="quantity-input">
-                        <button class="plus-btn" type="button" name="button" id="plus_btn">+</button>
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="buttons">
-                <button type="submit" class="buy_button" name="add_to_cart" >Add 2 Cart</button>
-                <a href="cart.php" class="view_cart" ><i class="fa-solid fa-cart-shopping"></i> Cart</a>
-            </div>
-            </form>
-        </div>
-
-        <?php
-                    include "config.php";
-                     $sql = "SELECT * FROM books where id = 5";
-                    $result = mysqli_query($con, $sql);
-                    $rowcount = mysqli_num_rows($result);
-                    if ($rowcount > 0) {
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $book_title = $row['book_title'];
-                        $book_author = $row['book_author'];
-                        $book_price = $row['book_price'];
-                        $book_image = $row['book_image'];
-                        $book_no = $row['id'];
-                  }
-                }
-                ?>
-
-        <div class="book_container">
-            <div class="book_picture">
-            <img src="./img/<?php echo $book_image;?>" alt="Design of Everyday things.">
-            </div>
-           
-            <div class="book_text">
-                <div class="b-left">
-                    <h2><?php echo $book_title;?></h2>
-                    <h5><?php echo $book_author;?></h5>
-                </div>
-                
-                <div class="b-right">
-                    <form  method="post">
-                    <h3>N<?php echo $book_price; ?></h3> 
-                    <input type="hidden" name="book_no" value="<?php echo $book_no;?>">
-                    <input type="hidden" name="book_id" value="<?php echo $book_title;?>">
-                    <input type="hidden" name="book_price" value="<?php echo $book_price;?>">
-                    <div class="quantity">
-                        <h5>Quantity</h5>
-                        <span>
-                        <button class="minus-btn" type="button" name="button" id="minus_btn">-</button>
-                        <input type="text" name="quantity" value="1" id="quantity_input" class="quantity-input">
-                        <button class="plus-btn" type="button" name="button" id="plus_btn">+</button>
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="buttons">
-                <button type="submit" class="buy_button" name="add_to_cart" >Add 2 Cart</button>
-                <a href="cart.php" class="view_cart" ><i class="fa-solid fa-cart-shopping"></i> Cart</a>
-            </div>
-            </form>
-        </div> 
-
-        <?php
-                    include "config.php";
-                     $sql = "SELECT * FROM books where id = 9";
-                    $result = mysqli_query($con, $sql);
-                    $rowcount = mysqli_num_rows($result);
-                    if ($rowcount > 0) {
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $book_title = $row['book_title'];
-                        $book_author = $row['book_author'];
-                        $book_price = $row['book_price'];
-                        $book_image = $row['book_image'];
-                        $book_no = $row['id'];
-                  }
-                }
-                ?>
-        <div class="book_container">
-            <div class="book_picture">
-            <img src="./img/<?php echo $book_image;?>" alt="Design of Everyday things.">
-            </div>
-           
-            <div class="book_text">
-                <div class="b-left">
-                    <h2><?php echo $book_title;?></h2>
-                    <h5><?php echo $book_author;?></h5>
-                </div>
-                
-                <div class="b-right">
-                    <form  method="post">
-                    <h3>N<?php echo $book_price; ?></h3> 
+                    echo '<div class="b-right">';
+                    echo '<form method="post">';
+                    echo '<h3>N' . $book_price . '</h3>';
+                    echo '<input type="hidden" name="book_no" value="' . $book_no . '">';
+                    echo '<input type="hidden" name="book_id" value="' . $book_title . '">';
+                    echo '<input type="hidden" name="book_price" value="' . $book_price . '">';
                     
-                    <input type="hidden" name="book_no" value="<?php echo $book_no;?>">
-                    <input type="hidden" name="book_id" value="<?php echo $book_title;?>">
-                    <input type="hidden" name="book_price" value="<?php echo $book_price;?>">
-                    <div class="quantity">
-                        <h5>Quantity</h5>
-                        <span>
-                        <button class="minus-btn" type="button" name="button" id="minus_btn">-</button>
-                        <input type="text" name="quantity" value="1" id="quantity_input" class="quantity-input">
-                        <button class="plus-btn" type="button" name="button" id="plus_btn">+</button>
-                        </span>
-                    </div>
-                </div>
-            </div>
+                    echo '<div class="quantity">';
+                    echo '<h5>Quantity</h5>';
+                    echo '<span>';
+                    echo '<button class="minus-btn" type="button" name="button" id="minus_btn">-</button>';
+                    echo '<input type="text" name="quantity" value="1" id="quantity_input" class="quantity-input">';
+                    echo '<button class="plus-btn" type="button" name="button" id="plus_btn">+</button>';
+                    echo '</span>';
+                    echo '</div>';
+                    echo '</div>';
+                    
+                    echo '</div>';
 
-            <div class="buttons">
-                <button type="submit" class="buy_button" name="add_to_cart" >Add 2 Cart</button>
-                <a href="cart.php" class="view_cart" ><i class="fa-solid fa-cart-shopping"></i> Cart</a>
-            </div>
-            </form>
-        </div>
+                    echo '<div class="buttons">';
+                    echo '<button type="submit" class="buy_button" name="add_to_cart">Add to Cart</button>';
+                    echo '<a href="cart.php" class="view_cart"><i class="fa-solid fa-cart-shopping"></i> Cart</a>';
+                    echo '</div>';
+                    
+                    echo '</form>';
+                    echo '</div>';
+                }
+            } else {
+                // No books found in the database
+                echo '<p>No books found.</p>';
+            }
             
+            // Your existing code...
 
-        <?php
-                    include "config.php";
-                     $sql = "SELECT * FROM books where id = 11";
-                    $result = mysqli_query($con, $sql);
-                    $rowcount = mysqli_num_rows($result);
-                    if ($rowcount > 0) {
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $book_title = $row['book_title'];
-                        $book_author = $row['book_author'];
-                        $book_price = $row['book_price'];
-                        $book_image = $row['book_image'];
-                        $book_no = $row['id']; 
-                  }
-                }
-                ?>
-
-        <div class="book_container">
-            <div class="book_picture">
-            <img src="./img/<?php echo $book_image;?>" alt="Design of Everyday things.">
-            </div>
-           
-            <div class="book_text">
-                <div class="b-left">
-                    <h2><?php echo $book_title;?></h2>
-                    <h5><?php echo $book_author;?></h5>
-                </div>
-                
-                <div class="b-right">
-                    <form  method="post">
-                    <h3>N<?php echo $book_price; ?></h3> 
-                    
-                    <input type="hidden" name="book_no" value="<?php echo $book_no;?>">
-                    <input type="hidden" name="book_id" value="<?php echo $book_title;?>">
-                    <input type="hidden" name="book_price" value="<?php echo $book_price;?>">
-                    <div class="quantity">
-                        <h5>Quantity</h5>
-                        <span>
-                        <button class="minus-btn" type="button" name="button" id="minus_btn">-</button>
-                        <input type="text" name="quantity" value="1" id="quantity_input" class="quantity-input">
-                        <button class="plus-btn" type="button" name="button" id="plus_btn">+</button>
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="buttons">
-                <button type="submit" class="buy_button" name="add_to_cart" >Add 2 Cart</button>
-                <a href="cart.php" class="view_cart" ><i class="fa-solid fa-cart-shopping"></i> Cart</a>
-            </div>
-            </form>
-        </div>
-
-
-    </div>
+            // Scroll to top and bottom buttons
+            echo '<div class="scroll-buttons">
+            <button id="scroll-to-top" class="scroll-button"><i class="fa-solid fa-arrow-up"></i></button>
+            <button id="scroll-to-bottom" class="scroll-button"><i class="fa-solid fa-arrow-down"></i></button>            
+            </div>';
+        ?>
 
     <!-- welcome section -->
     <!-- <div class="welcome_text">
@@ -424,7 +178,42 @@ if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 
         <?php include "footer.php"; ?>
 
 
+    <script>
+        const scrollToTopButton = document.getElementById('scroll-to-top');
+        const scrollToBottomButton = document.getElementById('scroll-to-bottom');
 
+        window.addEventListener('scroll', () => {
+        // Display the scroll-to-top button when scrolling down
+        if (window.scrollY > 100) {
+            scrollToTopButton.style.display = 'block';
+        } else {
+            scrollToTopButton.style.display = 'none';
+        }
+
+        // Display the scroll-to-bottom button when scrolling up
+        if (window.scrollY < document.body.scrollHeight - window.innerHeight - 100) {
+            scrollToBottomButton.style.display = 'block';
+        } else {
+            scrollToBottomButton.style.display = 'none';
+        }
+        });
+
+        scrollToTopButton.addEventListener('click', () => {
+        // Scroll to the top of the page
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+        });
+
+        scrollToBottomButton.addEventListener('click', () => {
+        // Scroll to the bottom of the page
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: 'smooth',
+        });
+        });
+            </script>
 
     <script>    
         /* Set the width of the sidebar to 250px (show it) */

@@ -44,6 +44,52 @@ body{
     border-radius: 4px;
 }
 
+/* Scroll button styles */
+.scroll-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+}
+
+.scroll-button {
+    background-color: #22272e;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 5px 0;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.scroll-button:hover {
+    background-color: #7a8897;
+}
+
+.scroll-button-top {
+    background-color: #e74c3c;
+}
+
+.scroll-button-top:hover {
+    background-color: #c0392b;
+}
+
+.scroll-button-bottom {
+    background-color: #27ae60;
+}
+
+.scroll-button-bottom:hover {
+    background-color: #219951;
+}
+
 /* book section css */
 @media only screen and (min-width: 1150px) {
 .book_container{
