@@ -29,14 +29,14 @@ $data = array(
     "tx_ref" => "LR_A" . uniqid(),
     "amount" => $amount_paid,
     "currency" => "NGN",
-    "redirect_url" => "https://lionreads.com.ng/verify_payment.php",
+    "redirect_url" => "http://localhost:8000/verify_payment.php",
     "meta" => array(
         "consumer_id" => 23,
         "consumer_mac" => "92a3-912ba-1192a"
     ),
     "customer" => array(
         "email" => $email,
-        "phonenumber" => $phone_number,
+        "phone_number" => $phone_number,
         "name" => $name
     ),
     "customizations" => array(

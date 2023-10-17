@@ -1,23 +1,22 @@
 <?php
+session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-
-session_start();
 
 $reference = $_SESSION['reference'];
 $name = $_SESSION['name'];
 $orderCR = $_SESSION['order_number'];
 $amount = $_SESSION['amount'];
-$description = $_SESSION['description'];
+$description = $_SESSION['ConcatenatedInputs'];
 $location = $_SESSION['location'];
-$status = $_SESSION['payment_status']; // Define $status
-$email = $_SESSION['email']; // Define $email
-$books_Paidfor = $_SESSION['books_paid_for']; // Define $books_Paidfor
+$status = $_SESSION['paymentStatus'];
+$email = $_SESSION['email_address'];
+$books_Paidfor = $_SESSION['books_paid_for'];
 
 // Include the PHPMailer classes
-require_once 'PHPMailer/src/PHPMailer.php';
-require_once 'PHPMailer/src/SMTP.php';
-require_once 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+require 'PHPMailer/src/Exception.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -28,21 +27,20 @@ $mail = new PHPMailer(true);
 
 try {
     // Server settings
-    $mail->isSMTP(); // Set mailer to use SMTP
-    $mail->Host = 'smtp.gmail.com'; // Specify your SMTP server
-    $mail->SMTPAuth = true; // Enable SMTP authentication
-    $mail->Username = 'lionreadsunn@gmail.com'; // Your SMTP username
-    $mail->Password = 'c@n$ti||change'; // Your SMTP password
-    $mail->SMTPSecure = 'tls'; // Enable TLS encryption, 'ssl' is also accepted
-    $mail->Port = 465; // TCP port to connect to
+    $mail->isSMTP();
+    $mail->Host = 'mail.lionreads.com.ng';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'support@lionreads.com.ng';
+    $mail->Password = 'C@n$tillchange';
+    $mail->SMTPSecure = 'tls';
+    $mail->Port = 587;  // Use the correct port for TLS
 
     // Sender and recipient
-    $mail->setFrom('lionreadsunn@gmail.com', 'Lionreads');
-    $mail->addAddress('amaechiisaac450@gmail.com', 'Isaac Onyemaechi');
+    $mail->setFrom('support@lionreads.com.ng', 'Lionreads');
+    $mail->addAddress($email, $name);
 
     // Add BCC recipient
     $mail->addBCC('akannodebbie7@gmail.com', 'Akanno Deborah');
-
 
     // Email subject
     $mail->Subject = 'Lionreads Payment Notification';
@@ -93,14 +91,20 @@ try {
         </div>
     </body>
     </html>
-";
+    ";
 
     $mail->msgHTML($htmlContent);
-    
+
     // Send the email
-    $mail->send();
-    return true;
+    if ($mail->send()) {
+        echo '<script>alert("Email sent successfully");</script>';
+        return true;
+    } else {
+        echo '<script>alert("Email could not be sent. Error: ' . $mail->ErrorInfo . '");</script>';
+        return false;
+    }
 } catch (Exception $e) {
+    echo '<script>alert("Email could not be sent. Exception: ' . $e->getMessage() . '");</script>';
     return false;
 }
 ?>
