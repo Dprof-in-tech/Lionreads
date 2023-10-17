@@ -1,13 +1,13 @@
 <!-- // search_results.php -->
 <?php
+ // start the session
+ session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 // set the session timeout to 30 minutes
 ini_set('session.gc_maxlifetime', 2300);
 session_set_cookie_params(2300);
 
-// start the session
-session_start();
 
 // regenerate the session ID to prevent session fixation attacks
 session_regenerate_id(true);
