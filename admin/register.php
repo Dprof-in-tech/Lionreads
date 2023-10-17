@@ -1,11 +1,11 @@
-<?php 
+<?php
+ // start the session
+ session_start(); 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 // Set session cookie lifetime to 30 minutes (adjust as needed)
 $sessionLifetime = 2300; // 30 minutes in seconds
 session_set_cookie_params($sessionLifetime);
-// Start the session
-session_start();
 
 // Check if the session expiration time is set
 if (isset($_SESSION['expire_time'])) {
