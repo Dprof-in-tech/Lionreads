@@ -94,7 +94,7 @@ if (
         mysqli_stmt_bind_param($stmt, "is", $quantity_purchased, $book_title);
 
         if ($stmt->execute()) {
-            echo '<script>alert("Quantity for $bookName subtracted by $quantity.<br>")</script>';
+            echo "<script>alert('Quantity for $bookName subtracted by $quantity.<br>')</script>";
         } else {
             echo "Failed to update quantity for $bookName.<br>";
         }
