@@ -7,8 +7,8 @@ session_set_cookie_params(2300);
 
 // start the session
 session_start();
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+
+
 
 // regenerate the session ID to prevent session fixation attacks
 session_regenerate_id(true);
