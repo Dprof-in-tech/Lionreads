@@ -79,12 +79,14 @@ curl_close($ch);
 $responseData = json_decode($response, true);
 
 // Handle the response data as needed
-if (isset($responseData['data']['link'])) {
+// Handle the response data as needed
+if (isset($responseData['status']) && $responseData['status'] === 'success') {
     // Redirect the user to the payment link
     header('Location: ' . $responseData['data']['link']);
 } else {
     // Handle the error
     echo 'API returned an error: ' . $responseData['message'];
+    // Optionally, you can log the error or provide more information to the user.
 }
     }
     ?>
