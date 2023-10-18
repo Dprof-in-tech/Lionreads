@@ -44,27 +44,27 @@ session_start();
         <h5><i class=" fa-solid fa-lightbulb" style="color: black;"></i> News & Memes</h5>
         <div class="news_slider">
             <div class="myslides fade" id="mySlides">
-                <img src="https://memeheist.com/wp-content/uploads/2023/06/Funny-Memes71.jpeg" alt=" Meme Picture">
+                <img src="https://media.discordapp.net/attachments/1152353769145778216/1164247039459201054/IMG_20231018_175331.jpg?ex=6542848c&is=65300f8c&hm=6d479bdfab10c58de3cd23fd4b19267d9c42a551bf5d848260c96f6f6da0a511&=&width=416&height=418" alt=" Meme Picture">
             </div>
             
             <div class="myslides fade" id="mySlides">
-                <img src="https://memeheist.com/wp-content/uploads/2023/06/Funny-Memes75.jpeg" alt=" Meme Picture">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEFbrJbryW6FaRIA6Q03MmAs-p75K-_9vxVw&usqp=CAU" alt=" Meme Picture">
             </div>
 
             <div class="myslides fade" id="mySlides">
-                <img src="https://memeheist.com/wp-content/uploads/2023/06/Funny-Memes60.jpeg" alt=" Meme Picture">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDLXukA7Hi6-2YcPpwTw3h1rZghKaN234s5A&usqp=CAU" alt=" Meme Picture">
             </div>
             <div class="myslides fade" id="mySlides">
-                <img src="https://memeheist.com/wp-content/uploads/2023/06/Funny-Memes86-824x1024.jpeg" alt=" Meme Picture">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCkaZ_VJTcqfEaUTOSRGgbCOLOeFTx0VLM2A&usqp=CAU" alt=" Meme Picture">
             </div>
             <div class="myslides fade" id="mySlides">
-                <img src="https://memeheist.com/wp-content/uploads/2023/05/Funny-Memes2-839x1024.jpeg" alt=" Meme Picture">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDL6jHyp4HCx-4tbCajJ0ID5GEgmA2s2NSdg&usqp=CAU" alt=" Meme Picture">
             </div>
             <div class="myslides fade" id="mySlides">
-                <img src="https://memeheist.com/wp-content/uploads/2023/05/Funny-Memes13-828x1024.jpeg" alt=" Meme Picture">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgkoe0-WR1Yex_AUvzyHCT1zqtbbNWJD67hg&usqp=CAU" alt=" Meme Picture">
             </div>
             <div class="myslides fade" id="mySlides">
-                <img src="https://memeheist.com/wp-content/uploads/2023/05/Funny-Memes47-1-1024x856.jpeg" alt=" Meme Picture">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGNN-AJsltrdXMENBqS-wNnWH1mFYO9SGjJg&usqp=CAU" alt=" Meme Picture">
             </div>
         </div>
         <div class="news_text">
