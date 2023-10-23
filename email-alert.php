@@ -93,7 +93,6 @@ try {
 
     // Send the email
     if ($mail->send()) {
-        echo '<script>alert("Email sent successfully");</script>';
         return true;
     } else {
         echo '<script>alert("Email could not be sent. Error: ' . $mail->ErrorInfo . '");</script>';
