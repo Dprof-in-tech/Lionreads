@@ -28,7 +28,7 @@ $mail = new PHPMailer(true);
 try {
     // Server settings
     $mail->isSMTP();
-    $mail->Host = 'mail.lionreads.com.ng';
+    $mail->Host = 'lionreads.com.ng';
     $mail->SMTPAuth = true;
     $mail->Username = 'support@lionreads.com.ng';
     $mail->Password = 'C@n$tillchange';
@@ -78,7 +78,7 @@ try {
     </head>
     <body>
         <div class='container'>
-            <h1>Payment Successful Notification</h1>
+            <h1>Successful Payment Notification</h1>
             <p>Hello from Lionreads,</p>
             <p>The customer, $name has made a successful payment with reference $reference. Details:</p>
             <div class='details'>

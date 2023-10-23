@@ -120,7 +120,7 @@ if (
          
          if ($stmt->execute()) {   
              // Include the email sending file
-            //  require_once 'email-alert.php';
+             require_once 'email-alert.php';
              header("location: receipt.php");
              exit();
          } else {
