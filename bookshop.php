@@ -1,5 +1,5 @@
 <?php
-        // set the session timeout to 5 minutes
+// set the session timeout to 5 minutes
 ini_set('session.gc_maxlifetime', 2300);
 session_set_cookie_params(2300);
 

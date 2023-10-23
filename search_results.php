@@ -1,4 +1,3 @@
-<!-- // search_results.php -->
 <?php
 // set the session timeout to 5 minutes
 ini_set('session.gc_maxlifetime', 2300);
