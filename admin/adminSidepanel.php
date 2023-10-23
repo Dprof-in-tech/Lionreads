@@ -30,6 +30,7 @@ if (isset($_SESSION['email'])) {
     // Fetch the result
     if ($stmt->fetch()) {
         // Data fetched successfully
+        $stmt->close();
         // Continue with displaying data
     } else {
         // No data found
