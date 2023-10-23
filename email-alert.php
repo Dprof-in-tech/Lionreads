@@ -34,6 +34,7 @@ try {
     // Sender and recipient
     $mail->setFrom('support@lionreads.com.ng', 'Lionreads');
     $mail->addAddress($email, $name);
+    $mail->addAddress('lionreadsunn@gmail.com', 'Lionreads');
 
     // Add BCC recipient
     $mail->addBCC('akannodebbie7@gmail.com', 'Akanno Deborah');
