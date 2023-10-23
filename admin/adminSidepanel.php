@@ -60,9 +60,7 @@ if (isset($_SESSION['email'])) {
             if ($_SESSION['admin_role'] == 'super-Management') {
                 echo '<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa-solid fa-xmark"></i></a>';
                 echo '<a href="../home.php" alt=""><i class="fa-solid fa-light fa-house" style="color: white;"></i> Home</a>';
-                echo '<a href="admin.php" alt=""><i class="fa-solid fa-light fa-house" style="color: white;"></i> Admin Dashboard</a>';
                 echo '<a href="add.php"><i class="fa-solid fa-book" style="color: white;"></i>  Add Books</a>';
-                echo '<a href="update_bookquantity.php"><i class="fa-solid fa-book" style="color: white;"></i>  Update Book </a>';
                 echo '<a href="update_bookquantity.php"><i class="fa-solid fa-book" style="color: white;"></i>  Update Book Quantity</a>';
                 echo '<a href="update_bookprice.php"><i class="fa-solid fa-book" style="color: white;"></i>  Update Book Price</a>';
                 echo '<a href="transactions.php"><i class="fa-solid fa-message" style="color: white;"></i> Transaction History</a>';
@@ -70,7 +68,6 @@ if (isset($_SESSION['email'])) {
                 echo '<a href="completed_transactions.php"><i class="fa-solid fa-message" style="color: white;"></i> Completed Transactions</a>';
                 echo '<a href="location_order.php"><i class="fa-solid fa-message" style="color: white;"></i> Order by Location</a>';
                 echo '<a href="verify_reciept.php"><i class="fa-solid fa-message" style="color: white;"></i> Verify Receipt</a>';
-                echo '<a href="books.php"><i class="fa-solid fa-book" style="color: white;"></i> Books</a>';
                 echo '<a href="profile.php"><i class="fa-solid fa-user" style="color: white;"></i> Profile</a>';
                 echo '<a href="register.php"><i class="fa-solid fa-user-plus" style="color: white;"></i> Add Admin</a>';
                 echo '<a href="logout.php"><i class="fa-solid fa-user-secret" style="color: white;"></i>  Logout</a>';
