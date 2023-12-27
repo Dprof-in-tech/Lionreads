@@ -41,8 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Send email
         if ($mail->send()) {
             echo '<script>alert("Message sent successfully");</script>';
-            header("Location: {$_SERVER['PHP_SELF']}");
-            exit; // Exit after the refresh
+            return true;
         } else {
             echo '<script>alert("Email could not be sent. Error: ' . $mail->ErrorInfo . '");</script>';
             return false;
