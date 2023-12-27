@@ -52,8 +52,8 @@ session_start();
                 </div>
                 
                 <div class="hero-image">
-                    <img src="img/book-vector-2.png" alt="" >
-                    <img src="img/book-vector.png" alt="" >
+                    <img src="img/book-vector-2.png" alt="" loading="lazy">
+                    <img src="img/book-vector.png" alt="" loading="lazy" class="slide-in">
                 </div>
             </div>
         </section>
@@ -63,32 +63,32 @@ session_start();
                 <h2>Featured Books</h2>
                 <div class="featured-books-container">
                     <div class="featured-book">
-                        <img src="img/introduction-to-entrepreneurship.jpg" alt="" >
+                        <img src="img/introduction-to-entrepreneurship.jpg" alt="" loading="lazy">
                         <span class="featured-book-details">
                             <h3>NGN 1300</h3>
                         </span>
                     </div>
                     <div class="featured-book">
-                        <img src="img/GSP-101-CA.jpg" alt="" >
+                        <img src="img/GSP-101-CA.jpg" alt="" loading="lazy">
                         <span class="featured-book-details">
                             <h3>NGN 700</h3>
                         </span>
                     </div>
                     <div class="featured-book">
-                        <img src="img/the broken promise.jpeg" alt="" >
+                        <img src="img/the broken promise.jpeg" alt="" loading="lazy">
                         <span class="featured-book-details">
                             <h3>NGN 3200</h3>
                         </span>
                     </div>
                     <div class="featured-book">
-                        <img src="img/computer-science.jpg" alt="" >
+                        <img src="img/computer-science.jpg" alt="" loading="lazy">
                         <span class="featured-book-details">
                             <h3>NGN 4500</h3>
                         </span>
                     </div>
 
                     <div class="featured-book">
-                        <img src="img/introduction-to-entrepreneurship.jpg" alt="" >
+                        <img src="img/introduction-to-entrepreneurship.jpg" alt="" loading="lazy">
                         <span class="featured-book-details">
                             <h3>NGN 3500</h3>
                         </span>
@@ -103,7 +103,7 @@ session_start();
                 <h2>Free Books</h2>
                 <div class="free-books-container">
                     <div class="free-book-left">
-                        <img src="img/book-vector-3.png" alt="" class="slide-in">
+                        <img src="img/book-vector-3.png" alt="" class="slide-in" loading="lazy">
                     </div>
                     <div class="free-book-right">
                         <p>
@@ -134,7 +134,7 @@ session_start();
         <section id="footer">
             <footer class="footer">
                 <div class="footer-left">
-                    <img src="img/lionreads-logo-1.png" alt="" >
+                    <img src="img/lionreads-logo-1.png" alt="" loading="lazy">
                     <p>
                         Lionreads Bookstore is a subsidiary of Lionreads Inc. 
                         We are a bookstore that sells books of all kinds and 
