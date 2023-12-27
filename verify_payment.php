@@ -25,7 +25,7 @@ $_SESSION['books_paid_for'] = $books_Paidfor;
 $_SESSION['location'] = $location;
 $_SESSION['ConcatenatedInputs'] = $description;
 
-$FLW_SECRET_KEY = 'FLWSECK_TEST-7ccf562064f3de3d9197f3fa1dd2bcc6-X'; // Replace with your Flutterwave secret key
+$FLW_SECRET_KEY = 'FLWSECK-9bb1f9d05506de0dc47bd87ec41547dd-18c991f6d54vt-X'; // Replace with your Flutterwave secret key
 $transactionId = $_GET['transaction_id']; // Assuming you get the transaction ID from the URL
 $expectedAmount = 100; // Replace with your expected amount
 $expectedCurrency = 'NGN'; // Replace with your expected currency

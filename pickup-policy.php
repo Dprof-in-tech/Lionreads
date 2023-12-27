@@ -7,7 +7,7 @@
     <title>LionReads Pickup Policy | Your UNN mobile Bookshop</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=JetBrains Mono">
     <script src="https://kit.fontawesome.com/ff24e75514.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="./img/LionReads-logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/Lionreads-logo-1.png" type="image/x-icon">
     <style>
         body {
             font-family: 'JetBrains Mono', sans-serif;

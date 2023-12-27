@@ -59,7 +59,7 @@ if (isset($_SESSION['email'])) {
             // Check the admin_role and show/hide menu items accordingly
             if ($_SESSION['admin_role'] == 'super-Management') {
                 echo '<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa-solid fa-xmark"></i></a>';
-                echo '<a href="../home.php" alt=""><i class="fa-solid fa-light fa-house" style="color: white;"></i> Home</a>';
+                echo '<a href="../index.php" alt=""><i class="fa-solid fa-light fa-house" style="color: white;"></i> Home</a>';
                 echo '<a href="add.php"><i class="fa-solid fa-book" style="color: white;"></i>  Add Books</a>';
                 echo '<a href="update_bookquantity.php"><i class="fa-solid fa-book" style="color: white;"></i>  Update Book Quantity</a>';
                 echo '<a href="update_bookprice.php"><i class="fa-solid fa-book" style="color: white;"></i>  Update Book Price</a>';

@@ -21,7 +21,7 @@ if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 
     // session timed out, destroy the session
     session_unset();
     session_destroy();
-    header("location: home.php");
+    header("location: index.php");
 }
 
 // update the last activity time
@@ -37,7 +37,7 @@ $_SESSION['last_activity'] = time();
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=JetBrains Mono">
     <script src="https://kit.fontawesome.com/ff24e75514.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="../img/LionReads-logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/Lionreads-logo-1.png" type="image/x-icon">
     <title>Receipt Results | LionReads</title>
     <style>
         /* Add your CSS styles here */

@@ -36,7 +36,7 @@ $_SESSION['last_activity'] = time();
     <link rel="stylesheet" href="bookshop.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=JetBrains Mono">
     <script src="https://kit.fontawesome.com/ff24e75514.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="./img/LionReads-logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/Lionreads-logo-1.png" type="image/x-icon">
     <title>Search Results | lionreads</title>
 </head>
 <body>

@@ -40,7 +40,7 @@ $location = $_SESSION['location'];
     <link rel="stylesheet" href="receipt.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=JetBrains Mono">
     <script src="https://kit.fontawesome.com/ff24e75514.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="./img/LionReads-logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/Lionreads-logo-1.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment Receipt | LionReads</title>
 </head>
@@ -48,7 +48,7 @@ $location = $_SESSION['location'];
     <div id="receipt">
     <div class="top_bar">
         <span>
-            <img src="./img/LionReads-logo.png" alt="" height="30" width="30" >
+            <img src="./img/Lionreads-logo-1.png" alt="" height="30" width="30" >
             <h3>LionReads</h3>
         </span>
     </div>

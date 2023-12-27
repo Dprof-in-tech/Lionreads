@@ -53,7 +53,7 @@ if (isset($_SESSION['email'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=JetBrains Mono">
     <link rel="stylesheet" href="profile.css">
-    <link rel="shortcut icon" href="../img/LionReads-logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/Lionreads-logo-1.png" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://kit.fontawesome.com/ff24e75514.js" crossorigin="anonymous"></script>
     <title>Admin Profile | LionReads</title>

@@ -1,0 +1,468 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+nav{
+    height: 12vh;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    color: black;
+    font-family: "Sofia", sans-serif;
+}
+nav .nav-left{
+    width: 10%;
+    height: 100%;
+}
+.nav-left > img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+.nav-right{
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav .nav-right .page-navigation{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.page-navigation ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 1.5rem;
+}
+.page-navigation ul li{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: gray;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.hero-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hero-text{
+    max-width: 70%;
+    font-family: "Sofia", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hero-text h2{
+    font-weight: 800;
+    font-size: 4.5rem;
+    max-width: 80%;
+    text-align: center;
+    margin: 0;
+}
+.hero-text p{
+    max-width: 90%;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+.hero-image>:nth-child(2){
+    position: relative;
+    left: 7%;
+    top: -8rem;
+}
+
+
+.featured-books{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.featured-books h2{
+    font-family: "Sofia", serif;
+    font-size: 2.5rem;
+    text-align: start;
+}
+
+.featured-books-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.featured-book{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: center;
+    margin: 0 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.featured-book>img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+.featured-book .featured-book-details{
+    padding: 0.4rem;
+    border-radius: 8px;
+    background-color: rgba(39, 39, 39, 0.6);
+    position: absolute;
+    top: 168%;
+    margin-left: -8%;
+    color: white;
+    font-family: "Sofia", san-serif;
+    font-size: 0.7rem;
+}
+
+.featured-book:hover{
+    transform: scale(1.1);
+}
+
+.free-books{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Sofia", sans-serif;
+    margin-bottom: 2rem;
+}
+
+.free-books h2, .featured-books h2{
+    align-self: flex-start;
+    padding-left: 2rem;
+    font-size: 2.5rem;
+}
+.free-books-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.free-book-right{
+    max-width: 55%;
+    font-size: 2rem;
+    text-align: center;
+}
+.free-book-left>img{
+    object-fit: fill;
+    transition: all 0.5s ease-in;
+    cursor: pointer;
+}
+
+.free-book-right a{
+    background-color: rgb(92, 5, 70);
+    padding: 1rem;
+    color: white;
+    border-radius: 6px;
+}
+
+
+
+.newsletter-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    font-family: "Sofia", sans-serif;
+    margin-bottom: 2rem;
+    color: white;
+    padding: 1rem;
+    background-color: rgb(92, 5, 70);
+}
+
+.newsletter{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+    width: 100%;
+}
+.newsletter p{
+    font-size: 2rem;
+    max-width: 45%;
+}
+
+.subscribe-newsletter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 1.5rem;
+    align-items: center;
+    width: auto;
+}
+
+.subscribe-newsletter input[type=email]{
+    width: 25rem;
+    height: 2rem;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+.subscribe-newsletter input[type=submit]{
+    width: 8rem;
+    height: 3rem;
+    border-radius: 8px;
+    padding: 1rem;
+    border:none;
+    font-size: 1rem;
+    background-color: rgb(89, 5, 92);
+    color: white;
+    cursor: pointer;
+
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: auto;
+    background-color: #f5f5f5;
+    color: black;
+    font-family: "Sofia", sans-serif;
+    margin-bottom: 2rem;
+}
+
+.footer-left{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: 1rem;
+}
+.footer-left>img{
+    width: 70%;
+    height: 50%;
+}
+.footer-left p{
+    text-align: center;
+    margin-top: -2rem;
+}
+
+.footer-right{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.footer-right ul{
+    list-style: none;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+.footer-right ul li:nth-child(1){
+    font-weight: 600;
+}
+.footer-bottom{
+    width: 100%;
+    height: 5vh;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+    font-family: "Sofia", sans-serif;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+/* Additional CSS for animation */
+.slide-in {
+    opacity: 0;
+    transform: translateY(100px); /* Initially translate images down */
+    will-change: opacity, transform;
+}
+
+/* Define animation keyframes */
+@keyframes slideInAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(100px); /* Start position of the animation */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* End position of the animation */
+    }
+}
+
+.slide-in.active {
+    animation: slideInAnimation 0.8s ease forwards; /* Apply animation on active class */
+}
+
+/* Mobile first approach */
+
+/* Adjustments for smaller screens (mobile devices) */
+@media screen and (max-width: 767px) {
+    nav .nav-right .page-navigation{
+        display: none;
+    }
+    nav .nav-left{
+        width: 40%;
+    }
+    nav .nav-right{
+        width: 40%;
+    }
+    .hero-image{
+        width: 100%;
+    }
+
+    .hero-text h2{
+        font-size: 2rem;
+        max-width: 90%;
+    }
+    .hero-text p{
+        font-size: 1rem;
+    }
+    
+    .hero-image>*{
+        width: 100%;
+        height: auto;
+        margin-top: -4rem;
+    }
+    .featured-books{
+        margin-top: -5rem;
+    }
+    .featured-books h2, .free-books h2{
+        font-size: 2rem;
+    }
+    .featured-books-container{
+        display: flex;
+        flex-direction: column;
+        margin-top: 0;
+    }
+    .featured-book{
+        width: 70%;
+        height: 70%;
+        margin-bottom: 2rem;
+    }
+    .featured-book-details{
+        display: none;
+    }
+
+    .free-books-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .free-book-left>*{
+        height: 100%;
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .free-book-right{
+        width: 100%;
+    }
+    .free-book-right p{
+        font-size: 1rem;
+        max-width: 100%;
+    }
+    .free-book-right a{
+        width: 100%;
+        font-size: 1rem;
+    }
+    .newsletter-container, .newsletter, .subscribe-newsletter{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .newsletter p{
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    .subscribe-newsletter input[type=email]{
+        width: 100%;
+    }
+
+    .footer-right{
+        display: none;
+    }
+
+    .footer-left img{
+        display: none;
+    }
+    .footer-left{
+        width: 100%;
+        margin-top: 2rem;
+    }
+    .footer-left p{
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+}
+
+/* Tablet and larger screens */
+@media screen and (min-width: 768px) and (max-width: 1366px){
+    .hero-image>*{
+        width: 48%;
+    }   
+    .free-book-left{
+        width: 40%;
+    }
+
+    .free-book-left>img{
+        height: 100%;
+        width: 100%;    
+    }
+
+    .subscribe-newsletter{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        gap: 1.5rem;
+        align-items: center;
+        width: auto;
+    }
+
+    .newsletter p{
+        font-size: 1.3rem;
+        max-width: 45%;
+    }
+}

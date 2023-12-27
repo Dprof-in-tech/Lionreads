@@ -21,17 +21,22 @@ h1{
 /* Navbar and side panel css */
 .navbar{
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-evenly;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 6rem;
+  width: 100%;
   align-items: center;
 }
-.navbar .n-right{
-  padding-left: 5%;
-}
 .navbar, .n-left{
-  width: 98%;
+  width: 28%;
   margin: 0;
   padding: 0;
+  position: relative;
+  left: -27%;
+}
+.n-right{
+  width: 70%;
+  text-align: end;
 }
 .n-left .sidepanel a{
   font-size: 1.05rem;
@@ -62,7 +67,7 @@ h1{
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
     top: 0;
-    right: 0;
+    left: 0;
     background-color: #464646; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
@@ -101,7 +106,7 @@ h1{
       flex-direction: row-reverse;
     font-size: 30px;
     position: relative;
-    left: 70%;
+    right: 0;
     width: fit-content;
     cursor: pointer;
     background-color: transparent;

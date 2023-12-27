@@ -22,7 +22,7 @@ if(isset($_POST['pay_for_books'])){
     $_SESSION['location'] = $location;
 
   // Make sure to set your secret key
-$secretKey = "FLWSECK_TEST-7ccf562064f3de3d9197f3fa1dd2bcc6-X";
+$secretKey = "FLWSECK-9bb1f9d05506de0dc47bd87ec41547dd-18c991f6d54vt-X";
 
 // Define the data to be sent in the request
 $data = array(
@@ -41,7 +41,7 @@ $data = array(
     ),
     "customizations" => array(
         "title" => "Lionreads Book Purchase",
-        "logo" => "https://lionreads.com.ng/img/LionReads-logo.png"
+        "logo" => "https://lionreads.com.ng/img/Lionreads-logo-1.png"
     )
 );
 

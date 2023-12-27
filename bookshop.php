@@ -17,7 +17,7 @@ if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 
     // session timed out, destroy the session
     session_unset();
     session_destroy();
-    header("location: home.php");
+    header("location: index.php");
 }
 ?>
 
@@ -32,7 +32,7 @@ if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 
     <link rel="stylesheet" href="bookshop.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=JetBrains Mono">
     <script src="https://kit.fontawesome.com/ff24e75514.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="./img/LionReads-logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/Lionreads-logo-1.png" type="image/x-icon">
     <title>LionReads Bookshop | Get your Books quick and Easy</title>
     <style>
         #message-container {
@@ -64,7 +64,6 @@ if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 
     </div>
     <!-- Bestseller section begins -->
     <div class="bestseller_container">
-        <h3>Bestsellers</h3>
         <div class="search_container">
             <!-- search_form.php -->
             <form method="GET" action="search_results.php" class="search-form">
@@ -153,7 +152,7 @@ if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 
 
     <!-- PDF section begins -->
 
-    <div class="pdf_container">
+    <!-- <div class="pdf_container">
             <div class="pdf_picture">
                 <img src="./img/book4.jpg" alt="Design of Everyday things.">
             </div>
@@ -172,7 +171,7 @@ if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 
             <div class="download_button">
                 <a href="">Download Now</a>
             </div>
-        </div>
+        </div> -->
 
         <!-- Include footer -->
         <?php include "footer.php"; ?>
