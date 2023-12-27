@@ -53,7 +53,7 @@ session_start();
                 
                 <div class="hero-image">
                     <img src="img/book-vector-2.png" alt="" loading="lazy">
-                    <img src="img/book-vector.png" alt="" loading="lazy" class="slide-in">
+                    <img src="img/book-vector.png" alt="" loading="lazy">
                 </div>
             </div>
         </section>
