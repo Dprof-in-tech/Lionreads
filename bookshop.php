@@ -131,7 +131,7 @@ if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 
 
                             echo '<div class="buttons">';
                             echo '<button type="submit" class="buy_button" name="add_to_cart">Add to Cart</button>';
-                            echo '<a href="index.php?route=checkout?id=' . $book_no . '" class="view_cart"> Quick Buy</a>';
+                            echo '<a href="index.php?route=checkout&id=' . $book_no . '" class="view_cart"> Quick Buy</a>';
                             echo '</div>';
                             
                             echo '</form>';
