@@ -19,7 +19,7 @@ if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 
     // session timed out, destroy the session
     session_unset();
     session_destroy();
-    header("location: bookshop.php");
+    header("location: index.php?route=bookshop");
 }
 
 // update the last activity time
@@ -46,7 +46,7 @@ $_SESSION['last_activity'] = time();
             if($item['book_id'] == $remove_book) {
                 // Remove the item from the cart by unsetting it from the $_SESSION['cart'] array
                 unset($_SESSION['cart'][$key]);  
-                header('Location: cart.php');
+                header('Location: index.php?route=cart');
                 exit();       
             }
              
@@ -136,7 +136,7 @@ $_SESSION['last_activity'] = time();
         <?php else: ?>
         <p>Your cart is empty.</p>
         <?php endif; ?>
-        <p><a href="bookshop.php">Continue shopping, click here..</a></p>
+        <p><a href="index.php?route=bookshop">Continue shopping, click here..</a></p>
 
         
     </div>
@@ -198,6 +198,16 @@ $_SESSION['last_activity'] = time();
     function closeNav() {
        document.getElementById("mySidepanel").style.width = "0";
     }
+    // Function to close side panel if clicked outside
+    window.addEventListener('click', function(event) {
+    const sidePanel = document.getElementById('mySidepanel');
+    const openButton = document.querySelector('.openbtn');
+
+    // Close the side panel if the click is outside the panel and not on the open button
+    if (event.target !== sidePanel && event.target !== openButton && !sidePanel.contains(event.target)) {
+        closeNav();
+    }
+    });
 </script>
 <script>
       // Get all the book name elements

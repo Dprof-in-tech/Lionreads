@@ -37,7 +37,7 @@
     <title>Books Library | LionReads</title>
 </head>
 <body>
-    <a href="admin.php"><h1 class="btn btn-primary mt-3 ">Dashboard</h1></a>
+    <a href="index.php?route=admin"><h1 class="btn btn-primary mt-3 ">Dashboard</h1></a>
     <a href="transactions.php"><h1 class="btn btn-primary mt-3 ">Sales</h1></a>
     <a href="truncate1.php? truncate-table=' . $id . '"><h1 class="btn btn-danger btn-primary mt-3">Truncate</h1></a>
     <table class="table">

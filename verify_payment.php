@@ -141,7 +141,7 @@ if (
 } else {
     // Payment verification failed
     echo "Payment verification failed. Please check the payment status.";
-    header("Location: cart.php"); // Redirect to an error page
+    header("Location: index.php?route=cart"); // Redirect to an error page
     exit;
 }
 ?>

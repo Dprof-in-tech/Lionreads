@@ -2,6 +2,10 @@ body{
     margin: 0;
     padding: 0;
 }
+
+section{
+    width: 100%;
+}
 /* Welcome text begins */
 .welcome_text{
     margin-top: 1.5rem;
@@ -288,51 +292,6 @@ body{
   input:focus {
     outline:0;
   }
-/* Pdf section css */
-.pdf_container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left:1.5rem;
-    align-self: center;
-    margin-top: 1rem;
-    margin-left: 1rem;
-    margin-bottom: 2rem;
-    width: 80%;
-}
-.pdf_picture{
-    width: 100%;
-    height: 40vh;
-    
-}
-.pdf_picture img{
-    width: 100%;
-    height: 100%;
-}
-.pdf_text h4{
-    font-size: 1.5rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0;
-    color: black;
-    font-family: "JetBrains Mono", serif;
-}
-
-.pdf_text h5{
-    font-size: 1rem;
-    color: black;
-    margin-top: 0.5rem;
-    margin-bottom: 3rem;
-    font-family: "JetBrains Mono", sans-serif;
-}
-.download_button a{
-    color: white;
-    text-decoration: none;
-    padding: 1rem;
-    align-self: left;
-    background-color: rgb(89, 5, 92);
-    border-radius: 4px;
-    font-family: "JetBrains Mono", serif;
-}
 
 /* Search results css */
 a{
@@ -367,13 +326,16 @@ ul li{
 }
 
     /* book section css */
-  @media only screen and (max-width: 1149px){
+  @media only screen and (max-width: 722px){
     .book_container{
         display: flex;
         flex-direction: column;
         margin-top: 1rem;
         margin-bottom: 2rem;
         width: 85%;
+        border: 1px solid rgb(89, 5, 92);
+        padding: 0.5rem;
+        border-radius: 8px;
     }
 
     .bestseller_container{
@@ -384,4 +346,57 @@ ul li{
         width: 100%;
     }
     
+    .search_container{
+        width: 100%;
+    }
+     .search-form{
+        width: 85%;
+        margin-left: 0;
+     }
+    .search{
+        width: 100%;
+    }
+  }
+
+  @media screen and (min-width: 723px) and (max-width: 1149px){
+    .book_container{
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        width: 40%;
+        border: 1px solid rgb(89, 5, 92);
+        padding: 0.5rem;
+        border-radius: 8px;
+    }
+
+    .bestseller_container{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+        padding: 0;
+        margin:0;
+    }
+
+    .search_container{
+        width: 100%;
+    }
+     .search-form{
+        width: 85%;
+        margin-left: 0;
+     }
+    .search{
+        width: 100%;
+    }
+
+    .welcome_text{
+        width: 88%;
+        margin-left: 5%;
+    }
+
+    .welcome_text h3{
+        font-size: 1.3rem;
+    }
   }

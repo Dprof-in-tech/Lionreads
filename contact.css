@@ -8,13 +8,15 @@ body{
     padding: 1rem;
     justify-content: center;
     align-items: center;
+    width: 97%;
 }
 .contact-form{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
+    column-gap: 1.3rem;
     align-items: center;
-    width: 100%;
+    width: 95%;
 }
 
 .contact_form h1{
@@ -30,6 +32,7 @@ body{
     text-align: center;
     font-family: "JetBrains Mono", serif;
 }
+
 .name, .email, .phone_number{
     width: 85%;
     padding: 1rem;
@@ -63,4 +66,20 @@ input::placeholder, .message::placeholder{
     color: black;
     font-family: "JetBrains Mono", serif;
     font-size: 1rem;
+}
+
+@media screen and (min-width: 768px){
+    .name, .email{
+        width: 40%;
+        padding: 1rem;
+        font-family: "JetBrains Mono", serif;
+        font-size: 1rem;
+        height: 3vh;
+        border-radius: 5px;
+        margin-bottom: 1rem;   
+    }
+
+    .send_message{
+        width: 40%;
+    }
 }

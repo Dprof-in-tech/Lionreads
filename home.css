@@ -5,6 +5,7 @@ body{
     display:flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 a{
   text-decoration: none;
@@ -23,20 +24,20 @@ h1{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 6rem;
   width: 100%;
   align-items: center;
+  border-bottom: 2px solid #666;
 }
-.navbar, .n-left{
+.navbar .n-left{
   width: 28%;
   margin: 0;
   padding: 0;
   position: relative;
-  left: -27%;
+  left: 4%;
 }
 .n-right{
-  width: 70%;
-  text-align: end;
+  position: relative;
+  right: 4%;
 }
 .n-left .sidepanel a{
   font-size: 1.05rem;

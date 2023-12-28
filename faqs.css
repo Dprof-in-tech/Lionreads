@@ -1,8 +1,12 @@
 body{
     margin: 0;
     padding: 0;
+    font-family: "JetBrains Mono", serif;
 }
 
+details{
+    cursor: pointer;
+}
 
 /* Faqs container css */
 .faqs_container{
@@ -59,4 +63,33 @@ input::placeholder{
     background-color: inherit;
     padding: 1rem;
     font-family: "JetBrains Mono", sans-serif; 
+}
+
+@media screen and (min-width: 850px){
+    section{
+        width: 95%;
+    }
+
+    form{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        column-gap: 1.5rem;
+        align-items: center;
+        width: 100%;
+    }
+    .more_questions .submit_message{
+        width: 35%;
+        margin-left: 0;
+    }
+
+    .more_questions .questions{
+        width: 60%;
+        height: 5rem;
+        font-size: 1.2rem;
+    }
+
+    input[type=submit]:hover, input[type=submit]:focus{
+        background-color: rgb(196, 196, 196);
+    }
 }

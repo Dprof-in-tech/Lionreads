@@ -20,7 +20,9 @@
     <?php include "sidepanel.php";?>
 
     <!-- contact form starts -->
-    <div class="contact_form">
+    <section>
+        <main>
+        <div class="contact_form">
         <h1>
             Contact Us
         </h1>
@@ -31,11 +33,13 @@
         <form action="recieve-messages.php" method="post" class="contact-form">
             <input type="text" name="name" placeholder="Your Name." class="name">
             <input type="email" name="email" id="email" placeholder="Email" class="email" >
-            <input type="number" name="phone" id="number" placeholder="Phone Number" class="phone_number" >
+            <input type="tel" name="phone" id="number" placeholder="Phone Number" class="phone_number" >
             <textarea name="message" id="message" placeholder="Message" class="message"></textarea>
             <input type="submit" value="Send Message" name="Send_message" class="send_message">
         </form>
     </div>
+        </main>
+    </section>
 
     <!-- include footer -->
     <?php include "footer.php";?>
@@ -49,6 +53,17 @@
     function closeNav() {
        document.getElementById("mySidepanel").style.width = "0";
     }
+
+    // Function to close side panel if clicked outside
+    window.addEventListener('click', function(event) {
+    const sidePanel = document.getElementById('mySidepanel');
+    const openButton = document.querySelector('.openbtn');
+
+    // Close the side panel if the click is outside the panel and not on the open button
+    if (event.target !== sidePanel && event.target !== openButton && !sidePanel.contains(event.target)) {
+        closeNav();
+    }
+    });
 </script>
 </body>
 </html>

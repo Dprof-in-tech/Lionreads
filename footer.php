@@ -27,21 +27,21 @@
                 <div class="footer-right">
                     <ul>
                         <li>Quick Links</li>
-                        <li><a href="bookshop.php">Bookshop</a></li>
-                        <li><a href="faqs.php">About</a></li>
+                        <li><a href="index.php?route=bookshop">Bookshop</a></li>
+                        <li><a href="index.php?route=faqs">About</a></li>
                         <li><a href="contact.php">Contact</a></li>
                     </ul>
                     <ul>
                         <li>Quick Links</li>
                         <li><a href="pickup-policy.php">Terms & Conditions</a></li>
                         <li><a href="pickup-policy.php">Delivery Services</a></li>
-                        <li><a href="bookshop.php">Pickup Locations</a></li>
+                        <li><a href="index.php?route=bookshop">Pickup Locations</a></li>
                     </ul>
                     <ul>
                         <li>Category</li>
-                        <li><a href="bookshop.php">Textbooks</a></li>
-                        <li><a href="bookshop.php">Workbooks</a></li>
-                        <li><a href="bookshop.php">Novels</a></li>
+                        <li><a href="index.php?route=bookshop">Textbooks</a></li>
+                        <li><a href="index.php?route=bookshop">Workbooks</a></li>
+                        <li><a href="index.php?route=bookshop">Novels</a></li>
                     </ul>
                     <ul>
                         <li>Social Media</li>

@@ -17,7 +17,7 @@ if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 
     // session timed out, destroy the session
     session_unset();
     session_destroy();
-    header("location: bookshop.php");
+    header("location: index.php?route=bookshop");
 }
 
 // update the last activity time
@@ -66,7 +66,7 @@ $result = mysqli_query($con, $sql);
                 echo "<ul>";
                 while ($row = mysqli_fetch_assoc($result)) {
                   // display the product name and a link to the product detail page
-                  echo "<li><a href='checkout.php?id=" . $row['id'] . "'>" . $row['book_title'] . ' - Quantity Available: ' . $row['book_quantity'] . "</a></li>";
+                  echo "<li><a href='index.php?route=checkout?id=" . $row['id'] . "'>" . $row['book_title'] . ' - Quantity Available: ' . $row['book_quantity'] . "</a></li>";
                 }
                 echo "</ul>";
               } else {
@@ -91,6 +91,17 @@ $result = mysqli_query($con, $sql);
     function closeNav() {
         document.getElementById("mySidepanel").style.width = "0";
     }
+
+    // Function to close side panel if clicked outside
+    window.addEventListener('click', function(event) {
+    const sidePanel = document.getElementById('mySidepanel');
+    const openButton = document.querySelector('.openbtn');
+
+    // Close the side panel if the click is outside the panel and not on the open button
+    if (event.target !== sidePanel && event.target !== openButton && !sidePanel.contains(event.target)) {
+        closeNav();
+    }
+    });
     </script>
 </body>
 </html>

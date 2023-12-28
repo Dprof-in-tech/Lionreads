@@ -20,7 +20,7 @@ if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 
     // Session timed out, destroy the session
     session_unset();
     session_destroy();
-    header("location: index.php");
+    header("location: index.php?route=home");
 }
 
 // Update the last activity time

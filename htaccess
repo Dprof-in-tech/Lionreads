@@ -17,8 +17,8 @@ RewriteCond %{HTTP:CF-Visitor} !{"scheme":"https"}
 RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 # Prevent directory listing
 Options -Indexes
-# Set the default index file to index.php
-DirectoryIndex index.php
+# Set the default index file to index.php?route=home
+DirectoryIndex index.php?route=home
 # Enable mod_rewrite for URL rewriting
 <IfModule mod_rewrite.c>
     RewriteEngine On
@@ -29,8 +29,8 @@ DirectoryIndex index.php
     RewriteCond %{REQUEST_FILENAME} -f [OR]
     RewriteCond %{REQUEST_FILENAME} -d
     RewriteRule ^ - [L]
-    # Rewrite all other requests to index.php
-    RewriteRule ^ index.php [L]
+    # Rewrite all other requests to index.php?route=home
+    RewriteRule ^ index.php?route=home [L]
 </IfModule>
 # Set the PHP timezone (adjust to your timezone)
 <IfModule mod_php7.c>

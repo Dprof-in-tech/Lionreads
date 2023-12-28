@@ -17,7 +17,7 @@ if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 
     // session timed out, destroy the session
     session_unset();
     session_destroy();
-    header("location: bookshop.php");
+    header("location: index.php?route=bookshop");
 }
 
 // update the last activity time
@@ -58,77 +58,97 @@ $_SESSION['last_activity'] = time();
         <div id="message"><?php echo $message;?></div>
     </div>
 
-    <!-- Checkout begins -->
-    <div class="book_container">
-            <!-- // product_detail.php -->
-            <?php
-            // connect to the database
-            include "config.php";
+    <section>
+        <main class="main-content-container">
+             <!-- Checkout begins -->
+            <div class="book_container">
+                    <!-- // product_detail.php -->
+                    <?php
+                    // connect to the database
+                    include "config.php";
 
-            // retrieve the product ID from the URL query parameter
-            $book_id = $_GET['id'];
-            
-
-            // construct the SQL query to retrieve the product information based on the product ID
-            $sql = "SELECT * FROM books WHERE id = $book_id";
-
-            // execute the query and retrieve the product information
-            $result = mysqli_query($con, $sql);
-            $row = mysqli_fetch_assoc($result);
-            $book_title = $row['book_title'];
-            $book_image = $row['book_image'];
-            $book_price = $row['book_price'];
-            $book_no = $row['id'];
-        ?>
-
-            <div class="book_picture">
-                <!-- display the product information in the HTML markup for the product detail page -->
-            <img src="<?php echo "./img/$book_image"; ?>" alt="<?php echo $row['book_title']; ?>">
-            </div>
-           
-            <div class="book_text">
-                <div class="b-left">
-                    <h2><?php echo $row['book_title']; ?></h2>
-                    <h5><?php echo $row['book_author']; ?></h5>
-                </div>
-                <div class="b-right">
-                    <form  method="post">
-                    <h3>N<?php echo $book_price; ?></h3> 
+                    // retrieve the product ID from the URL query parameter
+                    $book_id = $_GET['id'];
                     
-                    <input type="hidden" name="book_charges" value="300" >
-                    <input type="hidden" name="book_no" value="<?php echo $book_no;?>">
-                    <input type="hidden" name="book_id" value="<?php echo $book_title;?>">
-                    <input type="hidden" name="book_price" value="<?php echo $book_price;?>">
-                    <div class="quantity">
-                        <h5>Quantity</h5>
-                        <span>
-                        <button class="minus-btn" type="button" name="button" id="minus_btn">-</button>
-                        <input type="text" name="quantity" value="1" id="quantity_input">
-                        <button class="plus-btn" type="button" name="button" id="plus_btn">+</button>
-                        </span>
+
+                    // construct the SQL query to retrieve the product information based on the product ID
+                    $sql = "SELECT * FROM books WHERE id = $book_id";
+
+                    // execute the query and retrieve the product information
+                    $result = mysqli_query($con, $sql);
+                    $row = mysqli_fetch_assoc($result);
+                    $book_title = $row['book_title'];
+                    $book_image = $row['book_image'];
+                    $book_price = $row['book_price'];
+                    $book_no = $row['id'];
+                ?>
+
+                    <div class="book_picture">
+                        <!-- display the product information in the HTML markup for the product detail page -->
+                    <img src="<?php echo "./img/$book_image"; ?>" alt="<?php echo $row['book_title']; ?>">
+                    </div>
+                
+                    <div class="book_text">
+                        <div class="b-left">
+                            <h2><?php echo $row['book_title']; ?></h2>
+                            <h5><?php echo $row['book_author']; ?></h5>
+                        </div>
+                        <div class="b-right">
+                            <form  method="post">
+                                <h3>N<?php echo $book_price; ?></h3> 
+                                
+                                <input type="hidden" name="book_charges" value="300" >
+                                <input type="hidden" name="book_no" value="<?php echo $book_no;?>">
+                                <input type="hidden" name="book_id" value="<?php echo $book_title;?>">
+                                <input type="hidden" name="book_price" value="<?php echo $book_price;?>">
+                                <div class="quantity">
+                                    <h5>Quantity</h5>
+                                    <span>
+                                    <button class="minus-btn" type="button" name="button" id="minus_btn">-</button>
+                                    <input type="text" name="quantity" value="1" id="quantity_input">
+                                    <button class="plus-btn" type="button" name="button" id="plus_btn">+</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="buttons">
+                            <button type="submit" class="buy_button" name="add_to_cart" >Add 2 Cart</button>
+                            <a href="index.php?route=cart" class="view_cart"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="bestseller-books">
+                    <header>
+                        <h2>
+                            Bestsellers.....
+                        </h2>
+                    </header>
+                    <div class="bestseller-book-container">
+                        <div class="bestseller-book">
+                            <img src="img/introduction-to-entrepreneurship.jpg" alt="" loading="lazy">
+                        </div>
+                        <div class="bestseller-book">
+                            <img src="img/computer-science.jpg" alt="" loading="lazy">
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="buttons">
-                <button type="submit" class="buy_button" name="add_to_cart" >Add 2 Cart</button>
-                <a href="cart.php" class="view_cart"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
-            </div>
-            </form>
-            
-        </div>
-
+        </main>
+    </section>
+   
+    <section>
         <div class="search_container">
-            <!-- search_form.php -->
-            <form method="GET" action="search_results.php">
-            <i class="fa-solid fa-magnifying-glass search_icon" style="color: gray;"></i>
-                <input type="text" name="query" placeholder="Search for more books..." class="search">
-                <button type="submit" class="search_button" >Search</button>
-            </form>
-        </div>
+                <!-- search_form.php -->
+                <form method="GET" action="search_results.php">
+                    <input type="text" name="query" placeholder="Search for more books..." class="search">
+                    <input type="submit" name="submit" value="Search"/>
+                </form>
+            </div>
+    </section>
 
-        <!-- include footer -->
-        <?php include "footer.php";?>
+    <!-- include footer -->
+    <?php include "footer.php";?>
 
     <script>        
         /* Set the width of the sidebar to 250px (show it) */
@@ -139,6 +159,17 @@ $_SESSION['last_activity'] = time();
     function closeNav() {
        document.getElementById("mySidepanel").style.width = "0";
     }
+
+    // Function to close side panel if clicked outside
+    window.addEventListener('click', function(event) {
+    const sidePanel = document.getElementById('mySidepanel');
+    const openButton = document.querySelector('.openbtn');
+
+    // Close the side panel if the click is outside the panel and not on the open button
+    if (event.target !== sidePanel && event.target !== openButton && !sidePanel.contains(event.target)) {
+        closeNav();
+    }
+    });
 
     let input = document.getElementById('quantity_input');
     let plusBtn = document.getElementById("plus_btn");
@@ -208,6 +239,10 @@ $_SESSION['last_activity'] = time();
         // Call this function to display the message
         showMessage("' . $message . '");
         </script>';
+
+        // Redirect to a different page after adding the book to the cart
+        header("Location: index.php?route=checkout");
+        exit;
     }
 ?>
 </body>
