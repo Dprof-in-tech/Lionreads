@@ -48,6 +48,15 @@ if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 
         }
     </style>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-136R1N2W7G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-136R1N2W7G');
+</script>
 <body>
     <section>
             <!-- Include Navbar -->

@@ -44,6 +44,15 @@ $location = $_SESSION['location'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment Receipt | LionReads</title>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-136R1N2W7G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-136R1N2W7G');
+</script>
 <body>
     <div id="receipt">
     <div class="top_bar">

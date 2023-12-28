@@ -9,6 +9,15 @@
     <script src="https://kit.fontawesome.com/ff24e75514.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="./img/Lionreads-logo-1.png" type="image/x-icon">
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-136R1N2W7G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-136R1N2W7G');
+</script>
 <body>
     <section>
         <main>

@@ -44,6 +44,15 @@ $out_of_stock_books = array_unique($out_of_stock_books);
         }
     </style>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-136R1N2W7G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-136R1N2W7G');
+</script>
 <body>
     <div class="error-message">
         <h1>Out of Stock</h1>

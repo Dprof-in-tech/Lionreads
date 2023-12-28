@@ -72,6 +72,15 @@ $_SESSION['last_activity'] = time();
     <link rel="stylesheet" href="checkout.css">
     <title>Shopping Cart</title>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-136R1N2W7G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-136R1N2W7G');
+</script>
 <body>
     <!-- include sidepanel -->
     <?php include "sidepanel.php"; ?> 

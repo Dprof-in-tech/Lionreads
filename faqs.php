@@ -15,6 +15,15 @@
     <link rel="stylesheet" href="faqs.css">
     <title>Frequently Asked Questions | LionReads.com</title>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-136R1N2W7G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-136R1N2W7G');
+</script>
 <body>
     <!-- include navbar -->
     <?php include "sidepanel.php";?>
