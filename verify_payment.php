@@ -25,6 +25,14 @@ $_SESSION['books_paid_for'] = $books_Paidfor;
 $_SESSION['location'] = $location;
 $_SESSION['ConcatenatedInputs'] = $description;
 
+
+$status = $_GET['status']; // Assuming you get the status from the URL
+
+if ($status === "cancelled") {
+    // If the status is 'cancelled', redirect to an error page or perform appropriate action
+    header("Location: 404.php");
+    exit;
+}
 $FLW_SECRET_KEY = 'FLWSECK-9bb1f9d05506de0dc47bd87ec41547dd-18c991f6d54vt-X'; // Replace with your Flutterwave secret key
 $transactionId = $_GET['transaction_id']; // Assuming you get the transaction ID from the URL
 $expectedAmount = 100; // Replace with your expected amount

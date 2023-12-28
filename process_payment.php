@@ -41,7 +41,7 @@ $data = array(
     ),
     "customizations" => array(
         "title" => "Lionreads Book Purchase",
-        "logo" => "https://lionreads.com.ng/img/Lionreads-logo-1.png"
+        "logo" => "https://lionreads.com.ng/img/lionreads-logo-1.png"
     )
 );
 
