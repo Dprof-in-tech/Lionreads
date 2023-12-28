@@ -60,7 +60,7 @@ session_start();
 
         <section id="featured-books">
             <div class="featured-books">
-                <h2>Featured Books</h2>
+                <h2>Bestsellers</h2>
                 <div class="featured-books-container">
                     <div class="featured-book">
                         <img src="img/introduction-to-entrepreneurship.jpg" alt="" loading="lazy">
