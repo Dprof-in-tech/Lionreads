@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Welcome to LionReads.com.ng, your trusted academic companion for the University of Nigeria (UNN). Do you have questions on how and why we operate, visit our website now to explore our seamless platform to find and effortlessly purchase required textbooks. Boost your academic journey with LionReads, your UNN mobile bookshop. Stay updated with news, memes, and valuable insights.">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=JetBrains Mono">
+    <meta name="google-adsense-account" content="ca-pub-3266488601163483">
     <script src="https://kit.fontawesome.com/ff24e75514.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="./img/Lionreads-logo-1.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
