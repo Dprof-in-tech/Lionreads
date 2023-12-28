@@ -38,6 +38,10 @@ h1{
 .n-right{
   position: relative;
   right: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  height: 100%;
 }
 .n-left .sidepanel a{
   font-size: 1.05rem;
