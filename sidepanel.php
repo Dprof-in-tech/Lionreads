@@ -23,7 +23,7 @@
                 <!-- <a href="catalog.php"><i class="fa-solid fa-shop" style="color: white;"></i> Catalog</a> -->
                 <a href="index.php?route=faqs"><i class="fa-solid fa-message" style="color: white;"></i>  FAQs</a>
                 <a href="index.php?route=contact"><i class="fa-solid fa-comments" style="color: white;"></i> Contact</a>
-                <a href="index.php?route=admin"><i class="fa-solid fa-user-secret" style="color: white;"></i> Admin</a>
+                <a href="admin/login.php"><i class="fa-solid fa-user-secret" style="color: white;"></i> Admin</a>
                 <span>
                     <h5>All Rights Reserved</h5>
                     <h5>LionReads, 2023</h5>
